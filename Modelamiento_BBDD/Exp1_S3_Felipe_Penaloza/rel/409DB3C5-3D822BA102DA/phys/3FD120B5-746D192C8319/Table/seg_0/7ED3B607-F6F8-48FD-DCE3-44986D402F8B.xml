@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="CONTRATO" directorySegmentName="seg_0" id="7ED3B607-F6F8-48FD-DCE3-44986D402F8B">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="id_personal" id="098FCFFD-4A4E-AF25-018D-1663B64938B9">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="tipo_financiamiento" id="432E5231-38AD-893A-AE1B-FCFACB3BBCBF">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_apoderado" id="C197B1C7-4CFC-A70A-ED0F-6ED92A1DBD98">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="estado_contrato" id="C242F265-123E-FB81-8233-2464EF71AFAF">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_contrato" id="CB19DAD1-DB8E-353E-3D5E-60432E1F71A2">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="ix_contrato_personal" id="0E48BDCA-8E0B-CFAF-D98D-237F00A8D77E">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<logging></logging>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="fk_contrato_apoderado" id="BDDD2CE4-33E4-86F3-6C67-0E221B9C6067">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="fk_contrato_personal" id="E936B9D0-938E-D6D8-A763-A6BF5FF89BCF">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CONTRATO_PK" id="B5C9F6A0-2D28-44E8-7990-38510E9736D6">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

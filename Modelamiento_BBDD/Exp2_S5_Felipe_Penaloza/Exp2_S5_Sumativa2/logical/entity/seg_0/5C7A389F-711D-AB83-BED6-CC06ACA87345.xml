@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5C7A389F-711D-AB83-BED6-CC06ACA87345" name="MEDICO">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:06:29 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="rut_medico" id="D366E59A-1E2E-7FCA-B032-71E536ED673F">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:06:45 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12 CHAR</dataTypeSize>
+<ownDataTypeParameters>12 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre_completo" id="FE42E630-9794-9731-35A7-793155097F94">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:07:10 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_ingreso" id="6CDB6056-4F6F-06CE-605C-8E8760B774FB">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:07:24 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_atencion" id="7AA62D63-7C5B-6052-42B9-C7ED8655CA96">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 18:26:42 UTC</createdTime>
+<generatorID>503DEBFD-E601-970F-71CD-0EA8FA0E0DA1</generatorID>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<referedAttribute>9B54413E-2A25-A317-E5DE-E2CEEA4D50CC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_institucion_salud" id="DBDA2A7E-223F-6DDD-836C-36DBBE1D9CE6">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 18:28:37 UTC</createdTime>
+<generatorID>28862051-39E8-BF47-68F5-9741161F2639</generatorID>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<referedAttribute>E2D21D2F-1EF8-01E0-E5C4-6050682F82F5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_afp" id="140C8828-C0EC-2A54-57C0-44F6C5B84A2B">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 18:29:33 UTC</createdTime>
+<generatorID>BC7C98A1-9662-2405-CFC4-B6BF0AA0FE7F</generatorID>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<referedAttribute>1D363583-E4FC-088C-AB9B-DFAF38D4C0C4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rut_medico1" id="C3CA8D6B-A4F9-82FF-14D1-AE528164C1BE">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 18:31:57 UTC</createdTime>
+<generatorID>EAD1E9B7-EB1F-4D45-7E64-681CFA39B3E4</generatorID>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<referedAttribute>D366E59A-1E2E-7FCA-B032-71E536ED673F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12 CHAR</dataTypeSize>
+<ownDataTypeParameters>12 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D1405975-6F7A-ADE9-6292-A94A90ED22D2" name="MEDICO PK">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:07:02 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D366E59A-1E2E-7FCA-B032-71E536ED673F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

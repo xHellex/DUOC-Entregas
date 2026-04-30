@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="FLIGHT" directorySegmentName="seg_0" id="03108F54-F063-2547-88FD-7DB74BFF4400">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="arrival_datetime" id="3A215F1A-19C8-9B24-6B42-F5C9821A052A">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="flight_number" id="6DD37A63-E731-A9BB-9C29-D0B3BD869408">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="flight_id" id="7B963809-5ABF-368F-794A-B267F6D9738D">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="destination_city" id="9518789C-2BB3-8FD0-9C7A-BC2EEBC6F34C">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="origin_city" id="9B2301C3-945A-40AA-55F6-9FE6ADE81CB0">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="departure_datetime" id="B0330218-98A3-04D5-5604-D82FC418D379">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="airplane_id" id="C4A2A321-DCE1-F73E-4DBD-2EC57E4CD9DC">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="ix_flight_number" id="9BFB7D0F-6CB4-35A6-6E19-2008A59A9B0F">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<logging></logging>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="ix_flight_dates" id="E0D9CA86-09D7-A40F-6509-7C104560F7D7">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<logging></logging>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="fk_flight_airplane" id="4E145425-4EB3-B070-A40F-DB76DCC7D505">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="FLIGHT_PK" id="34C63456-04BB-86B2-4E1F-5C2EDB162B99">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="chk_flight_dates" id="7A099D68-4111-04D3-D916-B1E48B27A89F">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+</tableCheckConstraints>
+</TableProxyOraclev20c>

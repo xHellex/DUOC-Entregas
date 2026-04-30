@@ -1,0 +1,48 @@
+CREATE DATABASE IF NOT EXISTS Computec_DB CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci;
+USE Computec_DB;
+
+CREATE TABLE IF NOT EXISTS Clientes (
+  rut VARCHAR(20) PRIMARY KEY,
+  nombre VARCHAR(150) NOT NULL,
+  direccion VARCHAR(200) NOT NULL,
+  comuna VARCHAR(100) NOT NULL,
+  email VARCHAR(120) NOT NULL,
+  telefono VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Equipos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  modelo VARCHAR(150) NOT NULL,
+  cpu VARCHAR(100) NOT NULL,
+  disco_mb INT NOT NULL,
+  ram_gb INT NOT NULL,
+  precio DECIMAL(12,2) NOT NULL,
+  tipo ENUM('LAPTOP','DESKTOP') NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Laptop (
+  equipo_id INT PRIMARY KEY,
+  pantalla_pulgadas DECIMAL(4,1) NOT NULL,
+  touch BOOLEAN NOT NULL DEFAULT FALSE,
+  puertos_usb INT NOT NULL,
+  FOREIGN KEY (equipo_id) REFERENCES Equipos(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS Desktop (
+  equipo_id INT PRIMARY KEY,
+  potencia_fuente INT NOT NULL,
+  factor_forma VARCHAR(20) NOT NULL,
+  FOREIGN KEY (equipo_id) REFERENCES Equipos(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS Ventas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  cliente_rut VARCHAR(20) NOT NULL,
+  equipo_id INT NOT NULL,
+  fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  precio_final DECIMAL(12,2) NOT NULL,
+  FOREIGN KEY (cliente_rut) REFERENCES Clientes(rut),
+  FOREIGN KEY (equipo_id) REFERENCES Equipos(id)
+);
+
+CREATE INDEX idx_equipos_tipo ON Equipos(tipo);

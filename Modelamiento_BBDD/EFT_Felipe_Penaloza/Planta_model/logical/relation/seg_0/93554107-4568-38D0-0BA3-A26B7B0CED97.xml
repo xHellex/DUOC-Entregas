@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="orden_fk_tecnico" directorySegmentName="seg_0" id="93554107-4568-38D0-0BA3-A26B7B0CED97">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>457C7AE8-65E5-6CAD-8705-760720B0DCC2</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<sourcePk>F74E963A-921F-C0F3-0B26-CA2FDEB8B6AE</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>3BE895A8-9B2B-1BCE-BF39-1CEAC8E31798</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E18BE38B-A703-3342-C817-C85CDEB00760</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

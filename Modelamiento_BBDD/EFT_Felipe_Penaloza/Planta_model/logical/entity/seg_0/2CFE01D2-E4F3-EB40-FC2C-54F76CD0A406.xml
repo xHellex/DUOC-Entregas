@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2CFE01D2-E4F3-EB40-FC2C-54F76CD0A406" name="maquina">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>5C5FDB06-A3EF-8FD6-3402-B15AD5E13ABD</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id maquina" id="BEA015BE-D841-CF28-1B37-B7FCE9CB6F55">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>930873FA-347C-D36D-2CA3-334AC502BB55</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C9389F50-571F-84B1-3F52-76FDF633C82C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="num maquina" id="4D113086-0BBE-1F98-5B38-7A6FD24F08E4">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>7D48C02E-6607-EFD3-3FF4-D73D66BB1854</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C9389F50-571F-84B1-3F52-76FDF633C82C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id planta" id="CA769150-1D41-EA5B-7C12-76D782D8DD10">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>1A251CEE-B2D5-9A53-D226-6D9AF892316B</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<referedAttribute>121B9835-00DB-8ECA-4035-95B2F4D73FA7</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C9389F50-571F-84B1-3F52-76FDF633C82C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre maquina" id="A4103E7B-C6D2-5EC6-A6AE-BE19B27CE33E">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>6A18F3FA-4258-1A02-BEFF-797A8942E4AC</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>A3517D8C-606F-F000-7B13-25C6628BF74B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estado activo" id="FD4A779D-F8AD-6743-C513-8585EA655721">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>8CE97808-C665-777E-E5CE-F3A2554464EC</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<domain>DA9CB0A7-B83C-0BDD-D74A-1FD2B617F92C</domain>
+<listOfValues>
+<valueDef value="N" description=""/>
+<valueDef value="S" description=""/>
+</listOfValues>
+<defaultValue>&apos;S&apos;</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id tipo" id="127D4F3D-1B4F-A36B-6F3C-8704657A1C93">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>397C27F5-DA19-821E-8062-CCD856A37764</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<referedAttribute>D6803C65-33E3-09E2-330E-0963EBB9B548</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C9389F50-571F-84B1-3F52-76FDF633C82C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="312EC048-69CE-A30C-25FE-52FBA0598FF9" name="maquina PK">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>67E957DB-EFC8-F0CA-4996-B9FADE861729</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BEA015BE-D841-CF28-1B37-B7FCE9CB6F55</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="E8D41595-6D16-054B-CCA6-BC3DC2921F50" name="maquina un">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>54F64E5F-8530-F94A-0ADF-5249953E4D5D</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>4D113086-0BBE-1F98-5B38-7A6FD24F08E4</attributeRef>
+<attributeRef>CA769150-1D41-EA5B-7C12-76D782D8DD10</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

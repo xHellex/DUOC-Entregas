@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="702FEEF5-0F7F-EE72-0B33-D6D8FBF88EAB" name="PILOT">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>9D27B101-A493-FEBC-4120-5CF02A77970E</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="employee_id" id="B4985996-B28A-5769-89F5-C72D75421C6D">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>74EAECBE-8315-E36A-77A6-A13A762FFF95</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F6069E01-C699-C476-FB81-C47DB44DEB6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5C099595-1CDF-06DD-29FD-62322227B7F2" referredColumn="09FCD9DE-0E3C-E4E2-FA88-A039C1ED0F86"/>
+</associations>
+</Column>
+<Column name="hours_flown" id="B7E924A4-93F4-CC47-BC59-627AE3A04345">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>7C4F422A-29B0-E43C-6E9F-9371C7676188</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>3E9F1090-E2A9-5E56-83B2-86A7A2FBC49E</domain>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="afp" id="C4DFB020-A01C-4061-7339-74B3CBF577E1">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>6FBABBF6-A031-199F-34B6-1BA3D69FD91E</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>6D1B96B3-F242-8B75-D933-D48A85CA2158</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6F3F1D67-9B2E-B124-6BB8-A0814402773A" name="PILOT_PK">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>5751D87A-E4F8-5CBC-0DB6-4B49E0C8FA8C</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B4985996-B28A-5769-89F5-C72D75421C6D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AB6C147E-BEAC-93C2-59D8-BB873AD6D834" name="fk_pilot_emp">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B4985996-B28A-5769-89F5-C72D75421C6D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

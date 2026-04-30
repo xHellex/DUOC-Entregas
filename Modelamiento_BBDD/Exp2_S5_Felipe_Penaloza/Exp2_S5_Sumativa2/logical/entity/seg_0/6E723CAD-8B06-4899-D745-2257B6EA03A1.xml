@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6E723CAD-8B06-4899-D745-2257B6EA03A1" name="EXAMEN">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:14:43 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_examen" id="F6BCCCD2-F777-FCA9-49AE-406F62FF1FF6">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:14:52 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo_examen" id="6E42B470-9572-6F76-A831-58427342720C">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:15:26 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre_examen" id="56959A23-8CA4-484A-CCE9-04210E1DBE9C">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:15:46 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>120 CHAR</dataTypeSize>
+<ownDataTypeParameters>120 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_muestra" id="63E22AD5-499B-E7A6-4792-83A9C3C4EB8D">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:16:00 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80 CHAR</dataTypeSize>
+<ownDataTypeParameters>80 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="condiciones_preparacion" id="9ED4A157-255C-3305-75FB-A144A88276B5">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:16:39 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_examen1" id="2107A107-A8EB-5FC1-3524-FB65B89BC34D">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 18:31:17 UTC</createdTime>
+<generatorID>752DEC64-7869-7B03-F2A7-FDA254A0E65E</generatorID>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<referedAttribute>F6BCCCD2-F777-FCA9-49AE-406F62FF1FF6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AE816FCA-483F-D89D-E6FE-4A5C8AB06349" name="EXAMEN PK">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:15:05 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F6BCCCD2-F777-FCA9-49AE-406F62FF1FF6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

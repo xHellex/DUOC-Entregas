@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7DA58654-0665-E9C5-95DF-8AD8EEB1BFCD" name="jefe_turno">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>A1562295-0368-FEAB-0F62-982EB8D76397</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_empleado" id="C412FF54-58F7-5D87-E225-A9A23CC9F8BC">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>897110BB-7E71-B71C-EF10-ADC1027FDCAD</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C9389F50-571F-84B1-3F52-76FDF633C82C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="40B40A20-8E3C-F513-A6B8-165B71263AD7" referredColumn="968949DD-65B8-A352-9ADA-01E051554D03"/>
+</associations>
+</Column>
+<Column name="area_responsabilidad" id="064F6441-4711-25B5-E1D5-D4B0939219EE">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>15E5A24F-B50D-A44F-135E-2196AF68AFA8</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E962B390-6A62-6993-3DF7-C47555B72789</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="max_operarios" id="F4B975D7-021E-8252-7BD7-7FA47C9977F2">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>A6E7A7E9-B568-7268-9A5A-342F787FCD62</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>DB222B9E-D13D-0A57-371B-BBDD5AF2F9DE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6BABAD8C-2A08-5012-D68A-D4EE816C4540" name="jefe_turno_PK">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>35D09BF8-00B5-1428-3B28-7FC2BDF6E0E3</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C412FF54-58F7-5D87-E225-A9A23CC9F8BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2BF71BAC-F981-13BC-142C-F0B61155913F" name="jefe_turno_fk_emp">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C412FF54-58F7-5D87-E225-A9A23CC9F8BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

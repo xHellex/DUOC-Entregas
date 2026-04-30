@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="48AC0C47-9961-2CB2-960F-AAF95C13B7FE" containerWithKeyObject="FA83118E-6101-529B-19EF-59F9359D6F37" localFKIndex="F565E206-EF27-77E5-5553-ED71228EB0A6" name="fk_solicitud_atencion">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>1FB4BBCF-54E9-EC45-D9ED-49C13D0C4557</importedID>
+<referredTableLongName>ATENCION</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>73EE30AF-F60B-9EA9-8A7B-B737AB177EBD</referredTableID>
+<keyObject>24D22B70-AE84-31F1-5023-0B73463434AC</keyObject>
+<referredKeyID>24D22B70-AE84-31F1-5023-0B73463434AC</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_atencion</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="CUIDADOR" directorySegmentName="seg_0" id="993B2065-5099-EEE1-037E-CC775B40B4D8">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="id_personal" id="634E763A-167A-B523-C7B5-55D210E149F8">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ficha_cuidador" id="D297D59F-ED55-1C97-8117-BA583BC7CB8F">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="fk_cuidador_personal" id="1B71CA4B-97D8-72C0-D4D2-9BFC1052F101">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CUIDADOR_PK" id="CEB1873F-0A89-26C4-93E0-ED592BFA6FA2">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

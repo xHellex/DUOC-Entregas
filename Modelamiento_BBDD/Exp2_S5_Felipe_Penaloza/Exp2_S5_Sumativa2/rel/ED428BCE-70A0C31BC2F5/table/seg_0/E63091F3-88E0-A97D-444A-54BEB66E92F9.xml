@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E63091F3-88E0-A97D-444A-54BEB66E92F9" name="PAGO">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>DDD438D5-B232-11E1-81E6-1E239A55FCFC</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_pago" id="25AA477F-646E-C14C-20F8-8C9515D3B1F7">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>F066ED72-A0AE-D3DE-4047-4808EF96FC45</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CE4E9FC8-BF1A-A4FC-DB9D-F79A6AE42CCB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<defaultOntNull>true</defaultOntNull>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="id_atencion" id="DC064D4F-C6B4-6851-E98E-DC43AAAE6895">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>4106043E-F954-1C01-5E47-D56C1380D9F7</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CE4E9FC8-BF1A-A4FC-DB9D-F79A6AE42CCB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DA7F9F86-4FF5-6942-89CB-EEEE5DBBF567" referredColumn="3E7B8500-72B6-853F-AEBD-9D02A2819C8D"/>
+</associations>
+</Column>
+<Column name="monto" id="52C448E6-55FB-9025-C082-E11ADA389065">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>8B7971A8-2955-DD7F-8C68-98EF9CFC9EB9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>943BE4A4-71D8-6C2D-E3E3-8454FE4BE77D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_pago" id="EC880A32-6177-3ADB-6FED-1F9CCF27DFAD">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>E1D75E75-2DEE-ADAD-9FFD-5A43FA629AC1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>42FEFFBF-88E7-8B88-AE93-FDABDF07FA8A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_pago" id="94BE5873-E1B9-6C52-083A-EC90AABC3913">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>0D50F69B-0924-A0E5-E491-60B18EDF068A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>B3BED292-174D-7274-9435-CCB05911232B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="00FE5266-6658-8B4D-5DCB-B0F5C39E32F8" name="PAGO_PK">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>D428360E-BE8E-D894-F23D-53B20664644E</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="25AA477F-646E-C14C-20F8-8C9515D3B1F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E216D467-8E87-79E6-751C-FE3DFC6B8A9D" name="uk_pago_atencion">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>5ADB3ACE-4C43-1E9A-6AD6-87EBCD8D51A0</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DC064D4F-C6B4-6851-E98E-DC43AAAE6895"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C59818C8-6C23-A2DA-2C52-6BCFF981CE31" name="fk_pago_atencion">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DC064D4F-C6B4-6851-E98E-DC43AAAE6895"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

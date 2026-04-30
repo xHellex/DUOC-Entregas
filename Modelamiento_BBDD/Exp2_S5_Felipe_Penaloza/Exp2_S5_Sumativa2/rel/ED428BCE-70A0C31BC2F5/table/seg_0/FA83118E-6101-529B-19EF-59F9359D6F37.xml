@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FA83118E-6101-529B-19EF-59F9359D6F37" name="SOLICITUD_EXAMEN">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>733E755E-1A0F-D39D-22C4-F986374579D3</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_solicitud" id="6C6828A6-7A6E-4994-D10C-DA46BDCC69F7">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>A5778049-4575-2A0C-D0E1-A560AF888787</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CE4E9FC8-BF1A-A4FC-DB9D-F79A6AE42CCB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<defaultOntNull>true</defaultOntNull>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="id_atencion" id="0A960A8D-CB64-23E6-4A05-590ED6885DE5">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>DC9F7F93-75C2-FB7F-F749-4FBF2B6EB447</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CE4E9FC8-BF1A-A4FC-DB9D-F79A6AE42CCB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="48AC0C47-9961-2CB2-960F-AAF95C13B7FE" referredColumn="3E7B8500-72B6-853F-AEBD-9D02A2819C8D"/>
+</associations>
+</Column>
+<Column name="id_examen" id="F5956251-A5FA-6C68-70CE-98CC4D692E5C">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>49E5AADB-12DE-AA35-A70F-16340C9E84F1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CE4E9FC8-BF1A-A4FC-DB9D-F79A6AE42CCB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1E60E86A-967C-B085-BCF5-57420417C364" referredColumn="4B2B8F36-CF55-9E69-7C13-1C38BBB4DAE0"/>
+</associations>
+</Column>
+<Column name="estado" id="F64E9EE4-77AB-0D09-C3FA-59DBEAC6CA6F">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>9426CB28-44EF-84C8-50DF-182E42039C6E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>42FEFFBF-88E7-8B88-AE93-FDABDF07FA8A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="resultado" id="1FC9A61E-B4A0-503C-EC7F-AED98A8454C6">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>CAC81E1B-9262-E2F6-F04F-9B5C9BBAF1FF</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>756BEBD9-37E2-297E-2C11-DB524F864D6A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_resultado" id="388138A8-49A7-2B4F-8AE2-CB9369C925C7">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>DBCAF46C-49D4-DE42-9AA9-82DE622528D5</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>B3BED292-174D-7274-9435-CCB05911232B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9DAEA485-0542-77C1-C68D-51954B2F3FF1" name="SOLICITUD_EXAMEN_PK">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>03DEABA7-13E3-BB21-BFD6-7361C14FB49A</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C6828A6-7A6E-4994-D10C-DA46BDCC69F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="76B09C3B-557C-F995-1D27-E6FBF495F8A9" name="ix_solicitud_examen_atencion">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>6E04B202-B326-3BA6-1EC5-42682F845414</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A960A8D-CB64-23E6-4A05-590ED6885DE5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F565E206-EF27-77E5-5553-ED71228EB0A6" name="fk_solicitud_atencion">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A960A8D-CB64-23E6-4A05-590ED6885DE5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C55764DC-B713-E342-3DD8-DEDE04FCE48B" name="fk_solicitud_examen">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F5956251-A5FA-6C68-70CE-98CC4D692E5C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B35228AE-7571-B2E1-4720-5A77B15EEBE5" name="RESIDENTE">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 05:02:23 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="rut_residente" id="3AE27286-FF2C-0591-96B9-6785CA0847DA">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 05:02:28 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre_residente" id="ABA2267E-8048-5181-B9FA-90FDCA7D671E">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 05:02:49 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_nacimiento" id="3400D7BA-1212-0FB5-1566-CBEAC3A8F2EE">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 05:03:15 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="autonomia" id="9F90CED4-03EB-C7FE-4DB7-A7E6E11C6046">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 05:03:51 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2 CHAR</dataTypeSize>
+<ownDataTypeParameters>2 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rut_residente1" id="D3C2AA6F-AB03-EAF8-A69C-00DD02ABFAAC">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 05:17:44 UTC</createdTime>
+<generatorID>7E2CE0A6-FD03-C0A6-ABD3-1D2DD6136A2C</generatorID>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<referedAttribute>0D75D221-9631-2946-4E0A-F38B13D51030</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rut_residente2" id="D71087F4-AA48-AC08-FB35-BFB5E646FC8F">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 05:17:51 UTC</createdTime>
+<generatorID>89F7E013-2738-5E25-22DD-D04B802C64F3</generatorID>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<referedAttribute>FF44BA29-ED40-550A-9407-89DF754B156D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_anexo" id="62F394AB-A5B0-1AFC-BE7E-23B98FBE4BF9">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 05:18:49 UTC</createdTime>
+<generatorID>24CCBDA5-A9ED-1261-5A01-5B2B3584BD37</generatorID>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<referedAttribute>B149099F-79EA-AD74-A7BC-C0BB756491F4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7C861944-4013-A521-83A3-9ACCC9A033D5" name="RESIDENTE PK">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 05:02:42 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3AE27286-FF2C-0591-96B9-6785CA0847DA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

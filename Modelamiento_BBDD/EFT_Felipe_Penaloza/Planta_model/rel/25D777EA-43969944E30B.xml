@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="25D777EA-3707-91EE-29AD-43969944E30B" mainViewID="36682997-C7DE-3069-C473-E07C30A23C3E">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:12:21 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>01F6E6D1-21D0-CFBD-ABDD-3988D1813575</selectedRDBMSSite>
+<importDDLFileStamps>
+<importDDLFileStamp class="oracle.dbtools.crest.imports.DDLFileStamp">
+<fileName>planta_model.sql</fileName>
+<pathName>E:\documentos\Analista Computacional\Modelamiento BBDD\EFT_Felipe_Penaloza</pathName>
+<dbType>17</dbType>
+</importDDLFileStamp>
+</importDDLFileStamps>
+</relationalModel>

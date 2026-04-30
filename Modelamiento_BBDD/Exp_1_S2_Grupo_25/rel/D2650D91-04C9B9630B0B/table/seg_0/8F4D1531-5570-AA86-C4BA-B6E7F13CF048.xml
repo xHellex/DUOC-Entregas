@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8F4D1531-5570-AA86-C4BA-B6E7F13CF048" name="PASSENGER_CONTACT">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>B36B76AC-7F07-4E6D-957B-1400ED1124A8</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="contact_id" id="83533F51-9147-70A0-3AF5-BE445754FBD6">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>7E31B344-1A9B-7833-83C7-0ACA4684DDB1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F6069E01-C699-C476-FB81-C47DB44DEB6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<defaultOntNull>true</defaultOntNull>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="passenger_id" id="545EC3A3-430B-B846-14EA-8CA22891BEEF">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>8158FB0F-4B6A-8C58-3A5E-0F8B88EBAEF5</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F6069E01-C699-C476-FB81-C47DB44DEB6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4B1EBA5E-A92C-B135-ED3B-AE075051DBCF" referredColumn="A7EDB8B6-4D87-2006-685A-4823019F0A53"/>
+</associations>
+</Column>
+<Column name="contact_type" id="FF03CC3E-47F2-8E92-2B98-A171101DA158">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>CB44045C-5BE3-C2F7-CA6C-25EEAA746BE1</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>CCC28D0F-2793-2E48-56BC-0989FC0497BA</domain>
+<listOfValues>
+<valueDef value="EMAIL" description=""/>
+<valueDef value="PHONE" description=""/>
+</listOfValues>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contact_value" id="1164E8D4-A94B-4E2F-F929-946FBB0EC25F">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>E1FF2E39-634B-F320-995E-A67E47DD1A05</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E8FB8C71-E870-743D-CC5B-FFD0B4143FBC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="37F356B3-6EDA-4895-9691-E2C2974C8ED2" name="PASSENGER_CONTACT_PK">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>9347B047-7174-7E83-22A4-62AB783FD29B</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="83533F51-9147-70A0-3AF5-BE445754FBD6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="25C163F8-F564-80D0-3BA0-D4329426E0AF" name="fk_pc_passenger">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="545EC3A3-430B-B846-14EA-8CA22891BEEF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

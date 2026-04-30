@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="05B386A0-5374-E58F-E01D-40DAB2F67ECD" name="tipo maquina">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>4BC4B4BA-EF19-6847-2072-768406021BD0</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id tipo" id="D6803C65-33E3-09E2-330E-0963EBB9B548">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>E2852056-39D7-2EBD-85A7-11A35A4CBB6E</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C9389F50-571F-84B1-3F52-76FDF633C82C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre tipo" id="5507DF3B-FE36-34A8-7EC3-5FDAAF6615EE">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>EBE51E77-FF3E-BC2B-129A-BEBD88B1AFA6</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E962B390-6A62-6993-3DF7-C47555B72789</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6F006B69-8289-A63E-F355-64749816BAA3" name="tipo maquina PK">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>F21922C5-4A74-F367-81D6-CC3970D1790E</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D6803C65-33E3-09E2-330E-0963EBB9B548</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="666CF33A-3217-051D-5EE3-84AF10A1D32F" name="tipo maquina un">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>85DE9B32-1ADE-D679-23B9-398A0A0679DF</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>5507DF3B-FE36-34A8-7EC3-5FDAAF6615EE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

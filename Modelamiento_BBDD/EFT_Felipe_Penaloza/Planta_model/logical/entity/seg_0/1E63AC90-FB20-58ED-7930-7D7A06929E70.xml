@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1E63AC90-FB20-58ED-7930-7D7A06929E70" name="operario">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>A1859EE3-8A04-0B5D-B394-F3FAFB55B6ED</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id empleado" id="C777E8BA-8FD3-54B3-2750-8CEDD1065B57">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>E82EFA4A-F66B-C6DC-C9DD-648C0DCEDD54</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<referedAttribute>3492B6A7-E8FF-73B5-45C6-57CCF8019FD2</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C9389F50-571F-84B1-3F52-76FDF633C82C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="categoria proceso" id="BC4DA5DE-27C8-044A-0C3B-F79B117EEA1F">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>0AB820E3-B227-D708-3B7D-1FD743CAB799</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>309FB4C2-5164-397D-0837-373C2D932017</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="certificacion" id="E124D3A3-9CBD-93D4-5E98-6BDF5EAABC3A">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>5343B973-B9EB-8676-E347-ADBC1E8C7048</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E962B390-6A62-6993-3DF7-C47555B72789</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="horas turno" id="1D150A53-DE4D-05BE-76A4-2195DB1AB5FE">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>8256CE9F-BAE8-FC32-E0F2-4A21C87C119C</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C9389F50-571F-84B1-3F52-76FDF633C82C</domain>
+<defaultValue>8</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4E5E6FED-0647-E717-8A5C-DF7AE330A0D1" name="operario PK">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>60FC17A0-2A40-920B-C9B5-F7C015297DDF</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C777E8BA-8FD3-54B3-2750-8CEDD1065B57</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

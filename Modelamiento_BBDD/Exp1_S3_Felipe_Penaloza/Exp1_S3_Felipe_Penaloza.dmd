@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Exp1_S3_Felipe_Penaloza" id="1426A583-60FC-53ED-1F91-9452E19682DF" version="3.5">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:22:39 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>1426A583-60FC-53ED-1F91-9452E19682DF</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="3C78DBDB-936B-80F2-B487-7DAADB33BC67">
+<designStoragePath>C:\residencia_model</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

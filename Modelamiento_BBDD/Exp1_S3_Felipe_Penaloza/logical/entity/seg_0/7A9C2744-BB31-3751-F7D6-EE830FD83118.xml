@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7A9C2744-BB31-3751-F7D6-EE830FD83118" name="CONTRATO">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 04:55:42 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_contrato" id="2FC0923B-71FA-036F-4F33-65C6C32DA18B">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 04:55:50 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_financiamiento" id="BC44F4A8-9F60-3D0F-4A3E-CE052331EF31">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 04:55:56 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_personal" id="08639F7D-D3B0-3A77-949B-AE0380515D21">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 04:56:40 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_apoderado" id="F6F984CB-BFB1-79E6-F768-DCCF5E53C62C">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 04:57:11 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estado_contrado" id="5D209B36-4207-5A84-A930-A622FB57AA4D">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 04:57:30 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_anexo" id="D81BE921-3CD0-CF12-9F28-FDAB6EFBF6D3">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 05:19:37 UTC</createdTime>
+<generatorID>FC58608F-9AE0-E479-CAD9-01AA79C6905F</generatorID>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<referedAttribute>B149099F-79EA-AD74-A7BC-C0BB756491F4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="14CF13A2-44BE-F1A6-3217-485C64CF407A" name="CONTRATO PK">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 04:55:58 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<engineerTo>
+<item key="409DB3C5-EE63-E804-91CA-3D822BA102DA" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2FC0923B-71FA-036F-4F33-65C6C32DA18B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

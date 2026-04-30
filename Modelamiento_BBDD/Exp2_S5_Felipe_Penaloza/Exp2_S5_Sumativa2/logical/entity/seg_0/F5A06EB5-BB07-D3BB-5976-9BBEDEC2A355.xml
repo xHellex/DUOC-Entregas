@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F5A06EB5-BB07-D3BB-5976-9BBEDEC2A355" name="INSTITUCION_SALUD">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:27:28 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_institucion_salud" id="E2D21D2F-1EF8-01E0-E5C4-6050682F82F5">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:27:38 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo" id="CB5AF822-2017-B78E-0AB7-AC183CF88F35">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:28:06 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="497DEE2A-2DC4-AE99-9A41-87731D75A9D4">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:28:20 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80 CHAR</dataTypeSize>
+<ownDataTypeParameters>80 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo" id="CF70B1E9-4614-9BDB-5BE3-8B1C749B77DD">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:28:33 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_institucion_salud1" id="9BA0B74D-FF6A-6379-E49E-C7FBA78EF493">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 18:28:51 UTC</createdTime>
+<generatorID>28862051-39E8-BF47-68F5-9741161F2639</generatorID>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<referedAttribute>E2D21D2F-1EF8-01E0-E5C4-6050682F82F5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="01722D59-95DA-5A55-E8F5-C7CD7E643C97" name="INSTITUCION_SALUD PK">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:27:50 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E2D21D2F-1EF8-01E0-E5C4-6050682F82F5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="28CD03BB-BC7D-7D34-E7D7-F628657EE068" containerWithKeyObject="DAFD4D31-8B1D-4B15-F27B-8C9F77B01CA9" localFKIndex="B031709D-EB61-6D36-6FA7-F7FC03B0D35F" name="fk_asig_hab_anexo">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>A2AEA780-F31B-8D79-E25B-4DDBADFCFAF3</importedID>
+<referredTableLongName>ANEXO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4010C261-AA11-7FDC-B7F8-7A8F5A1B852D</referredTableID>
+<keyObject>037B5F43-98F5-C544-1CB1-6F91115378B6</keyObject>
+<referredKeyID>037B5F43-98F5-C544-1CB1-6F91115378B6</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>id_anexo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

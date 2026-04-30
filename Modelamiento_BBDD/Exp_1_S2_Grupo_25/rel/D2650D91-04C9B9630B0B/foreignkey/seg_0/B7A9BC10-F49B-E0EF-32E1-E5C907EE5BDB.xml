@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B7A9BC10-F49B-E0EF-32E1-E5C907EE5BDB" containerWithKeyObject="39F63F2B-1092-EE64-71D9-C3805F104D2C" localFKIndex="409E317B-7C47-43CA-0BA0-776B8BCF457F" name="fk_luggage_passenger">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>31316CE4-3F06-92E8-43E9-CA3866A73DBE</importedID>
+<referredTableLongName>PASSENGER</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>FC88DC5C-DBDA-62AC-AB71-33A68B901A10</referredTableID>
+<keyObject>94C4BA8B-CFD6-E9E5-178C-7A676F28E8A9</keyObject>
+<referredKeyID>94C4BA8B-CFD6-E9E5-178C-7A676F28E8A9</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>passenger_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

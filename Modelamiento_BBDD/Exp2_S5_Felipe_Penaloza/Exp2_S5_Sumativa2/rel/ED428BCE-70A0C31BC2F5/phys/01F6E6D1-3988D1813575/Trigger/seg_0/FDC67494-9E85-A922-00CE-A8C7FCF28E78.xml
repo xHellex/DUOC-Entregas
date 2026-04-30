@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="trg_solicitud_exam_result_dates" directorySegmentName="seg_0" id="FDC67494-9E85-A922-00CE-A8C7FCF28E78">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:06 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<actions>INSERT, UPDATE</actions>
+<body><![CDATA[BEGIN
+  IF :NEW.estado = 'completado' AND :NEW.fecha_resultado IS NULL THEN
+    RAISE_APPLICATION_ERROR(-20006, 'Si el estado es COMPLETADO, fecha_resultado debe tener valor.');
+  END IF;
+
+  IF :NEW.fecha_resultado IS NOT NULL AND :NEW.estado != 'completado' THEN
+    RAISE_APPLICATION_ERROR(-20007, 'Si existe fecha_resultado, el estado debe ser COMPLETADO.');
+  END IF;
+END;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<table>FA83118E-6101-529B-19EF-59F9359D6F37</table>
+</TriggerOraclev10g>

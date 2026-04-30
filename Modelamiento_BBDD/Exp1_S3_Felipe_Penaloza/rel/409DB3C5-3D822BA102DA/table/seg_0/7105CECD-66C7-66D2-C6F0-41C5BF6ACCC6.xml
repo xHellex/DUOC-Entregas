@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7105CECD-66C7-66D2-C6F0-41C5BF6ACCC6" name="RESIDENCIA">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>99C41416-3006-E089-BF0B-6A8304702507</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_residencia" id="43E49D5E-8180-5E16-A000-EF1090C72CD2">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>85977078-D897-DDD9-C67E-578B457C6A1D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7481B26D-DD93-2EB5-0ABC-BA86D26A17F6</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre_residencia" id="34AB735B-DFD6-111D-904E-82C303B9A09D">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>23E7761B-96A3-01FE-9199-0C47B15CFCEC</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4C81008B-CB25-B5A0-DE05-048DCB5C54DE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_comuna" id="409E4F1D-70E2-E51A-2AF0-E568C3105BFE">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>5E96A2E9-BC8D-B013-DDD2-894FC627D3F9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7481B26D-DD93-2EB5-0ABC-BA86D26A17F6</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4DA92149-14EF-79EE-B9B3-165AC5B1E0DE" referredColumn="36826E37-6AB1-BF37-D298-D3DEF3143E53"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4DF8BE2D-C40C-B8C9-18D5-5B51A3DFE775" name="RESIDENCIA_PK">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>8464B8E2-D347-E831-477D-3E515A4ED8AF</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="43E49D5E-8180-5E16-A000-EF1090C72CD2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DC64B94A-D8C9-87E4-0CB9-882A900A9718" name="ix_residencia_comuna">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>40DA2028-576B-316C-27A3-742F03EF25A0</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="409E4F1D-70E2-E51A-2AF0-E568C3105BFE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="819382AE-675C-E09D-C5D3-FCA7FC9CD3FC" name="fk_residencia_comuna">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="409E4F1D-70E2-E51A-2AF0-E568C3105BFE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

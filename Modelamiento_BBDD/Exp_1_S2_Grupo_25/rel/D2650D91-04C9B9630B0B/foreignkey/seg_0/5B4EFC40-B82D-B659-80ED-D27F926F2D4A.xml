@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5B4EFC40-B82D-B659-80ED-D27F926F2D4A" containerWithKeyObject="8DCC28A0-901C-C004-96B9-7442E85ACD02" localFKIndex="94192EAB-BB6F-09A6-952A-FBAA7291B13B" name="fk_res_emp">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>DC6D9ECE-967D-9FAA-F473-193161B9D5F8</importedID>
+<referredTableLongName>EMPLOYEE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2808A4B1-79E6-8B8A-E413-5EA407012E40</referredTableID>
+<keyObject>3096B5B9-012D-617F-B54B-A6395179868D</keyObject>
+<referredKeyID>3096B5B9-012D-617F-B54B-A6395179868D</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>employee_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

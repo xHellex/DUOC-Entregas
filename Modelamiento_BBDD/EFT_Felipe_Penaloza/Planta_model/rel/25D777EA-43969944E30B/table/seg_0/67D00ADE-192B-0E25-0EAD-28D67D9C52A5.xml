@@ -1,0 +1,152 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="67D00ADE-192B-0E25-0EAD-28D67D9C52A5" name="orden_mantencion">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>06F7CF5A-A505-4D70-3848-0D59295E74DF</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_orden" id="C7F14B01-0F11-4990-2CAB-9749C69A8F1E">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>EEF35D8D-5C20-5BB2-0301-D245B8537964</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C9389F50-571F-84B1-3F52-76FDF633C82C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="id_maquina" id="DA1CDEBE-8942-936E-B6FA-9072419045C0">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>5BDAD9F2-2150-A388-501A-B8165C24113D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C9389F50-571F-84B1-3F52-76FDF633C82C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C7EBBD35-5B38-8E54-A03B-B36202805C49" referredColumn="930873FA-347C-D36D-2CA3-334AC502BB55"/>
+</associations>
+</Column>
+<Column name="id_tecnico" id="70C231E1-0EE5-913E-A5F1-18D66D6770A2">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>6D91D9FE-D0C6-E657-81C5-153C23012C57</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C9389F50-571F-84B1-3F52-76FDF633C82C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="457C7AE8-65E5-6CAD-8705-760720B0DCC2" referredColumn="362A6F55-0BEE-5BAC-D073-30D8AD077E67"/>
+</associations>
+</Column>
+<Column name="fecha_programada" id="0B1D1281-6E2D-3E00-075F-80BA6BDAA407">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>2C375AE0-1989-F2E7-56AD-9155FC7549CB</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>3DAACFB2-0B65-5BAA-028E-1F51F5651B8A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_ejecucion" id="91727375-D554-9A90-E1B6-0722C85A5FB1">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>8F99BB45-F957-8B73-1A35-FC23344CC09C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>3DAACFB2-0B65-5BAA-028E-1F51F5651B8A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="DCE22C8F-CE29-499B-59CD-591947378A10">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>F0A08D88-0C39-44D7-BCD5-362BE6F289E7</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B7FFAD46-7CD4-7645-0896-70856AEE428D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B4E4C5EF-CDF3-ECFA-B25C-EB377671B0C7" name="orden_mantencion_PK">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>EE39C68F-2B51-7ADE-AD30-353111C91058</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C7F14B01-0F11-4990-2CAB-9749C69A8F1E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="030E7D34-26A4-E8A8-6A77-5B471E7DFD5C" name="ix_orden_maquina">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>AC5FDEB6-6863-A049-B070-44BA67B1D89D</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DA1CDEBE-8942-936E-B6FA-9072419045C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CEBE2D83-B018-CCD9-9CA6-6AAA532229B2" name="orden_fk_maquina">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DA1CDEBE-8942-936E-B6FA-9072419045C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F182F3C1-49B4-ABEF-DFEE-29E85D4AB670" name="orden_fk_tecnico">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="70C231E1-0EE5-913E-A5F1-18D66D6770A2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="orden_ck_fecha" directorySegmentName="seg_0" id="5C17E7FB-C70B-0ACB-091E-54BD505F5E15">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>9B2CFAA7-39FE-78AF-379A-455D23174D3C</importedID>
+<rule><![CDATA[fecha_ejecucion IS NULL OR fecha_ejecucion >= fecha_programada]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

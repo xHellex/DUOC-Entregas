@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7ED3B607-F6F8-48FD-DCE3-44986D402F8B" name="CONTRATO">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>E6016E12-03ED-3AE6-9EAE-0F9F28C918E3</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_contrato" id="CB19DAD1-DB8E-353E-3D5E-60432E1F71A2">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>4E83C430-46C5-9C15-B714-97DAF1C11926</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>5C5C9E09-E346-4160-C3C9-16132E145327</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_financiamiento" id="432E5231-38AD-893A-AE1B-FCFACB3BBCBF">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>2E30E459-D10A-F038-A44E-D5BFE97F3208</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4F44166A-F23B-52CE-2AC3-AAA4FF4BF23F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_personal" id="098FCFFD-4A4E-AF25-018D-1663B64938B9">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>71D722F5-B89B-1908-AB55-B4093207FAA7</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7481B26D-DD93-2EB5-0ABC-BA86D26A17F6</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C6880204-01EC-95BA-602C-6EA71F4D1919" referredColumn="CB4B7643-87AF-6606-A71A-918CF8346D87"/>
+</associations>
+</Column>
+<Column name="id_apoderado" id="C197B1C7-4CFC-A70A-ED0F-6ED92A1DBD98">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>F21D86D2-90B9-98E1-7098-2BD650ED30A0</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7481B26D-DD93-2EB5-0ABC-BA86D26A17F6</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="52314BB2-E04D-0AAD-9F54-E24D66590302" referredColumn="5AF512FC-C170-B141-09B7-4519660D1091"/>
+</associations>
+</Column>
+<Column name="estado_contrato" id="C242F265-123E-FB81-8233-2464EF71AFAF">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>CDB2E82F-1E51-FC44-5A92-404321885B07</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4F44166A-F23B-52CE-2AC3-AAA4FF4BF23F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B5C9F6A0-2D28-44E8-7990-38510E9736D6" name="CONTRATO_PK">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>FF536F04-C2B4-AD00-8F34-BEC16E069EDC</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CB19DAD1-DB8E-353E-3D5E-60432E1F71A2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E48BDCA-8E0B-CFAF-D98D-237F00A8D77E" name="ix_contrato_personal">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>11EC3803-E817-99DD-D832-DD22755A1079</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="098FCFFD-4A4E-AF25-018D-1663B64938B9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BDDD2CE4-33E4-86F3-6C67-0E221B9C6067" name="fk_contrato_apoderado">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C197B1C7-4CFC-A70A-ED0F-6ED92A1DBD98"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E936B9D0-938E-D6D8-A763-A6BF5FF89BCF" name="fk_contrato_personal">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="098FCFFD-4A4E-AF25-018D-1663B64938B9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="trg_medico_no_self_supervisor" directorySegmentName="seg_0" id="83DBC4FA-C580-CCEE-EBA6-2FB2FCF29CB3">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:06 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<actions>INSERT, UPDATE</actions>
+<body><![CDATA[BEGIN
+  IF :NEW.rut_supervisor IS NOT NULL AND :NEW.rut_supervisor = :NEW.rut_medico THEN
+    RAISE_APPLICATION_ERROR(-20001, 'Un mÃ©dico no puede ser su propio supervisor.');
+  END IF;
+END;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<table>F76B58B7-3F64-A4E5-43D0-C30A8934EC08</table>
+</TriggerOraclev10g>

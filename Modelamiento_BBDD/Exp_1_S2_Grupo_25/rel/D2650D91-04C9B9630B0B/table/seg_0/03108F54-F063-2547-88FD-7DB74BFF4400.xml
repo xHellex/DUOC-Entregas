@@ -1,0 +1,162 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="03108F54-F063-2547-88FD-7DB74BFF4400" name="FLIGHT">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>AFD056D8-E1E3-32B5-D4D8-1E5F47DDE9D2</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="flight_id" id="7B963809-5ABF-368F-794A-B267F6D9738D">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>F9CFFD1F-FCF4-F3F2-64F6-02F294A2A659</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F6069E01-C699-C476-FB81-C47DB44DEB6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<defaultOntNull>true</defaultOntNull>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="flight_number" id="6DD37A63-E731-A9BB-9C29-D0B3BD869408">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>1462FEEB-7E03-C221-797B-04F8871007BD</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>45FA8778-52A9-950F-D06D-305D703416CB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="airplane_id" id="C4A2A321-DCE1-F73E-4DBD-2EC57E4CD9DC">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>B876B495-1623-3BA9-468C-5661A0147E43</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F6069E01-C699-C476-FB81-C47DB44DEB6B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ECCFE581-992A-2232-39D9-502A4B669445" referredColumn="204355A3-AD65-8FCA-D606-FF92AE7A5868"/>
+</associations>
+</Column>
+<Column name="origin_city" id="9B2301C3-945A-40AA-55F6-9FE6ADE81CB0">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>1682186E-1EF5-86F0-CFFF-16B39630066A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>6D1B96B3-F242-8B75-D933-D48A85CA2158</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="destination_city" id="9518789C-2BB3-8FD0-9C7A-BC2EEBC6F34C">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>A10EC6DB-B09D-FB72-3B6E-47A8B24DC35F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>6D1B96B3-F242-8B75-D933-D48A85CA2158</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="departure_datetime" id="B0330218-98A3-04D5-5604-D82FC418D379">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>3A140D98-DF93-49A8-3FA3-743815CA9AAA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>E9855EDE-2841-97BC-B9EE-5E0E2ED09B81</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="arrival_datetime" id="3A215F1A-19C8-9B24-6B42-F5C9821A052A">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>0B6274EA-256D-9F09-1C07-7FDEC551221C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>E9855EDE-2841-97BC-B9EE-5E0E2ED09B81</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="34C63456-04BB-86B2-4E1F-5C2EDB162B99" name="FLIGHT_PK">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>E5E0F9EA-BF4E-7EE4-64F6-AAA5CC498F67</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B963809-5ABF-368F-794A-B267F6D9738D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9BFB7D0F-6CB4-35A6-6E19-2008A59A9B0F" name="ix_flight_number">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>67525841-9B74-A8E9-5475-113E4A1283C0</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6DD37A63-E731-A9BB-9C29-D0B3BD869408"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E0D9CA86-09D7-A40F-6509-7C104560F7D7" name="ix_flight_dates">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>D0A4E989-A360-93EF-F407-BD5AE54AC5B1</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B0330218-98A3-04D5-5604-D82FC418D379"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4E145425-4EB3-B070-A40F-DB76DCC7D505" name="fk_flight_airplane">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C4A2A321-DCE1-F73E-4DBD-2EC57E4CD9DC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="chk_flight_dates" directorySegmentName="seg_0" id="7A099D68-4111-04D3-D916-B1E48B27A89F">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>702707B0-22BC-3EA6-058B-C0CE6792B41D</importedID>
+<rule><![CDATA[arrival_datetime IS NULL OR arrival_datetime >= departure_datetime]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

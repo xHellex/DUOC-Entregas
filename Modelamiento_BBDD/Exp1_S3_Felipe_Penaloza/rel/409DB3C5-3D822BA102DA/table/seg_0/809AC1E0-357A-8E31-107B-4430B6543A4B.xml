@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="809AC1E0-357A-8E31-107B-4430B6543A4B" name="PERMANENTE">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>59411736-02D2-1761-9696-212E69F62B6F</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="rut_residente" id="8B24A3A3-A03D-C5DF-BB96-F2D9F4E72808">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>647BEBBF-327D-2AAE-3A45-952FBAD23465</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4F44166A-F23B-52CE-2AC3-AAA4FF4BF23F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A7B80AA4-B2B8-9A8B-269D-AAD361FB8561" referredColumn="50735F8D-43B7-9BF4-043D-82B0B52E7694"/>
+</associations>
+</Column>
+<Column name="historial_clinico" id="58AD7C28-D800-25BD-EF72-F574F5F3488B">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>7FFFB3D8-261E-6FB3-D8DB-7DE4D183A050</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>D10D72F7-6814-0E4D-623E-91CEC4185B59</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E4FBE985-589C-794B-C0C1-BE3D82BEDD01" name="PERMANENTE_PK">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>77806757-F682-A386-DDF2-F3623D5DB30D</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8B24A3A3-A03D-C5DF-BB96-F2D9F4E72808"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6E442276-35A0-CED1-43F8-C744BD8ACF50" name="fk_permanente_residente">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8B24A3A3-A03D-C5DF-BB96-F2D9F4E72808"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

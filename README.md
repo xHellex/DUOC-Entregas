@@ -1,0 +1,1 @@
+Repositorio central con todas mis entregas, laboratorios y ejercicios prácticos de la carrera de Analista Computacional en DUOC UC.

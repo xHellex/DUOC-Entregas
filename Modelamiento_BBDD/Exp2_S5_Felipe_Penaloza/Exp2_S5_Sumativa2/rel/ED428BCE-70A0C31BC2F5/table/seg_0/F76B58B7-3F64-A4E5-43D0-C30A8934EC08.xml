@@ -1,0 +1,168 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F76B58B7-3F64-A4E5-43D0-C30A8934EC08" name="MEDICO">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>1176F980-5EC6-7DC9-4501-D8CF9FC525EE</importedID>
+<useDDLTransformationScript>true</useDDLTransformationScript>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="rut_medico" id="9702BB33-CE32-ADDE-A168-63A38D4E903A">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>52714E59-ABF1-4B00-5D5C-6BCF47904B0A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>D21E9E83-FB4A-DC40-F9B1-C68C34D128EE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre_completo" id="825B039D-BE68-4C60-3C8E-8D9C857573AF">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>137DF4B0-C2BB-E5FD-56A6-9981C76FF3EE</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>704AB523-9862-DA8E-2798-6550122E9071</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_ingreso" id="EFC59328-D585-673A-15A8-D63A64076308">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>33C4D265-7362-D6F3-060E-2C8F37A211E7</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>B3BED292-174D-7274-9435-CCB05911232B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_especialidad" id="A8D4208F-5B94-E9E9-B3F0-4CBF0B09B384">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>86F35952-4EB5-165B-C86E-124BC22A6C13</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CE4E9FC8-BF1A-A4FC-DB9D-F79A6AE42CCB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="86820712-D9C8-A857-470F-8B689B026FC4" referredColumn="063BF8E4-0E79-79B2-A075-0CFAC55237BD"/>
+</associations>
+</Column>
+<Column name="id_afp" id="44E6D9B6-39EB-E44A-528D-C3D37219D2C2">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>AE77548C-83A2-EC35-143D-8877AB771CD8</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CE4E9FC8-BF1A-A4FC-DB9D-F79A6AE42CCB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BD980E5B-161A-B22A-875D-8053F220E3D8" referredColumn="1F2AD11A-DD5F-5215-6AE9-C8AE6A73AEED"/>
+</associations>
+</Column>
+<Column name="id_institucion_salud" id="9ED2C910-C3FE-601B-E695-8E81C8F77571">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>AD1F0681-FDEC-CF2B-8218-7C629D8E8134</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>CE4E9FC8-BF1A-A4FC-DB9D-F79A6AE42CCB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="710E43BC-397B-B4E8-7032-B4B6E8C0B03F" referredColumn="1742A712-4E8B-2C5C-05BC-839D0D3D38FC"/>
+</associations>
+</Column>
+<Column name="rut_supervisor" id="18FEC31E-E566-37DC-C1FE-72D48C5EF45C">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>103D021C-02D7-42C3-C077-AD71440A665B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>D21E9E83-FB4A-DC40-F9B1-C68C34D128EE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2C84716B-BF3E-060C-9D18-D3F808BF25AB" referredColumn="9702BB33-CE32-ADDE-A168-63A38D4E903A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="83EE2BE5-94FE-06B3-8771-F49B7C52AAD4" name="MEDICO_PK">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>A415CF3F-6CD0-34C8-EEDC-AB95D8B7F362</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9702BB33-CE32-ADDE-A168-63A38D4E903A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F5466DEB-30CD-8763-9FFF-DEAFACB3C69C" name="fk_medico_afp">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="44E6D9B6-39EB-E44A-528D-C3D37219D2C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FC4BB8B5-348C-B0DE-A49B-B28FEF75F16E" name="fk_medico_esp">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8D4208F-5B94-E9E9-B3F0-4CBF0B09B384"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A01AC5E5-C350-2671-FB06-373B34DAFB77" name="fk_medico_inst">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9ED2C910-C3FE-601B-E695-8E81C8F77571"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C69BC991-1938-BEB4-C459-5A9EB2ABB9BE" name="fk_medico_supervisor">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="18FEC31E-E566-37DC-C1FE-72D48C5EF45C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

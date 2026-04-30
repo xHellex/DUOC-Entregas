@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Exp2_S5_Sumativa2" id="B1A57CF5-E76C-134D-18AD-9A2D31BF2A7F" version="3.5">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:28:05 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>B1A57CF5-E76C-134D-18AD-9A2D31BF2A7F</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="4C17C799-AF93-26F7-086E-260652944CBA">
+<designStoragePath>C:\sanrafael_with_triggers</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="0E11977E-7C02-1CCD-386A-F31C8F70FB66">
+<designStoragePath>C:\sanrafael_with_triggers</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="DAEA4DFF-E268-8010-1106-95AE32F2E1DC">
+<designStoragePath>C:\sanrafael_with_triggers</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

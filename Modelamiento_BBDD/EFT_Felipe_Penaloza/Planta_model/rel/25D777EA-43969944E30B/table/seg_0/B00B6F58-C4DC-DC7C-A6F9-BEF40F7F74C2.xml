@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B00B6F58-C4DC-DC7C-A6F9-BEF40F7F74C2" name="turno">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>6F52E69D-DD6D-A606-BEC9-D3D3009651B6</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_turno" id="A8E27740-DFD5-11EC-5C4A-F25CC8989450">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>3F3BC4D1-1BF7-B197-1DBD-B097DFB47804</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C9389F50-571F-84B1-3F52-76FDF633C82C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="nombre_turno" id="8AC5CFA1-01F8-9F42-B357-91622F19A3AF">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>59604C2A-E0DD-89DC-4AA2-978E8BC4CCF1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>309FB4C2-5164-397D-0837-373C2D932017</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="entrada" id="B7D19E83-96CB-F6CC-00EB-E99CA754F499">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>FFE4C5D0-6C08-8494-DF2A-67E763BB724E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<domain>B856EA31-7BC6-76A7-212B-458987C92AB7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="salida" id="6D29F3BC-D284-1B97-ACA6-FE5B351E1CA5">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>AC8DC3AE-2414-5947-2CC3-244AD7934D8A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<domain>B856EA31-7BC6-76A7-212B-458987C92AB7</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AFC665FB-EBA3-E0F0-A9FD-F830FB5C49BC" name="turno_PK">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>774E9CF6-DE79-5A01-8F94-283197F70829</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8E27740-DFD5-11EC-5C4A-F25CC8989450"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AACB96EF-00D4-23E3-EC3C-7AC7750BDA46" name="turno_un_nombre">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>357447DC-13FC-1C3E-4F0D-D9BC3C17DC67</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8AC5CFA1-01F8-9F42-B357-91622F19A3AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="turno_ck_hora_entrada" directorySegmentName="seg_0" id="E01085FC-2D60-F73E-B9C8-2790A4B1FEF3">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>D1E7BDC3-33EB-8FFD-40DD-E933FB4D86DC</importedID>
+<rule><![CDATA[REGEXP_LIKE(entrada,'^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$')]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="turno_ck_hora_salida" directorySegmentName="seg_0" id="66493B82-B6F4-3DF4-BF5A-DD03A0DFD9E7">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>7B20C94A-8C85-BEEF-3DAD-124ED8D626E9</importedID>
+<rule><![CDATA[REGEXP_LIKE(salida,'^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$')]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

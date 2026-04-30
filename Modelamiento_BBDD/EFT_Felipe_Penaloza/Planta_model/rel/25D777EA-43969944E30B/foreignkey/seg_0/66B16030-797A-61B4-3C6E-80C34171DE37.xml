@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="66B16030-797A-61B4-3C6E-80C34171DE37" containerWithKeyObject="5C5FDB06-A3EF-8FD6-3402-B15AD5E13ABD" localFKIndex="878159F7-2B74-5E9D-C660-90D61FB05F8A" name="maquina_fk_planta">
+<sourceDDLFile>planta_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:16:15 UTC</createdTime>
+<ownerDesignName>Planta_model</ownerDesignName>
+<importedID>D50417AA-6E04-D9F6-9FF5-76BEC9E56870</importedID>
+<referredTableLongName>planta</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5E2DF8E0-3D50-04F5-2CE4-D7D227FE9734</referredTableID>
+<keyObject>8E6A9614-5AEC-1D4B-B6C9-58C8FCD6D70E</keyObject>
+<referredKeyID>8E6A9614-5AEC-1D4B-B6C9-58C8FCD6D70E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_planta</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

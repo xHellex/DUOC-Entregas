@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7DE0BF51-900D-F7A3-7CCB-F1E22C734192" containerWithKeyObject="4010C261-AA11-7FDC-B7F8-7A8F5A1B852D" localFKIndex="4DC5713C-B928-470D-9598-7778597DC45C" name="fk_anexo_contrato">
+<sourceDDLFile>residencia_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-06 01:29:10 UTC</createdTime>
+<ownerDesignName>Exp1_S3_Felipe_Penaloza</ownerDesignName>
+<importedID>20F86497-EAF1-C8EC-425B-8F983BDD6D46</importedID>
+<referredTableLongName>CONTRATO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>7ED3B607-F6F8-48FD-DCE3-44986D402F8B</referredTableID>
+<keyObject>B5C9F6A0-2D28-44E8-7990-38510E9736D6</keyObject>
+<referredKeyID>B5C9F6A0-2D28-44E8-7990-38510E9736D6</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>id_contrato</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

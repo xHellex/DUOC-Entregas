@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="trg_medico_no_double_booking" directorySegmentName="seg_0" id="33077782-76BB-37AD-4140-B074D3371B3E">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:06 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<actions>INSERT, UPDATE</actions>
+<body><![CDATA[DECLARE
+  v_count NUMBER;
+BEGIN
+  SELECT COUNT(*) INTO v_count FROM ATENCION a
+    WHERE a.rut_medico = :NEW.rut_medico
+      AND a.fecha_hora = :NEW.fecha_hora
+      AND a.id_atencion != NVL(:NEW.id_atencion,-1);
+
+  IF v_count > 0 THEN
+    RAISE_APPLICATION_ERROR(-20002, 'Conflicto de agenda: el mÃ©dico ya tiene una atenciÃ³n en ese horario.');
+  END IF;
+END;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<table>73EE30AF-F60B-9EA9-8A7B-B737AB177EBD</table>
+</TriggerOraclev10g>

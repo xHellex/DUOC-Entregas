@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="86820712-D9C8-A857-470F-8B689B026FC4" containerWithKeyObject="F76B58B7-3F64-A4E5-43D0-C30A8934EC08" localFKIndex="FC4BB8B5-348C-B0DE-A49B-B28FEF75F16E" name="fk_medico_esp">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>3300580E-EBDF-985F-23D7-0F076F422EEA</importedID>
+<referredTableLongName>ESPECIALIDAD</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B89F01B4-B81B-010E-0913-4B0BA22BCF16</referredTableID>
+<keyObject>F97DD19A-DCBB-93FE-3B54-601C4C20BD87</keyObject>
+<referredKeyID>F97DD19A-DCBB-93FE-3B54-601C4C20BD87</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_especialidad</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

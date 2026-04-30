@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E8C67E98-7314-249B-233F-166F135B2508" containerWithKeyObject="8DCC28A0-901C-C004-96B9-7442E85ACD02" localFKIndex="E8BB9F47-A214-14AA-8C27-09E80F7283DA" name="fk_res_flight">
+<sourceDDLFile>btairways_model.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 23:10:55 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<importedID>5B91426A-5E49-906A-6313-7988501CD569</importedID>
+<referredTableLongName>FLIGHT</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>03108F54-F063-2547-88FD-7DB74BFF4400</referredTableID>
+<keyObject>34C63456-04BB-86B2-4E1F-5C2EDB162B99</keyObject>
+<referredKeyID>34C63456-04BB-86B2-4E1F-5C2EDB162B99</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>flight_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

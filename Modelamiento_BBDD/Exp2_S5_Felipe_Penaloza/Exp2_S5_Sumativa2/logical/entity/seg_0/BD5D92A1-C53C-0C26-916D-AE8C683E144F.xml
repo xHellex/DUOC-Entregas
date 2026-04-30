@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BD5D92A1-C53C-0C26-916D-AE8C683E144F" name="ESPECIALIDAD">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:13:29 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_especialidad" id="28A3BBE5-AB4E-181D-39EC-14A058EE0C88">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:13:38 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre_especialidad" id="16FDBBEE-5A3E-45FA-AA6F-9FB0809AAD61">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:13:56 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80 CHAR</dataTypeSize>
+<ownDataTypeParameters>80 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rut_medico" id="932A92AC-F3F1-8B65-FD98-2FB4D37D03DE">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 18:30:23 UTC</createdTime>
+<generatorID>2C5BEE33-0EB2-867C-6218-634112C5104A</generatorID>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<referedAttribute>D366E59A-1E2E-7FCA-B032-71E536ED673F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_atencion" id="5FEB7567-8A16-BE3A-2D48-5DE4219143F6">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 18:30:32 UTC</createdTime>
+<generatorID>A4469D71-5B02-991F-2DA4-19E962959794</generatorID>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<referedAttribute>9B54413E-2A25-A317-E5DE-E2CEEA4D50CC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F718E423-1817-4BA0-FD25-C01EB863F654" name="ESPECIALIDAD PK">
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 17:13:54 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<engineerTo>
+<item key="ED428BCE-877F-4126-8A61-70A0C31BC2F5" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>28A3BBE5-AB4E-181D-39EC-14A058EE0C88</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

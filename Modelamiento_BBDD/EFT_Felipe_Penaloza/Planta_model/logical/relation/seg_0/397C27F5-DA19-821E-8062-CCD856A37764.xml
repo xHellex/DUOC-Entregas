@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="maquina_fk_tipo" directorySegmentName="seg_0" id="397C27F5-DA19-821E-8062-CCD856A37764">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>24892384-2185-E8DF-9A26-4C9E4CE7780A</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<sourcePk>6F006B69-8289-A63E-F355-64749816BAA3</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>05B386A0-5374-E58F-E01D-40DAB2F67ECD</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2CFE01D2-E4F3-EB40-FC2C-54F76CD0A406</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

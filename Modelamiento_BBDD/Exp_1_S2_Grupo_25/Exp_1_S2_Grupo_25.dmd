@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Exp_1_S2_Grupo_25" id="3E517C99-39BE-BB59-B6B2-F2CC10229902" version="3.5">
+<createdBy>Felip</createdBy>
+<createdTime>2025-08-23 19:17:13 UTC</createdTime>
+<ownerDesignName>Exp_1_S2_Grupo_25</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>3E517C99-39BE-BB59-B6B2-F2CC10229902</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="A86BF691-3CDB-8EE4-2EAC-1FA6286CF90A">
+<designStoragePath>C:\btairways_model</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

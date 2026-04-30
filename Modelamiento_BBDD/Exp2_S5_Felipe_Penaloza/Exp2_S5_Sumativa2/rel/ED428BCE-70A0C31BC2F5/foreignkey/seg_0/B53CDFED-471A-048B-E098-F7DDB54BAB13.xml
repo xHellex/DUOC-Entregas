@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B53CDFED-471A-048B-E098-F7DDB54BAB13" containerWithKeyObject="73EE30AF-F60B-9EA9-8A7B-B737AB177EBD" localFKIndex="6B8A806B-A8D1-747E-2028-AE275FFA88C5" name="fk_atencion_medico">
+<sourceDDLFile>sample_inserts.sql</sourceDDLFile>
+<createdBy>Felip</createdBy>
+<createdTime>2025-09-13 16:47:09 UTC</createdTime>
+<ownerDesignName>Exp2_S5_Sumativa2</ownerDesignName>
+<importedID>B486E750-99E6-23FA-3160-5D65F4A71792</importedID>
+<referredTableLongName>MEDICO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F76B58B7-3F64-A4E5-43D0-C30A8934EC08</referredTableID>
+<keyObject>83EE2BE5-94FE-06B3-8771-F49B7C52AAD4</keyObject>
+<referredKeyID>83EE2BE5-94FE-06B3-8771-F49B7C52AAD4</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>rut_medico</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

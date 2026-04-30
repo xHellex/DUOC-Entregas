@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="main_view" objectID="6D72781F-1751-5B7A-6CBF-929D07AF0DEF" name="btairways_model" visible="true"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

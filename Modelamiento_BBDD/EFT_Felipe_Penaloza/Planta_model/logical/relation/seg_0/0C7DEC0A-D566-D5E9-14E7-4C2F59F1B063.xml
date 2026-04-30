@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="tecnico_fk_emp" directorySegmentName="seg_0" id="0C7DEC0A-D566-D5E9-14E7-4C2F59F1B063">
+<createdBy>Felip</createdBy>
+<createdTime>2025-10-12 20:17:06 UTC</createdTime>
+<generatorID>DF0579D2-1A94-F7BE-7746-7E208A716F13</generatorID>
+<ownerDesignName>Planta_model</ownerDesignName>
+<engineerTo>
+<item key="25D777EA-3707-91EE-29AD-43969944E30B" value="true"/>
+</engineerTo>
+<sourcePk>71970C6B-7ECD-F71D-D11B-879DBB4CC7BE</sourcePk>
+<dominantRole>14713860-05BF-84CD-96AA-489B5BF498D6</dominantRole>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>14713860-05BF-84CD-96AA-489B5BF498D6</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>3BE895A8-9B2B-1BCE-BF39-1CEAC8E31798</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
