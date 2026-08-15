@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe Penaloza HTML Semana 1</title>
+    <style>
+        /* Estilos básicos para la sección de productos */
+        body { font-family: Arial, Helvetica, sans-serif; line-height: 1.4; margin: 0; padding: 0 16px; }
+        header, nav, main, footer { max-width: 1100px; margin: 0 auto; }
+        nav ul { display:flex; gap:12px; padding:0; list-style:none; }
+        .productos-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+        .producto { background: #fff; border: 1px solid #eee; padding: 12px; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+        .producto figure { margin: 0; }
+        .producto img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; display: block; }
+        .producto h3 { margin: 8px 0 4px; font-size: 1.05rem; }
+        .descripcion { margin: 0; color: #444; font-size: 0.95rem; }
+        @media (max-width:420px){ .producto img{height:150px} }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TIENDA</h1>
+        <p>Bienvenido a nuestra tienda lorem ipsum dolor sit amet</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="mailto:contacto@tienda.com">Contacto</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="productos">
+            <h2>Productos Destacados</h2>
+            <ul class="productos-list">
+                <li class="producto">
+                    <figure>
+                        <img src="https://buka.cl/cdn/shop/files/Graficas_nutricionales_FLOW_WEB-28.png?v=1767627170&width=3840" alt="Producto 1 - Grafica nutricional" loading="lazy">
+                        <figcaption>
+                            <h3>Producto 1</h3>
+                            <p class="descripcion">Descripción del producto 1: snack saludable con ingredientes naturales.</p>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li class="producto">
+                    <figure>
+                        <img src="https://buka.cl/cdn/shop/files/Productos_web_nueva_linea_FLOW_200G_44ac3352-2673-4692-855b-7b49401857ab.jpg?v=1767627287" alt="Producto 2 - Imagen del producto" loading="lazy">
+                        <figcaption>
+                            <h3>Producto 2</h3>
+                            <p class="descripcion">Descripción del producto 2: nueva línea con sabor mejorado.</p>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li class="producto">
+                    <figure>
+                        <img src="https://buka.cl/cdn/shop/files/Productos_web_nueva_linea_CAMOTES_200G_820d8bd6-6293-4f99-9ec4-6c2e100f7401.jpg?v=1767627170&width=500" alt="Producto 3 - Camotes" loading="lazy">
+                        <figcaption>
+                            <h3>Producto 3</h3>
+                            <p class="descripcion">Descripción del producto 3: chips de camote, crujientes y naturales.</p>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li class="producto">
+                    <figure>
+                        <img src="https://jumbocl.vtexassets.com/arquivos/ids/547434-900-900?width=900&height=900&aspect=true" alt="Producto 4 - Imagen" loading="lazy">
+                        <figcaption>
+                            <h3>Producto 4</h3>
+                            <p class="descripcion">Descripción del producto 4: edición limitada.</p>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Tienda. Todos los derechos reservados.</p>
+        <span>Contacto: <a href="mailto:contacto@tienda.com">contacto@tienda.com</a></span>
+        <span>Teléfono: <a href="tel:+1234567890">+1 234 567 890</a></span>
+        <span>Dirección: Calle Falsa 123, Ciudad, País</span>
+        <span>Síguenos en redes sociales: 
+            <a href="https://www.facebook.com/tienda" target="_blank">Facebook</a> | 
+            <a href="https://www.twitter.com/tienda" target="_blank">Twitter</a> | 
+            <a href="https://www.instagram.com/tienda" target="_blank">Instagram</a>
+        </span>
+    </footer>
+</body>
+</html>
