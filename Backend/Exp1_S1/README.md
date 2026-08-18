@@ -3,6 +3,8 @@
 **Desarrollo Backend III (PBY2203) · Experiencia 1 · Semana 1**
 Grupo 3 — Actividad formativa: *Analizando la arquitectura batch para procesar datos*
 
+**Repositorio:** https://github.com/xHellex/DUOC-Entregas/tree/main/Backend/Exp1_S1
+
 ---
 
 ## 1. Objetivo del proyecto
@@ -113,8 +115,8 @@ Exp1_S1_Grupo3/
 El perfil `h2` viene activo por defecto en `application.properties`:
 
 ```bash
-git clone https://github.com/<tu-usuario>/Exp1_S1_Grupo3.git
-cd Exp1_S1_Grupo3
+git clone https://github.com/xHellex/DUOC-Entregas.git
+cd DUOC-Entregas/Backend/Exp1_S1
 mvn clean spring-boot:run
 ```
 

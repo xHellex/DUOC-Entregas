@@ -29,19 +29,19 @@ import org.springframework.transaction.PlatformTransactionManager;
  * Configuracion del Job 1: Reporte de Transacciones Diarias.
  *
  * El Job se compone de DOS Steps encadenados:
- * 1. transaccionesStep: FlatFileItemReader -> TransaccionProcessor ->
- * RepositoryItemWriter. Lee el CSV, valida/normaliza y persiste las
- * transacciones validas.
- * 2. resumenTransaccionesStep: un Tasklet que consolida el resumen
- * (totales, montos por tipo, anomalias) y lo escribe a la tabla
- * resumen_transacciones y a un archivo CSV.
+ *   1. transaccionesStep: FlatFileItemReader -> TransaccionProcessor ->
+ *      RepositoryItemWriter. Lee el CSV, valida/normaliza y persiste las
+ *      transacciones validas.
+ *   2. resumenTransaccionesStep: un Tasklet que consolida el resumen
+ *      (totales, montos por tipo, anomalias) y lo escribe a la tabla
+ *      resumen_transacciones y a un archivo CSV.
  *
  * Politicas de tolerancia a fallos en el step 1:
- * - skip: omite hasta 1000 filas que lancen excepcion de parseo, para
- * que una linea corrupta no aborte el job.
- * - retry: reintenta hasta 3 veces ante fallos transitorios de acceso a
- * datos (DataAccessException), utiles cuando la BD esta momentaneamente
- * ocupada o hay un bloqueo temporal.
+ *   - skip: omite hasta 1000 filas que lancen excepcion de parseo, para
+ *     que una linea corrupta no aborte el job.
+ *   - retry: reintenta hasta 3 veces ante fallos transitorios de acceso a
+ *     datos (DataAccessException), utiles cuando la BD esta momentaneamente
+ *     ocupada o hay un bloqueo temporal.
  */
 @Configuration
 public class TransaccionesBatchConfig {
@@ -76,10 +76,10 @@ public class TransaccionesBatchConfig {
 
     @Bean
     public Step transaccionesStep(JobRepository jobRepository,
-            PlatformTransactionManager txManager,
-            FlatFileItemReader<TransaccionInput> transaccionReader,
-            ItemProcessor<TransaccionInput, Transaccion> transaccionProcessor,
-            ItemWriter<Transaccion> transaccionWriter) {
+                                  PlatformTransactionManager txManager,
+                                  FlatFileItemReader<TransaccionInput> transaccionReader,
+                                  ItemProcessor<TransaccionInput, Transaccion> transaccionProcessor,
+                                  ItemWriter<Transaccion> transaccionWriter) {
         return new StepBuilder("transaccionesStep", jobRepository)
                 .<TransaccionInput, Transaccion>chunk(10, txManager)
                 .reader(transaccionReader)
@@ -95,10 +95,10 @@ public class TransaccionesBatchConfig {
 
     @Bean
     public Step resumenTransaccionesStep(JobRepository jobRepository,
-            PlatformTransactionManager txManager,
-            TransaccionRepository transaccionRepository,
-            ResumenTransaccionesRepository resumenRepository,
-            @Value("${app.output.path}") String outputDir) {
+                                         PlatformTransactionManager txManager,
+                                         TransaccionRepository transaccionRepository,
+                                         ResumenTransaccionesRepository resumenRepository,
+                                         @Value("${app.output.path}") String outputDir) {
         long totalLineas = contarLineasCsv();
         return new StepBuilder("resumenTransaccionesStep", jobRepository)
                 .tasklet(new ResumenTransaccionesTasklet(
@@ -118,8 +118,8 @@ public class TransaccionesBatchConfig {
 
     @Bean
     public Job reporteTransaccionesJob(JobRepository jobRepository,
-            Step transaccionesStep,
-            Step resumenTransaccionesStep) {
+                                       Step transaccionesStep,
+                                       Step resumenTransaccionesStep) {
         return new JobBuilder("reporteTransaccionesJob", jobRepository)
                 .listener(new ResumenJobListener())
                 .start(transaccionesStep)
