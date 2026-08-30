@@ -1,0 +1,42 @@
+18:17:57.978 [main] INFO  c.b.batch.MigracionBatchApplication - Started MigracionBatchApplication in 3.777 seconds (process running for 4.059)
+18:17:57.981 [main] INFO  com.bancoxyz.batch.BatchRunner -  LANZANDO Job 1 - Reporte de Transacciones Diarias
+18:17:58.033 [main] INFO  c.b.b.advanced.JobCompletionListener - [JOB] Inicio del Job 'reporteTransaccionesJob' con ID de ejecucion: 4
+18:17:58.346 [main] INFO  c.b.b.tasklet.LimpiezaTablasTasklet - [LIMPIEZA] 9 fila(s) eliminada(s) de 2 tabla(s) destino antes de procesar
+18:17:58.368 [main] INFO  c.b.batch.advanced.RangoPartitioner - [PARTICION] particion0 -> registros 0 a 3
+18:17:58.368 [main] INFO  c.b.batch.advanced.RangoPartitioner - [PARTICION] particion1 -> registros 4 a 7
+18:17:58.368 [main] INFO  c.b.batch.advanced.RangoPartitioner - [PARTICION] particion2 -> registros 8 a 9
+18:17:58.433 [Batch-Part-1] WARN  c.b.batch.advanced.CustomSkipPolicy - [SKIP] Excepcion omitida (1 de 100000): Monto invalido en transaccion id=3: '-200'
+18:17:58.434 [Batch-Part-1] WARN  c.b.batch.advanced.CustomSkipPolicy - [SKIP] Excepcion omitida (2 de 100000): Monto invalido en transaccion id=4: '0'
+18:17:58.468 [Batch-Part-2] INFO  o.s.batch.core.step.AbstractStep - Step: [transaccionMinionStep:particion2] executed in 85ms
+18:17:58.469 [Batch-Part-3] INFO  o.s.batch.core.step.AbstractStep - Step: [transaccionMinionStep:particion1] executed in 85ms
+18:17:58.468 [Batch-Part-1] INFO  o.s.batch.core.step.AbstractStep - Step: [transaccionMinionStep:particion0] executed in 85ms
+18:17:58.520 [main] INFO  c.b.b.t.ResumenTransaccionesTasklet - [RESUMEN] CSV generado: E:\documentos\Analista Computacional\Backend 3\S3\Exp1_S3_Grupo3\salida\resumen_transacciones_20260830_181758.csv
+18:17:58.520 [main] INFO  c.b.b.t.ResumenTransaccionesTasklet - [RESUMEN] Transacciones validas=8 anomalias=2 debitos=4 creditos=4
+18:17:58.528 [main] INFO  c.b.b.advanced.JobCompletionListener - [JOB] Job 'reporteTransaccionesJob' completado exitosamente. Estado: COMPLETED
+18:17:58.528 [main] INFO  c.b.b.advanced.JobCompletionListener - [JOB] Resumen -> inicio: 2026-08-30T18:17:58.027154, fin: 2026-08-30T18:17:58.528863200, duracion aprox: 501 ms
+18:17:58.533 [main] INFO  com.bancoxyz.batch.BatchRunner -  LANZANDO Job 2 - Calculo de Intereses Mensuales
+18:17:58.544 [main] INFO  c.b.b.advanced.JobCompletionListener - [JOB] Inicio del Job 'calculoInteresesJob' con ID de ejecucion: 5
+18:17:58.559 [main] INFO  c.b.b.tasklet.LimpiezaTablasTasklet - [LIMPIEZA] 6 fila(s) eliminada(s) de 1 tabla(s) destino antes de procesar
+18:17:58.574 [main] INFO  c.b.batch.advanced.RangoPartitioner - [PARTICION] particion0 -> registros 0 a 2
+18:17:58.574 [main] INFO  c.b.batch.advanced.RangoPartitioner - [PARTICION] particion1 -> registros 3 a 5
+18:17:58.574 [main] INFO  c.b.batch.advanced.RangoPartitioner - [PARTICION] particion2 -> registros 6 a 7
+18:17:58.598 [Batch-Part-3] WARN  c.b.batch.advanced.CustomSkipPolicy - [SKIP] Excepcion omitida (1 de 100000): Edad fuera de rango en cuenta id=108: '80'
+18:17:58.599 [Batch-Part-2] WARN  c.b.batch.advanced.CustomSkipPolicy - [SKIP] Excepcion omitida (1 de 100000): Saldo invalido en cuenta id=104: '0'
+18:17:58.613 [Batch-Part-3] INFO  o.s.batch.core.step.AbstractStep - Step: [interesMinionStep:particion2] executed in 27ms
+18:17:58.614 [Batch-Part-2] INFO  o.s.batch.core.step.AbstractStep - Step: [interesMinionStep:particion1] executed in 28ms
+18:17:58.615 [Batch-Part-1] INFO  o.s.batch.core.step.AbstractStep - Step: [interesMinionStep:particion0] executed in 29ms
+18:17:58.623 [main] INFO  c.b.b.advanced.JobCompletionListener - [JOB] Job 'calculoInteresesJob' completado exitosamente. Estado: COMPLETED
+18:17:58.623 [main] INFO  c.b.b.advanced.JobCompletionListener - [JOB] Resumen -> inicio: 2026-08-30T18:17:58.542283500, fin: 2026-08-30T18:17:58.623679800, duracion aprox: 81 ms
+18:17:58.627 [main] INFO  com.bancoxyz.batch.BatchRunner -  LANZANDO Job 3 - Estados de Cuenta Anuales
+18:17:58.638 [main] INFO  c.b.b.advanced.JobCompletionListener - [JOB] Inicio del Job 'estadosCuentaAnualesJob' con ID de ejecucion: 6
+18:17:58.657 [main] INFO  c.b.b.tasklet.LimpiezaTablasTasklet - [LIMPIEZA] 17 fila(s) eliminada(s) de 2 tabla(s) destino antes de procesar
+18:17:58.673 [main] INFO  c.b.batch.advanced.RangoPartitioner - [PARTICION] particion0 -> registros 0 a 2
+18:17:58.673 [main] INFO  c.b.batch.advanced.RangoPartitioner - [PARTICION] particion1 -> registros 3 a 5
+18:17:58.673 [main] INFO  c.b.batch.advanced.RangoPartitioner - [PARTICION] particion2 -> registros 6 a 8
+18:17:58.704 [Batch-Part-2] INFO  o.s.batch.core.step.AbstractStep - Step: [cuentaAnualMinionStep:particion2] executed in 16ms
+18:17:58.705 [Batch-Part-1] INFO  o.s.batch.core.step.AbstractStep - Step: [cuentaAnualMinionStep:particion1] executed in 17ms
+18:17:58.705 [Batch-Part-3] INFO  o.s.batch.core.step.AbstractStep - Step: [cuentaAnualMinionStep:particion0] executed in 17ms
+18:17:58.734 [main] INFO  c.b.b.tasklet.InformeAnualTasklet - [INFORME] CSV generado: E:\documentos\Analista Computacional\Backend 3\S3\Exp1_S3_Grupo3\salida\informe_anual_20260830_181758.csv
+18:17:58.734 [main] INFO  c.b.b.tasklet.InformeAnualTasklet - [INFORME] Estados de cuenta generados para 8 cuentas
+18:17:58.744 [main] INFO  c.b.b.advanced.JobCompletionListener - [JOB] Job 'estadosCuentaAnualesJob' completado exitosamente. Estado: COMPLETED
+18:17:58.744 [main] INFO  c.b.b.advanced.JobCompletionListener - [JOB] Resumen -> inicio: 2026-08-30T18:17:58.635970500, fin: 2026-08-30T18:17:58.744074500, duracion aprox: 108 ms
