@@ -1,0 +1,63 @@
+name: CI/CD Pipeline Spring Boot to EC2
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Descarga el código del repositorio
+    - name: Checkout del código
+      uses: actions/checkout@v3
+
+    # 2. Configura Java 21
+    - name: Configurar Java JDK 21
+      uses: actions/setup-java@v3
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+
+    # 3. Compila el proyecto y genera el .jar (Entrando a la subcarpeta)
+    - name: Compilar con Maven
+      run: mvn clean package -DskipTests
+      working-directory: ./ms-administracion-archivos
+
+    # 4. Inicia sesión en Docker Hub
+    - name: Login en Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    # 5. Construye la imagen y la sube a Docker Hub (Entrando a la subcarpeta)
+    - name: Build y Push de la imagen Docker
+      run: |
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/ms-administracion-archivos:latest .
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/ms-administracion-archivos:latest
+      working-directory: ./ms-administracion-archivos
+
+    # 6. Se conecta por SSH a la EC2, descarga la imagen y corre el contenedor
+    - name: Despliegue en AWS EC2
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.USER_SERVER }}
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          # Detiene y elimina el contenedor viejo si existe
+          sudo docker stop ms-administracion-archivos || true
+          sudo docker rm ms-administracion-archivos || true
+          
+          # Descarga la imagen más reciente
+          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/ms-administracion-archivos:latest
+          
+          # Corre el nuevo contenedor inyectando las credenciales de AWS S3 y enlazando el disco EFS
+          sudo docker run -d -p 8080:8080 -v /mnt/efs:/app/efs --name ms-administracion-archivos \
+            -e AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}" \
+            -e AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}" \
+            -e AWS_SESSION_TOKEN="${{ secrets.AWS_SESSION_TOKEN }}" \
+            ${{ secrets.DOCKERHUB_USERNAME }}/ms-administracion-archivos:latest
