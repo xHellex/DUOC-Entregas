@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Games Store</title>
+    <!-- Enlace al CSS de Bootstrap 5 vía CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Hoja de Estilos Personalizada -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="text-center py-4 text-white" style="background-color: #1a1a2e; border-bottom: 5px solid #0f3460;">
+        <h1>Pixel Games Store</h1>
+        <p>Bienvenido a nuestra tienda. Encuentra los mejores videojuegos para todas tus consolas y PC.</p>
+    </header>
+
+    <!-- Navegación Principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0f3460;">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pixel Games</a>
+
+            <!-- Botón de hamburguesa para móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion"
+                aria-controls="menuNavegacion" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú Colapsable -->
+            <div class="collapse navbar-collapse" id="menuNavegacion">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Felipe_Penaloza_PFY2201_HTML_Semana4.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:contacto@tienda.com">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrusel (Slider Central) -->
+    <div id="carruselDestacados" class="carousel slide my-4" data-bs-ride="carousel" data-bs-interval="3000">
+
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carruselDestacados" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carruselDestacados" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carruselDestacados" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Contenido del Carrusel -->
+        <div class="carousel-inner shadow">
+            <!-- Primer slide -->
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1100&h=400&q=80"
+                    class="d-block w-100" style="object-fit: cover; height: 50vh; min-height: 350px;"
+                    alt="Lanzamiento de nuevo juego RPG">
+                <div class="carousel-caption d-none d-md-block"
+                    style="background-color: rgba(0,0,0,0.6); border-radius: 10px;">
+                    <h5>Nuevos Lanzamientos RPG</h5>
+                    <p>Explora mundos abiertos increíbles y vive aventuras épicas.</p>
+                </div>
+            </div>
+
+            <!-- Segundo slide -->
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1100&h=400&q=80"
+                    class="d-block w-100" style="object-fit: cover; height: 50vh; min-height: 350px;"
+                    alt="Consolas de última generación">
+                <div class="carousel-caption d-none d-md-block"
+                    style="background-color: rgba(0,0,0,0.6); border-radius: 10px;">
+                    <h5>Hardware de Última Generación</h5>
+                    <p>Equípate con las mejores consolas y accesorios del mercado.</p>
+                </div>
+            </div>
+
+            <!-- Tercer slide -->
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1100&h=400&q=80"
+                    class="d-block w-100" style="object-fit: cover; height: 50vh; min-height: 350px;"
+                    alt="Juegos multijugador y eSports">
+                <div class="carousel-caption d-none d-md-block"
+                    style="background-color: rgba(0,0,0,0.6); border-radius: 10px;">
+                    <h5>Compite al Máximo Nivel</h5>
+                    <p>Los mejores juegos competitivos y shooters en primera persona.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselDestacados" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselDestacados" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <main class="container mt-4">
+        <section id="productos" class="mt-5 mb-5">
+            <h2 class="text-center mb-4" style="color: #1a1a2e;">Juegos Destacados</h2>
+
+            <!-- Contenedor de la Cuadrícula -->
+            <div class="row g-4">
+
+                <!-- Producto 1 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=500&q=60"
+                            class="card-img-top" alt="Juego de aventuras en mundo abierto" loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5" style="color: #0f3460;">Aventura Épica RPG</h3>
+                            <p class="card-text text-muted flex-grow-1">Explora un vasto mundo abierto lleno de magia,
+                                misiones secundarias y peligros ocultos.</p>
+                            <a href="#" class="btn w-100 text-white" style="background-color: #e94560;">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=500&q=60"
+                            class="card-img-top" alt="Juego de disparos en primera persona" loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5" style="color: #0f3460;">Combate Estelar FPS</h3>
+                            <p class="card-text text-muted flex-grow-1">Únete a la batalla en este frenético shooter
+                                multijugador con gráficos de última generación.</p>
+                            <a href="#" class="btn w-100 text-white" style="background-color: #e94560;">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=500&q=60"
+                            class="card-img-top" alt="Control de consola retro" loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5" style="color: #0f3460;">Colección Retro Clásicos</h3>
+                            <p class="card-text text-muted flex-grow-1">Revive la nostalgia con esta colección
+                                remasterizada de los mejores juegos de los años 90.</p>
+                            <a href="#" class="btn w-100 text-white" style="background-color: #e94560;">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?auto=format&fit=crop&w=500&q=60"
+                            class="card-img-top" alt="Juego de carreras de autos" loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5" style="color: #0f3460;">Carreras Extremas 2026</h3>
+                            <p class="card-text text-muted flex-grow-1">Siente la adrenalina pura compitiendo con los
+                                autos deportivos más rápidos del mundo.</p>
+                            <a href="#" class="btn w-100 text-white" style="background-color: #e94560;">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Pixel Games Store</h5>
+                    <p>&copy; 2026 Pixel Games Store. Todos los derechos reservados.</p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Enlaces</h5>
+                    <p><a href="Felipe_Penaloza_PFY2201_HTML_Semana4.html"
+                            class="text-white text-decoration-none">Inicio</a></p>
+                    <p><a href="#productos" class="text-white text-decoration-none">Productos</a></p>
+                    <p><a href="mailto:contacto@tienda.com" class="text-white text-decoration-none">Contacto</a></p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contacto</h5>
+                    <p>Calle Falsa 123, Ciudad, País</p>
+                    <p><a href="mailto:contacto@tienda.com"
+                            class="text-white text-decoration-none">contacto@tienda.com</a></p>
+                    <p><a href="tel:+1234567890" class="text-white text-decoration-none">+1 234 567 890</a></p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Síguenos</h5>
+                    <p>
+                        <a href="https://www.facebook.com/tienda" target="_blank"
+                            class="text-white text-decoration-none d-block">Facebook</a>
+                        <a href="https://www.twitter.com/tienda" target="_blank"
+                            class="text-white text-decoration-none d-block">Twitter</a>
+                        <a href="https://www.instagram.com/tienda" target="_blank"
+                            class="text-white text-decoration-none d-block">Instagram</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JS de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
