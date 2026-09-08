@@ -1,0 +1,11 @@
+$ mvn clean test
+
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 18 source files with javac [debug parameters release 17] to target\classes
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 17] to target\test-classes
+2026-09-06T23:24:00.593-03:00  INFO 21700 --- [bff-bancoxyz] [           main] c.b.bff.BffBancoxyzApplicationTests      : Started BffBancoxyzApplicationTests in 6.264 seconds (process running for 7.451)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.961 s -- in com.bancoxyz.bff.BffBancoxyzApplicationTests
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+[INFO] Total time:  13.807 s

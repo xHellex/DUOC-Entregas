@@ -1,0 +1,61 @@
+EVIDENCIA DE EJECUCION - BFF Banco XYZ (Exp2 S4 - Grupo 3)
+App http://localhost:8080 | perfil H2 | 5 cuentas de ejemplo (DataInitializer)
+web_user/web123 (WEB) . movil_user/movil123 (MOVIL) . cajero_user/cajero123 (CAJERO)
+===============================================================================
+
+### 1. LA MISMA CUENTA 101 SEGUN EL CANAL  (personalizacion por frontend) ###
+
+GET /api/web/cuentas/101   (web_user)
+{"id":101,"titular":"John Doe","tipo":"ahorro","saldo":5000.0,"numeroCuenta":"1234567890123456"}
+   [HTTP 200] COMPLETO: titular, tipo, saldo, numero entero
+
+GET /api/movil/cuentas/101 (movil_user)
+{"id":101,"titular":"John Doe","saldo":5000.0,"cuentaEnmascarada":"**** 3456"}
+   [HTTP 200] LIGERO: sin 'tipo', numero enmascarado
+
+GET /api/cajero/cuentas/101/saldo (cajero_user)
+{"cuentaEnmascarada":"**** 3456","saldoDisponible":5000.0}
+   [HTTP 200] MINIMO: solo saldo, sin datos personales
+
+### 2. OPERACION CRITICA DEL CAJERO: RETIRO CON VALIDACION DE SALDO ###
+
+POST /api/cajero/cuentas/101/retiro  -d '{"monto": 1000}'   (saldo 5000)
+{"exito":true,"mensaje":"Retiro exitoso","saldoRestante":4000.0}
+   [HTTP 200] retiro valido, saldo 5000 -> 4000
+
+POST /api/cajero/cuentas/101/retiro  -d '{"monto": 999999}'
+{"exito":false,"mensaje":"Saldo insuficiente","saldoRestante":null}
+   [HTTP 409] rechazado por saldo insuficiente, no descuenta
+
+POST /api/cajero/cuentas/101/retiro  -d '{"monto": -50}'
+{"timestamp":"2026-09-07T02:26:40.830+00:00","status":400,"error":"Bad Request","path":"/api/cajero/cuentas/101/retiro"}
+   [HTTP 400] monto invalido
+
+GET /api/cajero/cuentas/101/saldo   (tras los intentos)
+{"cuentaEnmascarada":"**** 3456","saldoDisponible":4000.0}
+   [HTTP 200] saldo = 4000 (solo bajo con el retiro valido de 1000)
+
+### 3. AUTENTICACION Y AISLAMIENTO POR CANAL ###
+
+credenciales WEB    -> /api/movil/cuentas/101      : HTTP 403  Forbidden
+credenciales MOVIL  -> /api/cajero/cuentas/101/saldo: HTTP 403  Forbidden
+credenciales CAJERO -> /api/web/cuentas/101        : HTTP 403  Forbidden
+credenciales MALAS  -> /api/web/cuentas/101        : HTTP 401  Unauthorized
+SIN credenciales    -> /api/web/cuentas/101        : HTTP 401  Unauthorized
+credenciales WEB    -> /api/web/cuentas/101 (propia): HTTP 200  OK
+
+### 4. HISTORIAL: WEB COMPLETO vs MOVIL RECORTADO (mismo dato) ###
+
+GET /api/web/cuentas/101/transacciones   (web_user)  -- con id y descripcion
+[{"id":2,"fecha":"2024-01-05","monto":1500.0,"tipo":"credito","descripcion":"Transferencia recibida"},{"id":1,"fecha":"2024-01-01","monto":1000.0,"tipo":"debito","descripcion":"Compra supermercado"}]
+
+GET /api/movil/cuentas/101/transacciones (movil_user) -- solo fecha, monto, tipo; max 5
+[{"fecha":"2024-01-05","monto":1500.0,"tipo":"credito"},{"fecha":"2024-01-01","monto":1000.0,"tipo":"debito"}]
+
+### 5. LISTADO DE CUENTAS: WEB vs MOVIL ###
+
+GET /api/web/cuentas   (web_user)
+[{"id":101,"titular":"John Doe","tipo":"ahorro","saldo":4000.0,"numeroCuenta":"1234567890123456"},{"id":102,"titular":"Jane Smith","tipo":"prestamo","saldo":8000.0,"numeroCuenta":"2345678901234567"},{"id":103,"titular":"Bob Johnson","tipo":"hipoteca","saldo":12000.0,"numeroCuenta":"3456789012345678"},{"id":105,"titular":"Charlie Green","tipo":"ahorro","saldo":7000.0,"numeroCuenta":"4567890123456789"},{"id":107,"titular":"Diana Prince","tipo":"prestamo","saldo":15000.0,"numeroCuenta":"5678901234567890"}]
+
+GET /api/movil/cuentas (movil_user)
+[{"id":101,"titular":"John Doe","saldo":4000.0,"cuentaEnmascarada":"**** 3456"},{"id":102,"titular":"Jane Smith","saldo":8000.0,"cuentaEnmascarada":"**** 4567"},{"id":103,"titular":"Bob Johnson","saldo":12000.0,"cuentaEnmascarada":"**** 5678"},{"id":105,"titular":"Charlie Green","saldo":7000.0,"cuentaEnmascarada":"**** 6789"},{"id":107,"titular":"Diana Prince","saldo":15000.0,"cuentaEnmascarada":"**** 7890"}]
