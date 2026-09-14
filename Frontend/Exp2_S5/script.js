@@ -32,13 +32,13 @@ function renderizarJuegos(juegos) {
                 <div class="card-body d-flex flex-column">
                     <h3 class="card-title h5" style="color: #0f3460;">${juego.titulo}</h3>
                     <p class="card-text text-muted flex-grow-1">${juego.descripcion}</p>
-                    <button class="btn w-100 text-white btn-ver" style="background-color: #e94560;">Ver más</button>
+                    <a href="${juego.url}" class="btn w-100 text-white btn-ver" style="background-color: #e94560;">Ver más</a>
                 </div>
             </div>
         `;
 
         // 4. Implementación de Eventos de Interacción
-        
+
         // Evento mouseover: Cambia un estilo al pasar el cursor
         const tarjeta = columna.querySelector('.interactivo');
         tarjeta.addEventListener('mouseover', () => {
@@ -73,7 +73,7 @@ const mensajeAlerta = document.getElementById('mensaje-alerta');
  */
 function manejarEnvioFormulario(evento) {
     // Evita el comportamiento predeterminado del evento (que el formulario recargue la página)
-    evento.preventDefault(); 
+    evento.preventDefault();
 
     // Obtener los valores de los campos
     const nombre = document.getElementById('nombre').value.trim();
@@ -107,6 +107,6 @@ function mostrarAlerta(texto, tipo) {
 }
 
 // 6. Asociar el manejador de eventos al formulario
-if(formularioContacto) {
+if (formularioContacto) {
     formularioContacto.addEventListener('submit', manejarEnvioFormulario);
 }
