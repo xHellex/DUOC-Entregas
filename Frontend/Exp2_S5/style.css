@@ -69,6 +69,10 @@ nav ul li a:hover {
     color: #1a1a2e;
 }
 
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
 
 footer {
     background-color: #1a1a2e;
