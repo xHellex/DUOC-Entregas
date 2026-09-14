@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "titulo": "Aventura Épica RPG",
+        "descripcion": "Explora un vasto mundo abierto lleno de magia, misiones secundarias y peligros ocultos.",
+        "imagen": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 2,
+        "titulo": "Combate Estelar FPS",
+        "descripcion": "Únete a la batalla en este frenético shooter multijugador con gráficos de última generación.",
+        "imagen": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 3,
+        "titulo": "Colección Retro Clásicos",
+        "descripcion": "Revive la nostalgia con esta colección remasterizada de los mejores juegos de los años 90.",
+        "imagen": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 4,
+        "titulo": "Carreras Extremas 2026",
+        "descripcion": "Siente la adrenalina pura compitiendo con los autos deportivos más rápidos del mundo.",
+        "imagen": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?auto=format&fit=crop&w=500&q=60"
+    }
+]
