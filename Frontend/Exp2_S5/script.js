@@ -29,7 +29,7 @@ function renderizarJuegos(juegos) {
         columna.innerHTML = `
             <div class="card h-100 shadow-sm interactivo">
                 <img src="${juego.imagen}" class="card-img-top" alt="${juego.titulo}">
-                <div class="card-body d-flex flex-column">
+                <div class="card-body d-flex flex-column text-center">
                     <h3 class="card-title h5" style="color: #0f3460;">${juego.titulo}</h3>
                     <p class="card-text text-muted flex-grow-1">${juego.descripcion}</p>
                     <a href="${juego.url}" class="btn w-100 text-white btn-ver" style="background-color: #e94560;">Ver más</a>
