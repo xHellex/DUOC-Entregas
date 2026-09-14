@@ -1,0 +1,371 @@
+====================================================================
+COMPILACION Y TESTS - Exp2_S5_Felipe_Penaloza (4 modulos independientes)
+Fecha: Mon Sep 14 13:45:49 HSP 2026
+mvn -f pom.xml clean compile   (reactor: banco-servicios, bff-web, bff-movil, bff-cajero)
+====================================================================
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] banco-servicios                                                    [jar]
+[INFO] bff-web                                                            [jar]
+[INFO] bff-movil                                                          [jar]
+[INFO] bff-cajero                                                         [jar]
+[INFO] bff-bancoxyz-parent                                                [pom]
+[INFO] 
+[INFO] --------------------< com.bancoxyz:banco-servicios >--------------------
+[INFO] Building banco-servicios 1.0.0                                     [1/5]
+[INFO]   from banco-servicios\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ banco-servicios ---
+[INFO] Deleting E:\documentos\Analista Computacional\Backend 3\S5\Exp2_S5_Felipe_Penaloza\banco-servicios\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ banco-servicios ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ banco-servicios ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 14 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] ------------------------< com.bancoxyz:bff-web >------------------------
+[INFO] Building bff-web 1.0.0                                             [2/5]
+[INFO]   from bff-web\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ bff-web ---
+[INFO] Deleting E:\documentos\Analista Computacional\Backend 3\S5\Exp2_S5_Felipe_Penaloza\bff-web\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bff-web ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bff-web ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 11 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] -----------------------< com.bancoxyz:bff-movil >-----------------------
+[INFO] Building bff-movil 1.0.0                                           [3/5]
+[INFO]   from bff-movil\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ bff-movil ---
+[INFO] Deleting E:\documentos\Analista Computacional\Backend 3\S5\Exp2_S5_Felipe_Penaloza\bff-movil\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bff-movil ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bff-movil ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 10 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] ----------------------< com.bancoxyz:bff-cajero >-----------------------
+[INFO] Building bff-cajero 1.0.0                                          [4/5]
+[INFO]   from bff-cajero\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ bff-cajero ---
+[INFO] Deleting E:\documentos\Analista Computacional\Backend 3\S5\Exp2_S5_Felipe_Penaloza\bff-cajero\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bff-cajero ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bff-cajero ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 11 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] ------------------< com.bancoxyz:bff-bancoxyz-parent >------------------
+[INFO] Building bff-bancoxyz-parent 1.0.0                                 [5/5]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ bff-bancoxyz-parent ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for bff-bancoxyz-parent 1.0.0:
+[INFO] 
+[INFO] banco-servicios .................................... SUCCESS [  1.961 s]
+[INFO] bff-web ............................................ SUCCESS [  0.531 s]
+[INFO] bff-movil .......................................... SUCCESS [  0.489 s]
+[INFO] bff-cajero ......................................... SUCCESS [  0.416 s]
+[INFO] bff-bancoxyz-parent ................................ SUCCESS [  0.053 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.921 s
+[INFO] Finished at: 2026-09-14T13:45:54-03:00
+[INFO] ------------------------------------------------------------------------
+
+====================================================================
+mvn -f pom.xml test
+====================================================================
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] banco-servicios                                                    [jar]
+[INFO] bff-web                                                            [jar]
+[INFO] bff-movil                                                          [jar]
+[INFO] bff-cajero                                                         [jar]
+[INFO] bff-bancoxyz-parent                                                [pom]
+[INFO] 
+[INFO] --------------------< com.bancoxyz:banco-servicios >--------------------
+[INFO] Building banco-servicios 1.0.0                                     [1/5]
+[INFO]   from banco-servicios\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ banco-servicios ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ banco-servicios ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ banco-servicios ---
+[INFO] skip non existing resourceDirectory E:\documentos\Analista Computacional\Backend 3\S5\Exp2_S5_Felipe_Penaloza\banco-servicios\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ banco-servicios ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug parameters release 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ banco-servicios ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.bancoxyz.bancoservicios.BancoServiciosApplicationTests
+13:45:59.696 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.bancoxyz.bancoservicios.BancoServiciosApplicationTests]: BancoServiciosApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:45:59.794 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.bancoxyz.bancoservicios.BancoServiciosApplication for test class com.bancoxyz.bancoservicios.BancoServiciosApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-09-14T13:46:00.252-03:00  INFO 16792 --- [banco-servicios] [           main] c.b.b.BancoServiciosApplicationTests     : Starting BancoServiciosApplicationTests using Java 22.0.1 with PID 16792 (started by Felip in E:\documentos\Analista Computacional\Backend 3\S5\Exp2_S5_Felipe_Penaloza\banco-servicios)
+2026-09-14T13:46:00.253-03:00  INFO 16792 --- [banco-servicios] [           main] c.b.b.BancoServiciosApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T13:46:00.824-03:00  INFO 16792 --- [banco-servicios] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-14T13:46:00.886-03:00  INFO 16792 --- [banco-servicios] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+2026-09-14T13:46:01.280-03:00  INFO 16792 --- [banco-servicios] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-14T13:46:01.350-03:00  INFO 16792 --- [banco-servicios] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-09-14T13:46:01.387-03:00  INFO 16792 --- [banco-servicios] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-14T13:46:01.716-03:00  INFO 16792 --- [banco-servicios] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-14T13:46:01.749-03:00  INFO 16792 --- [banco-servicios] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-14T13:46:01.913-03:00  INFO 16792 --- [banco-servicios] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bancoservicios user=SA
+2026-09-14T13:46:01.915-03:00  INFO 16792 --- [banco-servicios] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-14T13:46:01.961-03:00  INFO 16792 --- [banco-servicios] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-14T13:46:02.709-03:00  INFO 16792 --- [banco-servicios] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-14T13:46:02.761-03:00  INFO 16792 --- [banco-servicios] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-14T13:46:03.207-03:00  WARN 16792 --- [banco-servicios] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-14T13:46:03.491-03:00  INFO 16792 --- [banco-servicios] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:bancoservicios'
+2026-09-14T13:46:03.546-03:00  INFO 16792 --- [banco-servicios] [           main] c.b.b.BancoServiciosApplicationTests     : Started BancoServiciosApplicationTests in 3.623 seconds (process running for 4.521)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\Felip\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.908 s -- in com.bancoxyz.bancoservicios.BancoServiciosApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ------------------------< com.bancoxyz:bff-web >------------------------
+[INFO] Building bff-web 1.0.0                                             [2/5]
+[INFO]   from bff-web\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bff-web ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bff-web ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ bff-web ---
+[INFO] skip non existing resourceDirectory E:\documentos\Analista Computacional\Backend 3\S5\Exp2_S5_Felipe_Penaloza\bff-web\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ bff-web ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug parameters release 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ bff-web ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.bancoxyz.bffweb.BffWebApplicationTests
+13:46:05.688 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.bancoxyz.bffweb.BffWebApplicationTests]: BffWebApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:46:05.777 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.bancoxyz.bffweb.BffWebApplication for test class com.bancoxyz.bffweb.BffWebApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-09-14T13:46:06.224-03:00  INFO 14092 --- [bff-web] [           main] c.b.bffweb.BffWebApplicationTests        : Starting BffWebApplicationTests using Java 22.0.1 with PID 14092 (started by Felip in E:\documentos\Analista Computacional\Backend 3\S5\Exp2_S5_Felipe_Penaloza\bff-web)
+2026-09-14T13:46:06.225-03:00  INFO 14092 --- [bff-web] [           main] c.b.bffweb.BffWebApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T13:46:07.293-03:00  INFO 14092 --- [bff-web] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-09-14T13:46:07.662-03:00  INFO 14092 --- [bff-web] [           main] c.b.bffweb.BffWebApplicationTests        : Started BffWebApplicationTests in 1.76 seconds (process running for 2.545)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\Felip\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.729 s -- in com.bancoxyz.bffweb.BffWebApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] -----------------------< com.bancoxyz:bff-movil >-----------------------
+[INFO] Building bff-movil 1.0.0                                           [3/5]
+[INFO]   from bff-movil\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bff-movil ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bff-movil ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ bff-movil ---
+[INFO] skip non existing resourceDirectory E:\documentos\Analista Computacional\Backend 3\S5\Exp2_S5_Felipe_Penaloza\bff-movil\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ bff-movil ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug parameters release 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ bff-movil ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.bancoxyz.bffmovil.BffMovilApplicationTests
+13:46:09.884 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.bancoxyz.bffmovil.BffMovilApplicationTests]: BffMovilApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:46:09.977 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.bancoxyz.bffmovil.BffMovilApplication for test class com.bancoxyz.bffmovil.BffMovilApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-09-14T13:46:10.425-03:00  INFO 1336 --- [bff-movil] [           main] c.b.bffmovil.BffMovilApplicationTests    : Starting BffMovilApplicationTests using Java 22.0.1 with PID 1336 (started by Felip in E:\documentos\Analista Computacional\Backend 3\S5\Exp2_S5_Felipe_Penaloza\bff-movil)
+2026-09-14T13:46:10.426-03:00  INFO 1336 --- [bff-movil] [           main] c.b.bffmovil.BffMovilApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T13:46:11.443-03:00  INFO 1336 --- [bff-movil] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-09-14T13:46:11.831-03:00  INFO 1336 --- [bff-movil] [           main] c.b.bffmovil.BffMovilApplicationTests    : Started BffMovilApplicationTests in 1.731 seconds (process running for 2.52)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\Felip\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.726 s -- in com.bancoxyz.bffmovil.BffMovilApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ----------------------< com.bancoxyz:bff-cajero >-----------------------
+[INFO] Building bff-cajero 1.0.0                                          [4/5]
+[INFO]   from bff-cajero\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ bff-cajero ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ bff-cajero ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ bff-cajero ---
+[INFO] skip non existing resourceDirectory E:\documentos\Analista Computacional\Backend 3\S5\Exp2_S5_Felipe_Penaloza\bff-cajero\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ bff-cajero ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug parameters release 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ bff-cajero ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.bancoxyz.bffcajero.BffCajeroApplicationTests
+13:46:14.059 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.bancoxyz.bffcajero.BffCajeroApplicationTests]: BffCajeroApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:46:14.162 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.bancoxyz.bffcajero.BffCajeroApplication for test class com.bancoxyz.bffcajero.BffCajeroApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-09-14T13:46:14.620-03:00  INFO 19780 --- [bff-cajero] [           main] c.b.bffcajero.BffCajeroApplicationTests  : Starting BffCajeroApplicationTests using Java 22.0.1 with PID 19780 (started by Felip in E:\documentos\Analista Computacional\Backend 3\S5\Exp2_S5_Felipe_Penaloza\bff-cajero)
+2026-09-14T13:46:14.621-03:00  INFO 19780 --- [bff-cajero] [           main] c.b.bffcajero.BffCajeroApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T13:46:15.640-03:00  INFO 19780 --- [bff-cajero] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-09-14T13:46:16.035-03:00  INFO 19780 --- [bff-cajero] [           main] c.b.bffcajero.BffCajeroApplicationTests  : Started BffCajeroApplicationTests in 1.747 seconds (process running for 2.558)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\Felip\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.764 s -- in com.bancoxyz.bffcajero.BffCajeroApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ------------------< com.bancoxyz:bff-bancoxyz-parent >------------------
+[INFO] Building bff-bancoxyz-parent 1.0.0                                 [5/5]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for bff-bancoxyz-parent 1.0.0:
+[INFO] 
+[INFO] banco-servicios .................................... SUCCESS [  7.591 s]
+[INFO] bff-web ............................................ SUCCESS [  4.268 s]
+[INFO] bff-movil .......................................... SUCCESS [  4.183 s]
+[INFO] bff-cajero ......................................... SUCCESS [  4.211 s]
+[INFO] bff-bancoxyz-parent ................................ SUCCESS [  0.000 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  20.617 s
+[INFO] Finished at: 2026-09-14T13:46:17-03:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,88 @@
+====================================================================
+EVIDENCIA DE PRUEBAS - Exp2_S5_Felipe_Penaloza (arquitectura independiente)
+Fecha: Mon Sep 14 13:45:40 HSP 2026
+banco-servicios :9000 | bff-web :8081 | bff-movil :8082 | bff-cajero :8083
+====================================================================
+
+### 1. banco-servicios responde directamente (backend real, sin BFF) ###
+GET http://localhost:9000/api/interno/cuentas/103
+{"id":103,"titular":"Bob Johnson","tipo":"hipoteca","saldo":12000.0,"numeroCuenta":"3456789012345678"}
+
+### 2. BFF WEB - dashboard agregado (cuenta+transacciones+tarjetas via HTTP a banco-servicios) ###
+GET http://localhost:8081/api/web/cuentas/101/dashboard (auth web_user)
+{"cuenta":{"id":101,"titular":"John Doe","tipo":"ahorro","saldo":5000.0,"numeroCuenta":"1234567890123456"},"transacciones":[{"id":2,"fecha":"2024-01-05","monto":1500.0,"tipo":"credito","descripcion":"Transferencia recibida"},{"id":1,"fecha":"2024-01-01","monto":1000.0,"tipo":"debito","descripcion":"Compra supermercado"}],"tarjetas":[{"id":1,"tipo":"credito","marca":"Visa","numeroTarjeta":"4111111111111111","cupoDisponible":2000.0,"activa":true},{"id":2,"tipo":"debito","marca":"Mastercard","numeroTarjeta":"5500005555555559","cupoDisponible":5000.0,"activa":true}],"totalTransacciones":2,"totalTarjetas":2}
+
+### 3. BFF MOVIL - resumen agregado, version ligera con numero enmascarado ###
+GET http://localhost:8082/api/movil/cuentas/101/resumen (auth movil_user)
+{"titular":"John Doe","saldo":5000.0,"cuentaEnmascarada":"**** 3456","tarjetasActivas":2,"ultimasTransacciones":[{"fecha":"2024-01-05","monto":1500.0,"tipo":"credito"},{"fecha":"2024-01-01","monto":1000.0,"tipo":"debito"}]}
+
+### 4. BFF CAJERO - saldo con tarjetasActivas, cuenta 103 tiene su UNICA tarjeta INACTIVA ###
+GET http://localhost:8083/api/cajero/cuentas/103/saldo (auth cajero_user)
+{"cuentaEnmascarada":"**** 5678","saldoDisponible":12000.0,"tarjetasActivas":0}  -> se espera tarjetasActivas:0 (prueba de agregacion real via HTTP entre procesos independientes)
+
+
+### 5. BFF CAJERO - retiro exitoso ###
+POST http://localhost:8083/api/cajero/cuentas/101/retiro {monto:500}
+{"exito":true,"mensaje":"Retiro exitoso","saldoRestante":4500.0}
+
+### 6. BFF CAJERO - retiro rechazado por saldo insuficiente (409, propagado desde banco-servicios) ###
+POST http://localhost:8083/api/cajero/cuentas/101/retiro {monto:999999}
+{"exito":false,"mensaje":"Saldo insuficiente","saldoRestante":null}
+HTTP_STATUS:409
+
+
+### 7. BFF CAJERO - retiro rechazado por monto invalido (400) ###
+POST http://localhost:8083/api/cajero/cuentas/101/retiro {monto:-10}
+{"timestamp":"2026-09-14T16:45:41.907+00:00","status":400,"error":"Bad Request","path":"/api/cajero/cuentas/101/retiro"}
+HTTP_STATUS:400
+
+
+### 8. AISLAMIENTO DE CANAL: credenciales moviles NO existen en el proceso bff-web ###
+GET http://localhost:8081/api/web/cuentas (auth movil_user/movil123, credencial de OTRO proceso)
+
+HTTP_STATUS:401
+
+
+### 9. AISLAMIENTO DE CANAL: el puerto de web NO expone rutas de cajero (independencia fisica de procesos) ###
+GET http://localhost:8081/api/cajero/cuentas/101/saldo
+{"timestamp":"2026-09-14T16:45:42.142+00:00","status":404,"error":"Not Found","path":"/api/cajero/cuentas/101/saldo"}
+HTTP_STATUS:404
+
+
+### 10. Cuenta inexistente en banco-servicios -> 404 propagado por el BFF web ###
+GET http://localhost:8081/api/web/cuentas/999
+
+HTTP_STATUS:404
+
+
+====================================================================
+### 11. COBERTURA COMPLETA: endpoints simples (no agregados) de cada BFF ###
+====================================================================
+
+--- BFF WEB: listado completo de cuentas ---
+GET http://localhost:8081/api/web/cuentas
+[{"id":101,"titular":"John Doe","tipo":"ahorro","saldo":5000.0,"numeroCuenta":"1234567890123456"},{"id":102,"titular":"Jane Smith","tipo":"prestamo","saldo":8000.0,"numeroCuenta":"2345678901234567"},{"id":103,"titular":"Bob Johnson","tipo":"hipoteca","saldo":12000.0,"numeroCuenta":"3456789012345678"},{"id":105,"titular":"Charlie Green","tipo":"ahorro","saldo":7000.0,"numeroCuenta":"4567890123456789"},{"id":107,"titular":"Diana Prince","tipo":"prestamo","saldo":15000.0,"numeroCuenta":"5678901234567890"}]
+
+--- BFF WEB: detalle simple de una cuenta (sin agregacion) ---
+GET http://localhost:8081/api/web/cuentas/101
+{"id":101,"titular":"John Doe","tipo":"ahorro","saldo":5000.0,"numeroCuenta":"1234567890123456"}
+
+--- BFF WEB: transacciones completas (historial sin recortar) ---
+GET http://localhost:8081/api/web/cuentas/101/transacciones
+[{"id":2,"fecha":"2024-01-05","monto":1500.0,"tipo":"credito","descripcion":"Transferencia recibida"},{"id":1,"fecha":"2024-01-01","monto":1000.0,"tipo":"debito","descripcion":"Compra supermercado"}]
+
+--- BFF MOVIL: listado completo de cuentas (version ligera) ---
+GET http://localhost:8082/api/movil/cuentas
+[{"id":101,"titular":"John Doe","saldo":5000.0,"cuentaEnmascarada":"**** 3456"},{"id":102,"titular":"Jane Smith","saldo":8000.0,"cuentaEnmascarada":"**** 4567"},{"id":103,"titular":"Bob Johnson","saldo":12000.0,"cuentaEnmascarada":"**** 5678"},{"id":105,"titular":"Charlie Green","saldo":7000.0,"cuentaEnmascarada":"**** 6789"},{"id":107,"titular":"Diana Prince","saldo":15000.0,"cuentaEnmascarada":"**** 7890"}]
+
+--- BFF MOVIL: detalle simple de una cuenta (numero enmascarado) ---
+GET http://localhost:8082/api/movil/cuentas/101
+{"id":101,"titular":"John Doe","saldo":5000.0,"cuentaEnmascarada":"**** 3456"}
+
+--- BFF MOVIL: transacciones recientes (limitadas a 3, sin descripcion) ---
+GET http://localhost:8082/api/movil/cuentas/101/transacciones
+[{"fecha":"2024-01-05","monto":1500.0,"tipo":"credito"},{"fecha":"2024-01-01","monto":1000.0,"tipo":"debito"}]
+
+--- banco-servicios: listado completo de cuentas (backend real, referencia) ---
+GET http://localhost:9000/api/interno/cuentas
+[{"id":101,"titular":"John Doe","tipo":"ahorro","saldo":5000.0,"numeroCuenta":"1234567890123456"},{"id":102,"titular":"Jane Smith","tipo":"prestamo","saldo":8000.0,"numeroCuenta":"2345678901234567"},{"id":103,"titular":"Bob Johnson","tipo":"hipoteca","saldo":12000.0,"numeroCuenta":"3456789012345678"},{"id":105,"titular":"Charlie Green","tipo":"ahorro","saldo":7000.0,"numeroCuenta":"4567890123456789"},{"id":107,"titular":"Diana Prince","tipo":"prestamo","saldo":15000.0,"numeroCuenta":"5678901234567890"}]

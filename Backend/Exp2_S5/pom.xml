@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.bancoxyz</groupId>
+    <artifactId>bff-bancoxyz-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>bff-bancoxyz-parent</name>
+    <description>
+        Banco XYZ - Backend for Frontend (BFF): cuatro aplicaciones Spring Boot
+        COMPLETAMENTE INDEPENDIENTES (proceso, puerto y despliegue propios):
+        banco-servicios (backend real) + bff-web + bff-movil + bff-cajero.
+        Este pom solo agrupa los modulos para poder compilarlos con un comando;
+        no es un requisito para ejecutar cada uno (cada modulo se levanta solo
+        entrando a su carpeta y ejecutando "mvn spring-boot:run").
+    </description>
+
+    <modules>
+        <module>banco-servicios</module>
+        <module>bff-web</module>
+        <module>bff-movil</module>
+        <module>bff-cajero</module>
+    </modules>
+</project>
