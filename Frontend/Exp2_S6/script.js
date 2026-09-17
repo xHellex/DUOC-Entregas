@@ -39,12 +39,18 @@ const totalCarrito = document.getElementById('total-carrito');
  */
 function renderizarJuegos(juegos) {
     const contenedorJuegos = document.getElementById('contenedor-juegos');
+    const btnVerMas = document.getElementById('btn-ver-mas');
     contenedorJuegos.innerHTML = '';
 
-    juegos.forEach(juego => {
+    juegos.forEach((juego, index) => {
         const columna = document.createElement('div');
         columna.classList.add('col-12', 'col-md-6', 'col-lg-3', 'tarjeta-juego-wrapper');
         columna.setAttribute('data-categoria', juego.categoria);
+
+        // Mostrar sólo los 4 primeros
+        if (index >= 4) {
+            columna.classList.add('d-none', 'juego-adicional');
+        }
 
         columna.innerHTML = `
             <div class="card h-100 shadow-sm interactivo">
@@ -76,6 +82,22 @@ function renderizarJuegos(juegos) {
         });
 
         contenedorJuegos.appendChild(columna);
+    });
+
+    // Controlar visibilidad del botón Ver más
+    if (juegos.length > 4) {
+        btnVerMas.style.display = 'inline-block';
+    } else {
+        btnVerMas.style.display = 'none';
+    }
+
+    // Evento Ver Más
+    btnVerMas.addEventListener('click', () => {
+        const adicionales = document.querySelectorAll('.juego-adicional');
+        adicionales.forEach(tarjeta => {
+            tarjeta.classList.remove('d-none');
+        });
+        btnVerMas.style.display = 'none';
     });
 }
 
@@ -194,15 +216,24 @@ formularioBusqueda.addEventListener('submit', (evento) => {
     const terminoBusqueda = inputBusqueda.value.toLowerCase().trim();
     const tarjetasJuegos = document.querySelectorAll('#contenedor-juegos .col-12');
     const mensajeSinResultados = document.getElementById('mensaje-sin-resultados');
+    const btnVerMas = document.getElementById('btn-ver-mas');
 
     // Ocultar mensaje previo
     mensajeSinResultados.style.display = 'none';
+    // Ocultar "ver más" cuando el usuario busca algo manual
+    if (btnVerMas) btnVerMas.style.display = 'none';
 
     // Si está vacío, mostramos todos de nuevo y salimos
     if (terminoBusqueda === '') {
         tarjetasJuegos.forEach(tarjeta => {
-            tarjeta.style.display = 'block';
+            if (tarjeta.classList.contains('juego-adicional')) {
+                tarjeta.classList.add('d-none');
+                tarjeta.style.display = '';
+            } else {
+                tarjeta.style.display = 'block';
+            }
         });
+        if (btnVerMas) btnVerMas.style.display = 'inline-block';
         return;
     }
 
@@ -225,6 +256,7 @@ formularioBusqueda.addEventListener('submit', (evento) => {
         }
 
         if (match) {
+            tarjeta.classList.remove('d-none');
             tarjeta.style.display = 'block';
             juegosEncontrados++;
         } else {
@@ -249,20 +281,35 @@ filtrosCategoria.forEach(filtro => {
         const categoriaSeleccionada = evento.target.getAttribute('data-categoria');
         const tarjetasJuegos = document.querySelectorAll('.tarjeta-juego-wrapper');
         const mensajeSinResultados = document.getElementById('mensaje-sin-resultados');
+        const btnVerMas = document.getElementById('btn-ver-mas');
 
         mensajeSinResultados.style.display = 'none';
+        if (btnVerMas) btnVerMas.style.display = 'none';
         let juegosEncontrados = 0;
 
         tarjetasJuegos.forEach(tarjeta => {
             const categoriaTarjeta = tarjeta.getAttribute('data-categoria');
 
-            if (categoriaSeleccionada === 'Todos' || categoriaTarjeta === categoriaSeleccionada) {
+            if (categoriaSeleccionada === 'Todos') {
+                if (tarjeta.classList.contains('juego-adicional')) {
+                    tarjeta.classList.add('d-none');
+                    tarjeta.style.display = '';
+                } else {
+                    tarjeta.style.display = 'block';
+                }
+                juegosEncontrados++;
+            } else if (categoriaTarjeta === categoriaSeleccionada) {
+                tarjeta.classList.remove('d-none');
                 tarjeta.style.display = 'block';
                 juegosEncontrados++;
             } else {
                 tarjeta.style.display = 'none';
             }
         });
+
+        if (categoriaSeleccionada === 'Todos' && btnVerMas) {
+            btnVerMas.style.display = 'inline-block';
+        }
 
         if (juegosEncontrados === 0) {
             mensajeSinResultados.style.display = 'block';
