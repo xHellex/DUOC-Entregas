@@ -90,15 +90,22 @@ function agregarAlCarrito(juego) {
  */
 function actualizarDOMCarrito() {
     cuerpoCarrito.innerHTML = '';
+    const badgeCarrito = document.getElementById('badge-carrito');
 
     // Estado vacío
     if (carrito.length === 0) {
         cuerpoCarrito.innerHTML = '<tr><td colspan="3" class="text-muted">El carrito está vacío.</td></tr>';
         totalCarrito.textContent = '$0';
+        badgeCarrito.style.display = 'none';
+        badgeCarrito.textContent = '0';
         return;
     }
 
     let total = 0;
+
+    // Actualizar badge
+    badgeCarrito.style.display = 'inline-block';
+    badgeCarrito.textContent = carrito.length;
 
     // Agregar filas a la tabla
     carrito.forEach((producto, index) => {
@@ -183,19 +190,37 @@ formularioBusqueda.addEventListener('submit', (evento) => {
     evento.preventDefault();
 
     const terminoBusqueda = inputBusqueda.value.toLowerCase().trim();
+    const tarjetasJuegos = document.querySelectorAll('#contenedor-juegos .col-12');
+    const mensajeSinResultados = document.getElementById('mensaje-sin-resultados');
 
+    // Ocultar mensaje previo
+    mensajeSinResultados.style.display = 'none';
+
+    // Si está vacío, mostramos todos de nuevo y salimos
     if (terminoBusqueda === '') {
-        alert('Por favor, ingresa el nombre de un juego para buscar.');
+        tarjetasJuegos.forEach(tarjeta => {
+            tarjeta.style.display = 'block';
+        });
         return;
     }
 
-    const tarjetasJuegos = document.querySelectorAll('#contenedor-juegos .col-12');
     let juegosEncontrados = 0;
 
     tarjetasJuegos.forEach(tarjeta => {
         const tituloJuego = tarjeta.querySelector('.card-title').textContent.toLowerCase();
 
-        if (tituloJuego.includes(terminoBusqueda)) {
+        // Búsqueda rudimentaria que permite coincidir si las primeras 3 letras existen
+        let match = tituloJuego.includes(terminoBusqueda);
+
+        // Tolerancia si se equivoca en la búsqueda para palabras cortas (al menos > 2 letras)
+        if (!match && terminoBusqueda.length > 2) {
+            const coincidenciaParcial = tituloJuego.split(" ").some(palabra =>
+                palabra.startsWith(terminoBusqueda) || terminoBusqueda.startsWith(palabra)
+            );
+            if (coincidenciaParcial) match = true;
+        }
+
+        if (match) {
             tarjeta.style.display = 'block';
             juegosEncontrados++;
         } else {
@@ -204,7 +229,7 @@ formularioBusqueda.addEventListener('submit', (evento) => {
     });
 
     if (juegosEncontrados === 0) {
-        alert(`No se encontraron juegos que coincidan con "${terminoBusqueda}".`);
+        mensajeSinResultados.style.display = 'block';
     }
 
     formularioBusqueda.reset();

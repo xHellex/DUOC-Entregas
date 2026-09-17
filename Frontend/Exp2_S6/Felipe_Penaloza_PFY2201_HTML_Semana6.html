@@ -18,7 +18,7 @@
     </header>
 
     <!-- Navegación Principal -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0f3460;">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm" style="background-color: #0f3460;">
         <div class="container">
             <a class="navbar-brand" href="#">Pixel Games</a>
 
@@ -56,6 +56,16 @@
                     <input class="form-control me-2" type="search" id="input-busqueda" placeholder="Buscar un juego..."
                         aria-label="Buscar">
                     <button class="btn btn-outline-light" type="submit">Buscar</button>
+                    <!-- Botón del Carrito en Nav -->
+                    <button class="btn btn-warning ms-3 position-relative" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito">
+                        🛒
+                        <span id="badge-carrito"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            style="display:none;">
+                            0
+                        </span>
+                    </button>
                 </form>
             </div>
         </div>
@@ -128,39 +138,49 @@
         <section id="productos" class="mt-5 mb-5">
             <h2 class="text-center mb-4" style="color: #1a1a2e;">Juegos Destacados</h2>
 
+            <!-- Mensaje de búsquedas sin resultados (oculto por defecto) -->
+            <div id="mensaje-sin-resultados" class="alert alert-warning text-center" style="display: none;">
+                No hemos encontrado juegos que coincidan con tu búsqueda. Intenta con otras palabras.
+            </div>
+
             <!-- Contenedor dinámico de juegos -->
             <div id="contenedor-juegos" class="row g-4">
             </div>
         </section>
 
-        <!-- Carrito de Compras -->
-        <section id="seccion-carrito" class="mt-5 mb-5 p-4 bg-white rounded shadow-sm border">
-            <h2 class="text-center mb-4" style="color: #1a1a2e;">Carrito de Compras</h2>
-
-            <div class="table-responsive">
-                <table class="table table-hover align-middle text-center">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Producto</th>
-                            <th>Precio</th>
-                            <th>Acción</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cuerpo-carrito">
-                        <!-- Los productos del carrito aparecerán aquí dinámicamente -->
-                        <tr>
-                            <td colspan="3" class="text-muted">El carrito está vacío.</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr class="fw-bold fs-5">
-                            <td class="text-end">Total:</td>
-                            <td colspan="2" id="total-carrito" class="text-start text-success">$0</td>
-                        </tr>
-                    </tfoot>
-                </table>
+        <!-- Carrito de Compras (Offcanvas) -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito"
+            aria-labelledby="offcanvasCarritoLabel">
+            <div class="offcanvas-header bg-dark text-white">
+                <h5 class="offcanvas-title" id="offcanvasCarritoLabel">Carrito de Compras</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Cerrar"></button>
             </div>
-        </section>
+            <div class="offcanvas-body">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle text-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-carrito">
+                            <tr>
+                                <td colspan="3" class="text-muted">El carrito está vacío.</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="fw-bold fs-5">
+                                <td class="text-end">Total:</td>
+                                <td colspan="2" id="total-carrito" class="text-start text-success">$0</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
 
         <!-- Sección de Contacto -->
         <section id="contacto" class="mt-5 mb-5 p-4 bg-white rounded shadow-sm">
