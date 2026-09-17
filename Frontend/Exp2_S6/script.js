@@ -43,13 +43,15 @@ function renderizarJuegos(juegos) {
 
     juegos.forEach(juego => {
         const columna = document.createElement('div');
-        columna.classList.add('col-12', 'col-md-6', 'col-lg-3');
+        columna.classList.add('col-12', 'col-md-6', 'col-lg-3', 'tarjeta-juego-wrapper');
+        columna.setAttribute('data-categoria', juego.categoria);
 
         columna.innerHTML = `
             <div class="card h-100 shadow-sm interactivo">
                 <img src="${juego.imagen}" class="card-img-top" alt="${juego.titulo}">
                 <div class="card-body d-flex flex-column text-center">
                     <h3 class="card-title h5" style="color: #0f3460;">${juego.titulo}</h3>
+                    <span class="badge bg-secondary mb-2 align-self-center py-1 px-3">${juego.categoria}</span>
                     <p class="card-text text-muted flex-grow-1">${juego.descripcion}</p>
                     <p class="fw-bold fs-5 text-success">$${juego.precio.toLocaleString('es-CL')}</p>
                     <button class="btn w-100 text-white btn-agregar" style="background-color: #e94560;">Agregar al Carrito</button>
@@ -208,13 +210,15 @@ formularioBusqueda.addEventListener('submit', (evento) => {
 
     tarjetasJuegos.forEach(tarjeta => {
         const tituloJuego = tarjeta.querySelector('.card-title').textContent.toLowerCase();
+        const categoriaTarjeta = tarjeta.getAttribute('data-categoria').toLowerCase();
+        const textoFiltro = tituloJuego + " " + categoriaTarjeta;
 
-        // Búsqueda rudimentaria que permite coincidir si las primeras 3 letras existen
-        let match = tituloJuego.includes(terminoBusqueda);
+        // Búsqueda rudimentaria
+        let match = textoFiltro.includes(terminoBusqueda);
 
         // Tolerancia si se equivoca en la búsqueda para palabras cortas (al menos > 2 letras)
         if (!match && terminoBusqueda.length > 2) {
-            const coincidenciaParcial = tituloJuego.split(" ").some(palabra =>
+            const coincidenciaParcial = textoFiltro.split(" ").some(palabra =>
                 palabra.startsWith(terminoBusqueda) || terminoBusqueda.startsWith(palabra)
             );
             if (coincidenciaParcial) match = true;
@@ -233,4 +237,35 @@ formularioBusqueda.addEventListener('submit', (evento) => {
     }
 
     formularioBusqueda.reset();
+});
+
+/**
+ * Filtra los productos desde el menú de Categorías
+ */
+const filtrosCategoria = document.querySelectorAll('.categoria-filtro');
+filtrosCategoria.forEach(filtro => {
+    filtro.addEventListener('click', (evento) => {
+        evento.preventDefault();
+        const categoriaSeleccionada = evento.target.getAttribute('data-categoria');
+        const tarjetasJuegos = document.querySelectorAll('.tarjeta-juego-wrapper');
+        const mensajeSinResultados = document.getElementById('mensaje-sin-resultados');
+
+        mensajeSinResultados.style.display = 'none';
+        let juegosEncontrados = 0;
+
+        tarjetasJuegos.forEach(tarjeta => {
+            const categoriaTarjeta = tarjeta.getAttribute('data-categoria');
+
+            if (categoriaSeleccionada === 'Todos' || categoriaTarjeta === categoriaSeleccionada) {
+                tarjeta.style.display = 'block';
+                juegosEncontrados++;
+            } else {
+                tarjeta.style.display = 'none';
+            }
+        });
+
+        if (juegosEncontrados === 0) {
+            mensajeSinResultados.style.display = 'block';
+        }
+    });
 });
