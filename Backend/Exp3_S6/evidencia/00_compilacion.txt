@@ -1,0 +1,169 @@
+====================================================================
+COMPILACION Y TESTS - Exp3_S6_Grupo3 (6 modulos independientes)
+Fecha: Thu Sep 17 22:17:04 HSP 2026
+====================================================================
+
+=== mvn clean test (config-server) ===
+22:17:08.740 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.bancoxyz.configserver.ConfigServerApplicationTests]: ConfigServerApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:17:08.831 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.bancoxyz.configserver.ConfigServerApplication for test class com.bancoxyz.configserver.ConfigServerApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-09-17T22:17:09.486-03:00  INFO 3108 --- [config-server] [           main] c.b.c.ConfigServerApplicationTests       : Starting ConfigServerApplicationTests using Java 22.0.1 with PID 3108 (started by Felip in E:\documentos\Analista Computacional\Backend 3\S6\Exp3_S6_Grupo3\config-server)
+2026-09-17T22:17:09.487-03:00  INFO 3108 --- [config-server] [           main] c.b.c.ConfigServerApplicationTests       : The following 1 profile is active: "native"
+2026-09-17T22:17:10.136-03:00  INFO 3108 --- [config-server] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c9795f3c-bc81-309b-9223-1818dbb3585f
+2026-09-17T22:17:10.964-03:00  INFO 3108 --- [config-server] [           main] c.b.c.ConfigServerApplicationTests       : Started ConfigServerApplicationTests in 1.843 seconds (process running for 2.792)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\Felip\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+exit code: 0
+
+=== mvn clean test (eureka-server) ===
+2026-09-17T22:17:19.882-03:00  INFO 7472 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1789694239881 with initial instances count: 0
+2026-09-17T22:17:19.917-03:00  INFO 7472 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2026-09-17T22:17:19.919-03:00  INFO 7472 --- [eureka-server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+2026-09-17T22:17:20.039-03:00  INFO 7472 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2026-09-17T22:17:20.039-03:00  INFO 7472 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2026-09-17T22:17:20.039-03:00  INFO 7472 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2026-09-17T22:17:20.040-03:00  INFO 7472 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2026-09-17T22:17:20.087-03:00  INFO 7472 --- [eureka-server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+2026-09-17T22:17:20.093-03:00  INFO 7472 --- [eureka-server] [           main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2026-09-17T22:17:20.093-03:00  INFO 7472 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2026-09-17T22:17:20.172-03:00  INFO 7472 --- [eureka-server] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-09-17T22:17:20.214-03:00  INFO 7472 --- [eureka-server] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVER with eureka with status UP
+2026-09-17T22:17:20.223-03:00  INFO 7472 --- [eureka-server] [      Thread-10] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2026-09-17T22:17:20.224-03:00  INFO 7472 --- [eureka-server] [      Thread-10] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2026-09-17T22:17:20.224-03:00  INFO 7472 --- [eureka-server] [      Thread-10] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2026-09-17T22:17:20.224-03:00  INFO 7472 --- [eureka-server] [      Thread-10] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2026-09-17T22:17:20.224-03:00  INFO 7472 --- [eureka-server] [      Thread-10] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2026-09-17T22:17:20.226-03:00  INFO 7472 --- [eureka-server] [      Thread-10] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2026-09-17T22:17:20.228-03:00  INFO 7472 --- [eureka-server] [           main] c.b.e.EurekaServerApplicationTests       : Started EurekaServerApplicationTests in 2.805 seconds (process running for 3.812)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\Felip\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+exit code: 0
+
+=== mvn clean test (api-gateway) ===
+2026-09-17T22:17:29.673-03:00  WARN 33760 --- [api-gateway] [foReplicator-%d] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105) ~[eureka-client-2.0.4.jar:2.0.4]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2026-09-17T22:17:29.703-03:00  INFO 33760 --- [api-gateway] [           main] c.b.a.ApiGatewayApplicationTests         : Started ApiGatewayApplicationTests in 2.463 seconds (process running for 3.435)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\Felip\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+exit code: 0
+
+=== mvn clean test (ms-cuentas) ===
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-17T22:17:43.219-03:00  INFO 16176 --- [ms-cuentas] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-17T22:17:43.243-03:00  INFO 16176 --- [ms-cuentas] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-17T22:17:43.850-03:00  WARN 16176 --- [ms-cuentas] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-17T22:17:43.947-03:00  WARN 16176 --- [ms-cuentas] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: cc489859-88eb-484e-9b21-3b7c3d5477be
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-17T22:17:43.972-03:00  INFO 16176 --- [ms-cuentas] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-17T22:17:44.599-03:00  INFO 16176 --- [ms-cuentas] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-09-17T22:17:45.583-03:00  INFO 16176 --- [ms-cuentas] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-09-17T22:17:45.684-03:00  WARN 16176 --- [ms-cuentas] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-09-17T22:17:45.752-03:00  INFO 16176 --- [ms-cuentas] [           main] c.b.mscuentas.MsCuentasApplicationTests  : Started MsCuentasApplicationTests in 6.16 seconds (process running for 7.167)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\Felip\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+exit code: 0
+
+=== mvn clean test (ms-transacciones) ===
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-17T22:17:56.489-03:00  INFO 26392 --- [ms-transacciones] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-17T22:17:56.519-03:00  INFO 26392 --- [ms-transacciones] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-17T22:17:57.141-03:00  WARN 26392 --- [ms-transacciones] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-17T22:17:57.231-03:00  WARN 26392 --- [ms-transacciones] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e7e2c28d-5770-41a5-a3f6-17ab96cf5d6f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-17T22:17:57.254-03:00  INFO 26392 --- [ms-transacciones] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-17T22:17:57.894-03:00  INFO 26392 --- [ms-transacciones] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-09-17T22:17:58.925-03:00  INFO 26392 --- [ms-transacciones] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-09-17T22:17:59.023-03:00  WARN 26392 --- [ms-transacciones] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-09-17T22:17:59.094-03:00  INFO 26392 --- [ms-transacciones] [           main] c.b.m.MsTransaccionesApplicationTests    : Started MsTransaccionesApplicationTests in 6.175 seconds (process running for 7.176)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\Felip\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+exit code: 0
+
+=== mvn clean test (ms-tarjetas) ===
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-17T22:18:09.806-03:00  INFO 1316 --- [ms-tarjetas] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-17T22:18:09.833-03:00  INFO 1316 --- [ms-tarjetas] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-17T22:18:10.438-03:00  WARN 1316 --- [ms-tarjetas] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-17T22:18:10.534-03:00  WARN 1316 --- [ms-tarjetas] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: dd9496e6-4f26-4385-9283-9793128d6724
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-17T22:18:10.557-03:00  INFO 1316 --- [ms-tarjetas] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-09-17T22:18:11.237-03:00  INFO 1316 --- [ms-tarjetas] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-09-17T22:18:12.217-03:00  INFO 1316 --- [ms-tarjetas] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-09-17T22:18:12.295-03:00  WARN 1316 --- [ms-tarjetas] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-09-17T22:18:12.362-03:00  INFO 1316 --- [ms-tarjetas] [           main] c.b.m.MsTarjetasApplicationTests         : Started MsTarjetasApplicationTests in 6.142 seconds (process running for 7.186)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\Felip\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+exit code: 0

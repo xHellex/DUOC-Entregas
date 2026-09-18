@@ -1,0 +1,17 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          # Sirve los .yml de la carpeta config-repo del proyecto (un nivel
+          # arriba de config-server/, que es el working directory cuando se
+          # arranca con "cd config-server && mvn spring-boot:run").
+          # En produccion se usaria un repositorio Git o un bucket S3.
+          search-locations: file:../config-repo

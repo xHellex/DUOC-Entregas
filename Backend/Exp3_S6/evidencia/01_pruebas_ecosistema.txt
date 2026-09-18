@@ -1,0 +1,70 @@
+====================================================================
+EVIDENCIA DE EJECUCION - Exp3_S6_Grupo3 (Spring Cloud: Config Server,
+Eureka, API Gateway, 3 microservicios con Resilience4j y JWT)
+Fecha: Thu Sep 17 20:51:50 HSP 2026
+config-server :8888 | eureka-server :8761 | api-gateway :8080
+ms-cuentas :8081 | ms-transacciones :8082 | ms-tarjetas :8083
+====================================================================
+
+### 1. Config Server sirviendo la configuracion de ms-cuentas (centralizada) ###
+GET http://localhost:8888/ms-cuentas/default
+{"name":"ms-cuentas","profiles":["default"],"label":null,"version":null,"state":null,"propertySources":[{"name":"file:../config-repo/ms-cuentas.yml","source":{"server.port":8081,"spring.datasource.url":"jdbc:h2:mem:cuentasdb;DB_CLOSE_DELAY=-1","spring.datasource.username":"sa","spring.datasource.password":"","spring.h2.console.enabled":true,"spring.jpa.hibernate.ddl-auto":"update","eureka.client.service-url.defaultZone":"http://localhost:8761/eureka/","eureka.instance.prefer-ip-address":true,"resilience4j.circuitbreaker.instances.cuentasCB.sliding-window-size":10,"resilience4j.circuitbreaker.instances.cuentasCB.failure-rate-threshold":50,"resilience4j.circuitbreaker.instances.cuentasCB.wait-duration-in-open-state":"10s","resilience4j.circuitbreaker.instances.cuentasCB.permitted-number-of-calls-in-half-open-state":3,"jwt.secret":"clave-secreta-banco-xyz-para-firmar-tokens-jwt-2024","jwt.expiration":3600000,"management.endpoints.web.exposure.include":"health,circuitbreakers"}}]}
+
+### 2. Eureka: los 4 servicios registrados (gateway + 3 microservicios) ###
+GET http://localhost:8761/eureka/apps
+API-GATEWAY          status=UP       instanceId=xFelox-PC:api-gateway:8080
+MS-TARJETAS          status=UP       instanceId=xFelox-PC:ms-tarjetas:8083
+MS-TRANSACCIONES     status=UP       instanceId=xFelox-PC:ms-transacciones:8082
+MS-CUENTAS           status=UP       instanceId=xFelox-PC:ms-cuentas:8081
+
+
+### 3. Login JWT via gateway ###
+POST http://localhost:8080/auth/login {"usuario":"admin","clave":"admin123"}
+{"token":"eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc4OTY4OTExMCwiZXhwIjoxNzg5NjkyNzEwfQ.YwsDtxlIoFKxSp5YoO2sHeQRigkIbd8P1Nsv8wAETD5-FwFh2gAPLTC1tF-tgr44"}
+
+
+### 4. ms-cuentas via gateway (con token, balanceado por Eureka lb://ms-cuentas) ###
+GET http://localhost:8080/cuentas
+[{"id":101,"titular":"John Doe","tipo":"ahorro","saldo":5000.0},{"id":102,"titular":"Jane Smith","tipo":"prestamo","saldo":8000.0},{"id":103,"titular":"Bob Johnson","tipo":"hipoteca","saldo":12000.0}]
+HTTP_STATUS:200
+
+
+### 5. ms-transacciones via gateway (con token) ###
+GET http://localhost:8080/transacciones
+[{"id":1,"cuentaId":101,"fecha":"2024-01-01","monto":1000.0,"tipo":"debito"},{"id":2,"cuentaId":101,"fecha":"2024-01-05","monto":1500.0,"tipo":"credito"},{"id":3,"cuentaId":102,"fecha":"2024-01-03","monto":800.0,"tipo":"debito"}]
+HTTP_STATUS:200
+
+
+### 6. ms-tarjetas via gateway (con token, incluye tarjeta inactiva id=3) ###
+GET http://localhost:8080/tarjetas
+[{"id":1,"cuentaId":101,"tipo":"credito","marca":"Visa","cupoDisponible":2000.0,"activa":true},{"id":2,"cuentaId":101,"tipo":"debito","marca":"Mastercard","cupoDisponible":5000.0,"activa":true},{"id":3,"cuentaId":102,"tipo":"credito","marca":"Visa","cupoDisponible":3500.0,"activa":false}]
+HTTP_STATUS:200
+
+
+### 7. Sin token -> acceso denegado (seguridad JWT funcionando) ###
+GET http://localhost:8080/cuentas (sin header Authorization)
+
+HTTP_STATUS:403
+
+
+### 8. Token invalido -> acceso denegado ###
+GET http://localhost:8080/cuentas (Authorization: Bearer token-invalido)
+
+HTTP_STATUS:403
+
+
+### 9. Tolerancia a fallos: Circuit Breakers registrados por microservicio (Resilience4j) ###
+GET http://localhost:8081/actuator/circuitbreakers (ms-cuentas)
+{"circuitBreakers":{"cuentasCB":{"failureRate":"-1.0%","slowCallRate":"-1.0%","failureRateThreshold":"50.0%","slowCallRateThreshold":"100.0%","bufferedCalls":2,"failedCalls":0,"slowCalls":0,"slowFailedCalls":0,"notPermittedCalls":0,"state":"CLOSED"}}}
+GET http://localhost:8082/actuator/circuitbreakers (ms-transacciones)
+{"circuitBreakers":{"transaccionesCB":{"failureRate":"-1.0%","slowCallRate":"-1.0%","failureRateThreshold":"50.0%","slowCallRateThreshold":"100.0%","bufferedCalls":2,"failedCalls":0,"slowCalls":0,"slowFailedCalls":0,"notPermittedCalls":0,"state":"CLOSED"}}}
+GET http://localhost:8083/actuator/circuitbreakers (ms-tarjetas)
+{"circuitBreakers":{"tarjetasCB":{"failureRate":"-1.0%","slowCallRate":"-1.0%","failureRateThreshold":"50.0%","slowCallRateThreshold":"100.0%","bufferedCalls":2,"failedCalls":0,"slowCalls":0,"slowFailedCalls":0,"notPermittedCalls":0,"state":"CLOSED"}}}
+
+### 10. Health check de cada componente ###
+GET http://localhost:8081/actuator/health
+{"status":"UP"}
+GET http://localhost:8082/actuator/health
+{"status":"UP"}
+GET http://localhost:8083/actuator/health
+{"status":"UP"}
