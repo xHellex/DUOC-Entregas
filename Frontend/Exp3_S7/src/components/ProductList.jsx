@@ -12,7 +12,7 @@ function ProductList({ onAgregarAlCarrito, filtroCategoria, terminoBusqueda }) {
 
     // Cargar productos al montar el componente
     useEffect(() => {
-        fetch('/juegos.json')
+        fetch('./juegos.json')
             .then(res => {
                 if (!res.ok) throw new Error('Error de red')
                 return res.json()
