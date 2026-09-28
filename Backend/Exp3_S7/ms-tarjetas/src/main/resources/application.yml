@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ms-tarjetas
+  config:
+    # Importa la configuracion desde el Config Server al arrancar.
+    import: optional:configserver:http://localhost:8888

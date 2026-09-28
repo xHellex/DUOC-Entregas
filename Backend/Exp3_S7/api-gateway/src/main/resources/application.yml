@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # Habilita el enrutamiento automatico por nombre de servicio de Eureka.
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: ms-cuentas
+          uri: lb://ms-cuentas
+          predicates:
+            - Path=/cuentas/**, /auth/**
+        - id: ms-transacciones
+          uri: lb://ms-transacciones
+          predicates:
+            - Path=/transacciones/**
+        - id: ms-tarjetas
+          uri: lb://ms-tarjetas
+          predicates:
+            - Path=/tarjetas/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

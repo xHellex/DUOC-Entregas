@@ -1,0 +1,37 @@
+====================================================================
+EVIDENCIA S7: flujo de eventos Publish/Subscribe con Kafka (real)
+Broker: apache/kafka 3.9.0 (KRaft) en Docker | Fecha: Thu Sep 24 20:38:06 HSP 2026
+====================================================================
+
+### 1. Saldo de la cuenta 101 ANTES ###
+{"id":101,"titular":"John Doe","tipo":"ahorro","saldo":5000.0}
+
+### 2. POST /transacciones (credito 500) via gateway -> productor publica el evento ###
+{"id":4,"cuentaId":101,"fecha":"2026-09-24","monto":500.0,"tipo":"credito"}
+HTTP_STATUS:201
+
+### 3. Saldo de la cuenta 101 DESPUES (ms-cuentas consumio el evento) ###
+{"id":101,"titular":"John Doe","tipo":"ahorro","saldo":5500.0}
+
+### 4. POST /transacciones (debito 300) ###
+{"id":5,"cuentaId":101,"fecha":"2026-09-24","monto":300.0,"tipo":"debito"}
+HTTP_STATUS:201
+
+### 5. Saldo DESPUES del debito (5000 + 500 - 300 = 5200 esperado) ###
+{"id":101,"titular":"John Doe","tipo":"ahorro","saldo":5200.0}
+
+### 6. Logs del PRODUCTOR (ms-transacciones) ###
+2026-09-24T20:38:06.472-03:00  INFO 9836 --- [ms-transacciones] [nio-8082-exec-4] c.b.m.event.TransaccionEventProducer     : [KAFKA-PRODUCER] Publicando evento en topico 'transacciones': TransaccionCreadaEvent[transaccionId=4, cuentaId=101, monto=500.0, tipo=credito, fecha=2026-09-24]
+2026-09-24T20:38:11.076-03:00  INFO 9836 --- [ms-transacciones] [nio-8082-exec-5] c.b.m.event.TransaccionEventProducer     : [KAFKA-PRODUCER] Publicando evento en topico 'transacciones': TransaccionCreadaEvent[transaccionId=5, cuentaId=101, monto=300.0, tipo=debito, fecha=2026-09-24]
+
+### 7. Logs del CONSUMIDOR ms-cuentas (groupId=grupo-cuentas) ###
+2026-09-24T20:38:06.943-03:00  INFO 26696 --- [ms-cuentas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER cuentas] Evento recibido: TransaccionCreadaEvent[transaccionId=4, cuentaId=101, monto=500.0, tipo=credito, fecha=2026-09-24]
+2026-09-24T20:38:06.954-03:00  INFO 26696 --- [ms-cuentas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER cuentas] Saldo actualizado para cuenta 101: nuevo saldo 5500.0
+2026-09-24T20:38:11.086-03:00  INFO 26696 --- [ms-cuentas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER cuentas] Evento recibido: TransaccionCreadaEvent[transaccionId=5, cuentaId=101, monto=300.0, tipo=debito, fecha=2026-09-24]
+2026-09-24T20:38:11.091-03:00  INFO 26696 --- [ms-cuentas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER cuentas] Saldo actualizado para cuenta 101: nuevo saldo 5200.0
+
+### 8. Logs del CONSUMIDOR ms-tarjetas (groupId=grupo-tarjetas) ###
+2026-09-24T20:38:06.943-03:00  INFO 28356 --- [ms-tarjetas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER tarjetas] Evento recibido: TransaccionCreadaEvent[transaccionId=4, cuentaId=101, monto=500.0, tipo=credito, fecha=2026-09-24]
+2026-09-24T20:38:06.945-03:00  INFO 28356 --- [ms-tarjetas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER tarjetas] Registrando movimiento de credito por 500.0 en cuenta 101
+2026-09-24T20:38:11.086-03:00  INFO 28356 --- [ms-tarjetas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER tarjetas] Evento recibido: TransaccionCreadaEvent[transaccionId=5, cuentaId=101, monto=300.0, tipo=debito, fecha=2026-09-24]
+2026-09-24T20:38:11.086-03:00  INFO 28356 --- [ms-tarjetas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER tarjetas] Registrando movimiento de debito por 300.0 en cuenta 101

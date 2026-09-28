@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+    <marker id="flechaVerde" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#047857"/>
+    </marker>
+    <marker id="flechaAzul" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="900" fill="#ffffff"/>
+  <text x="750" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#111827">Arquitectura de eventos: Publish/Subscribe con Kafka — Banco XYZ</text>
+  <text x="750" y="70" text-anchor="middle" font-size="15" fill="#4b5563">ms-transacciones publica un evento por cada transacción; ms-cuentas y ms-tarjetas lo consumen de forma asíncrona y desacoplada</text>
+
+  <!-- ===== Columna A: entrada y productor ===== -->
+  <rect x="30" y="120" width="300" height="70" rx="12" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+  <text x="180" y="150" text-anchor="middle" font-size="19" font-weight="700" fill="#111827">Cliente</text>
+  <text x="180" y="174" text-anchor="middle" font-size="14" fill="#374151">Authorization: Bearer &lt;JWT&gt;</text>
+
+  <line x1="180" y1="190" x2="180" y2="238" stroke="#374151" stroke-width="2.5" marker-end="url(#flecha)"/>
+  <text x="192" y="220" font-size="13" fill="#374151">HTTP</text>
+
+  <rect x="30" y="240" width="300" height="100" rx="12" fill="#e0e7ff" stroke="#4338ca" stroke-width="2"/>
+  <text x="180" y="272" text-anchor="middle" font-size="19" font-weight="700" fill="#312e81">API Gateway  :8080</text>
+  <text x="180" y="297" text-anchor="middle" font-size="14" fill="#3730a3">Puerta de entrada única del sistema</text>
+  <text x="180" y="319" text-anchor="middle" font-size="14" fill="#3730a3">Enruta por nombre lógico (lb://) vía Eureka</text>
+
+  <line x1="180" y1="340" x2="180" y2="388" stroke="#374151" stroke-width="2.5" marker-end="url(#flecha)"/>
+  <text x="192" y="370" font-size="13" fill="#374151">POST /transacciones</text>
+
+  <rect x="30" y="390" width="300" height="150" rx="12" fill="#d1fae5" stroke="#047857" stroke-width="2.5"/>
+  <text x="180" y="422" text-anchor="middle" font-size="19" font-weight="700" fill="#064e3b">ms-transacciones  :8082</text>
+  <text x="180" y="448" text-anchor="middle" font-size="16" font-weight="700" fill="#047857">PRODUCTOR</text>
+  <text x="180" y="474" text-anchor="middle" font-size="14" fill="#065f46">1) guarda la transacción en su BD</text>
+  <text x="180" y="496" text-anchor="middle" font-size="14" fill="#065f46">2) publica TransaccionCreadaEvent</text>
+  <text x="180" y="522" text-anchor="middle" font-size="13" fill="#065f46">responde 201 sin esperar a los consumidores</text>
+
+  <!-- ===== Columna B: broker Kafka ===== -->
+  <rect x="440" y="110" width="560" height="590" rx="16" fill="#fffbeb" stroke="#b45309" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <text x="720" y="140" text-anchor="middle" font-size="17" font-weight="700" fill="#92400e">Broker Apache Kafka (modo KRaft) — localhost:9092</text>
+
+  <rect x="470" y="165" width="500" height="250" rx="12" fill="#fef3c7" stroke="#b45309" stroke-width="2.5"/>
+  <text x="720" y="198" text-anchor="middle" font-size="21" font-weight="700" fill="#78350f">Tópico: transacciones</text>
+  <text x="720" y="222" text-anchor="middle" font-size="14" fill="#92400e">3 particiones · factor de replicación 1 · offsets por grupo</text>
+
+  <rect x="490" y="245" width="140" height="70" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="560" y="275" text-anchor="middle" font-size="17" font-weight="700" fill="#78350f">Partición 0</text>
+  <text x="560" y="298" text-anchor="middle" font-size="13" fill="#92400e">eventos ordenados</text>
+  <rect x="650" y="245" width="140" height="70" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="720" y="275" text-anchor="middle" font-size="17" font-weight="700" fill="#78350f">Partición 1</text>
+  <text x="720" y="298" text-anchor="middle" font-size="13" fill="#92400e">eventos ordenados</text>
+  <rect x="810" y="245" width="140" height="70" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="880" y="275" text-anchor="middle" font-size="17" font-weight="700" fill="#78350f">Partición 2</text>
+  <text x="880" y="298" text-anchor="middle" font-size="13" fill="#92400e">eventos ordenados</text>
+
+  <text x="720" y="352" text-anchor="middle" font-size="14" font-weight="700" fill="#78350f">key del mensaje = cuentaId</text>
+  <text x="720" y="374" text-anchor="middle" font-size="13" fill="#92400e">la misma cuenta cae siempre en la misma partición,</text>
+  <text x="720" y="393" text-anchor="middle" font-size="13" fill="#92400e">así se conserva el orden de sus transacciones</text>
+
+  <rect x="470" y="440" width="500" height="235" rx="12" fill="#ffffff" stroke="#6b7280" stroke-width="2"/>
+  <text x="720" y="470" text-anchor="middle" font-size="17" font-weight="700" fill="#111827">Mensaje: evento TransaccionCreadaEvent (JSON)</text>
+  <text x="490" y="503" font-size="15" font-family="Consolas, monospace" fill="#111827">{</text>
+  <text x="510" y="526" font-size="15" font-family="Consolas, monospace" fill="#111827">"transaccionId": 4,</text>
+  <text x="510" y="549" font-size="15" font-family="Consolas, monospace" fill="#111827">"cuentaId": 101,</text>
+  <text x="510" y="572" font-size="15" font-family="Consolas, monospace" fill="#111827">"monto": 500.0,</text>
+  <text x="510" y="595" font-size="15" font-family="Consolas, monospace" fill="#111827">"tipo": "credito",</text>
+  <text x="510" y="618" font-size="15" font-family="Consolas, monospace" fill="#111827">"fecha": "2026-09-24"</text>
+  <text x="490" y="641" font-size="15" font-family="Consolas, monospace" fill="#111827">}</text>
+  <text x="720" y="663" text-anchor="middle" font-size="12" fill="#6b7280">JSON puro: fecha ISO y sin header __TypeId__ (contrato independiente de las clases Java)</text>
+
+  <!-- publica -->
+  <line x1="330" y1="465" x2="466" y2="300" stroke="#047857" stroke-width="3" marker-end="url(#flechaVerde)"/>
+  <text x="352" y="366" font-size="15" font-weight="700" fill="#047857">publica</text>
+
+  <!-- ===== Columna C: grupos de consumidores ===== -->
+  <rect x="1090" y="150" width="380" height="210" rx="14" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2.5"/>
+  <text x="1280" y="182" text-anchor="middle" font-size="16" font-weight="700" fill="#1e3a8a">groupId = grupo-cuentas</text>
+  <text x="1280" y="213" text-anchor="middle" font-size="20" font-weight="700" fill="#1e40af">ms-cuentas  :8081</text>
+  <text x="1280" y="239" text-anchor="middle" font-size="16" font-weight="700" fill="#1d4ed8">CONSUMIDOR</text>
+  <text x="1280" y="267" text-anchor="middle" font-size="14" fill="#1e3a8a">actualiza el saldo de la cuenta:</text>
+  <text x="1280" y="288" text-anchor="middle" font-size="14" fill="#1e3a8a">crédito suma · débito resta</text>
+  <text x="1280" y="318" text-anchor="middle" font-size="13" fill="#1e3a8a">recibe una copia de TODOS los eventos</text>
+  <text x="1280" y="340" text-anchor="middle" font-size="13" fill="#1e3a8a">(1 instancia = las 3 particiones)</text>
+
+  <rect x="1090" y="440" width="380" height="235" rx="14" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2.5"/>
+  <text x="1280" y="472" text-anchor="middle" font-size="16" font-weight="700" fill="#1e3a8a">groupId = grupo-tarjetas</text>
+  <text x="1280" y="503" text-anchor="middle" font-size="20" font-weight="700" fill="#1e40af">ms-tarjetas  :8083 (+ :8093)</text>
+  <text x="1280" y="529" text-anchor="middle" font-size="16" font-weight="700" fill="#1d4ed8">CONSUMIDOR</text>
+  <text x="1280" y="557" text-anchor="middle" font-size="14" fill="#1e3a8a">registra el movimiento de la cuenta</text>
+  <text x="1280" y="588" text-anchor="middle" font-size="13" fill="#1e3a8a">recibe una copia de TODOS los eventos</text>
+  <text x="1280" y="610" text-anchor="middle" font-size="13" fill="#1e3a8a">las instancias del grupo se reparten</text>
+  <text x="1280" y="630" text-anchor="middle" font-size="13" fill="#1e3a8a">las particiones (escala horizontal)</text>
+  <text x="1280" y="656" text-anchor="middle" font-size="12" fill="#1e3a8a">ej.: A = partición 2 · B = particiones 0 y 1</text>
+
+  <line x1="1002" y1="300" x2="1086" y2="262" stroke="#1d4ed8" stroke-width="3" marker-end="url(#flechaAzul)"/>
+  <text x="1008" y="246" font-size="15" font-weight="700" fill="#1d4ed8">consume</text>
+  <line x1="1002" y1="340" x2="1086" y2="500" stroke="#1d4ed8" stroke-width="3" marker-end="url(#flechaAzul)"/>
+  <text x="1052" y="402" font-size="15" font-weight="700" fill="#1d4ed8">consume</text>
+
+  <!-- ===== Franja de soporte ===== -->
+  <rect x="30" y="735" width="1440" height="130" rx="14" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="750" y="762" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">Componentes de soporte (Config, Eureka y Resilience4j heredados de la semana 6; Kafka-UI nuevo)</text>
+
+  <rect x="55" y="778" width="320" height="72" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="215" y="803" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Config Server  :8888</text>
+  <text x="215" y="826" text-anchor="middle" font-size="13" fill="#374151">configuración centralizada (config-repo/)</text>
+
+  <rect x="395" y="778" width="320" height="72" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="555" y="803" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Eureka Server  :8761</text>
+  <text x="555" y="826" text-anchor="middle" font-size="13" fill="#374151">registro y descubrimiento de servicios</text>
+
+  <rect x="735" y="778" width="400" height="72" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="935" y="803" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Resilience4j en cada microservicio</text>
+  <text x="935" y="826" text-anchor="middle" font-size="13" fill="#374151">Circuit Breaker + fallback: cuentasCB · transaccionesCB · tarjetasCB</text>
+
+  <rect x="1155" y="778" width="290" height="72" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="1300" y="803" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Kafka-UI  :8090</text>
+  <text x="1300" y="826" text-anchor="middle" font-size="13" fill="#374151">evidencia visual del tópico y los grupos</text>
+
+  <text x="750" y="888" text-anchor="middle" font-size="13" fill="#6b7280">Publish/Subscribe · asíncrono · desacoplado — un groupId por microservicio consumidor = cada uno recibe todos los eventos</text>
+</svg>

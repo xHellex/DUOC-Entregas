@@ -1,0 +1,44 @@
+====================================================================
+EVIDENCIA S7: escalabilidad - grupo de consumidores con 2 instancias
+Topico 'transacciones' con 3 particiones; grupo-tarjetas con 2 instancias
+(ms-tarjetas :8083 = instancia A, ms-tarjetas :8093 = instancia B)
+Fecha: Thu Sep 24 20:43:32 HSP 2026
+====================================================================
+
+### 1. Asignacion de particiones tras unirse la instancia B (rebalanceo) ###
+A:  [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : grupo-tarjetas: partitions assigned: [transacciones-0, transacciones-1, transacciones-2]
+A:  [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : grupo-tarjetas: partitions revoked: [transacciones-0, transacciones-1, transacciones-2]
+A:  [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : grupo-tarjetas: partitions assigned: [transacciones-2]
+B:  [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : grupo-tarjetas: partitions assigned: [transacciones-0, transacciones-1]
+
+### 2. Se publican 12 eventos (cuentas 101,102,103,105,107; key = cuentaId) ###
+evento  1 cuenta 101 -> HTTP 201
+evento  2 cuenta 102 -> HTTP 201
+evento  3 cuenta 103 -> HTTP 201
+evento  4 cuenta 105 -> HTTP 201
+evento  5 cuenta 107 -> HTTP 201
+evento  6 cuenta 101 -> HTTP 201
+evento  7 cuenta 102 -> HTTP 201
+evento  8 cuenta 103 -> HTTP 201
+evento  9 cuenta 105 -> HTTP 201
+evento 10 cuenta 107 -> HTTP 201
+evento 11 cuenta 101 -> HTTP 201
+evento 12 cuenta 102 -> HTTP 201
+
+### 3. Reparto de los eventos entre las instancias del MISMO grupo (grupo-tarjetas) ###
+Instancia A (:8083, particion 2)      recibio 7 eventos  (transaccionId -> cuentaId): {4: 101, 6: 103, 7: 105, 9: 101, 11: 103, 12: 105, 14: 101}
+Instancia B (:8093, particiones 0 y 1) recibio 5 eventos  (transaccionId -> cuentaId): {5: 102, 8: 107, 10: 102, 13: 107, 15: 102}
+Duplicados entre A y B: 0 | Eventos distintos entre A+B: 12 (esperado 12: sin duplicados ni perdidas)
+Cuentas atendidas: A=[101, 103, 105]  B=[102, 107]  -> una misma cuenta siempre cae en la misma instancia (key = cuentaId fija la particion, preserva el orden por cuenta)
+
+### 4. El otro grupo (grupo-cuentas, 1 instancia) recibe TODOS los eventos: broadcast pub/sub ###
+ms-cuentas recibio 12 eventos; de ellos 12 coinciden con los de A+B.
+
+### 5. Estado de los grupos segun el broker (offsets por particion; particion 1 no recibio eventos con estas 5 cuentas) ###
+GROUP TOPIC PARTITION CURRENT-OFFSET LOG-END-OFFSET LAG CONSUMER-ID HOST CLIENT-ID
+grupo-tarjetas transacciones 0 5 5 0 consumer-grupo-tarjetas-1-8164f095-e916-486e-b548-13837d8474bc /172.18.0.1 consumer-grupo-tarjetas-1
+grupo-tarjetas transacciones 1 - 0 - consumer-grupo-tarjetas-1-8164f095-e916-486e-b548-13837d8474bc /172.18.0.1 consumer-grupo-tarjetas-1
+grupo-tarjetas transacciones 2 7 7 0 consumer-grupo-tarjetas-1-d4afffab-1549-4be2-b543-340d3d30a857 /172.18.0.1 consumer-grupo-tarjetas-1
+grupo-cuentas transacciones 0 5 5 0 consumer-grupo-cuentas-1-2a917d51-ab06-4f6d-a8b1-17e689c8e4b3 /172.18.0.1 consumer-grupo-cuentas-1
+grupo-cuentas transacciones 1 - 0 - consumer-grupo-cuentas-1-2a917d51-ab06-4f6d-a8b1-17e689c8e4b3 /172.18.0.1 consumer-grupo-cuentas-1
+grupo-cuentas transacciones 2 7 7 0 consumer-grupo-cuentas-1-2a917d51-ab06-4f6d-a8b1-17e689c8e4b3 /172.18.0.1 consumer-grupo-cuentas-1

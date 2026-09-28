@@ -1,0 +1,35 @@
+====================================================================
+EVIDENCIA S7: broker Kafka, topico y mensajes (real)
+Fecha: Thu Sep 24 20:40:41 HSP 2026
+====================================================================
+
+### 1. Contenedores (docker ps) ###
+NAMES               IMAGE                           STATUS              PORTS
+bancoxyz-kafka-ui   provectuslabs/kafka-ui:latest   Up 16 minutes       0.0.0.0:8090->8080/tcp, [::]:8090->8080/tcp
+bancoxyz-kafka      apache/kafka:3.9.0              Up About a minute   0.0.0.0:9092->9092/tcp, [::]:9092->9092/tcp
+
+### 2. Descripcion del topico 'transacciones' ###
+Topic: transacciones	TopicId: 7BE2Fqi6QZeA_1EhhErabw	PartitionCount: 1	ReplicationFactor: 1	Configs: 
+	Topic: transacciones	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: 	LastKnownElr: 
+
+### 3. Grupos de consumidores (un grupo por microservicio => broadcast pub/sub) ###
+grupo-cuentas
+grupo-tarjetas
+
+### 4. Estado de cada grupo ###
+GROUP TOPIC PARTITION CURRENT-OFFSET LOG-END-OFFSET LAG CONSUMER-ID HOST CLIENT-ID
+grupo-cuentas transacciones 0 5 5 0 consumer-grupo-cuentas-1-c6956179-c24f-4197-92af-8b08a73cca1a /172.18.0.1 consumer-grupo-cuentas-1
+grupo-tarjetas transacciones 0 5 5 0 consumer-grupo-tarjetas-1-9e9ef987-d701-4734-91d3-1f5d9251eb4f /172.18.0.1 consumer-grupo-tarjetas-1
+
+### 5. Mensajes reales del topico (JSON puro, fecha ISO, sin header __TypeId__) ###
+Offset:0	NO_HEADERS	101	{"transaccionId":4,"cuentaId":101,"monto":500.0,"tipo":"credito","fecha":"2026-09-24"}
+Offset:1	NO_HEADERS	101	{"transaccionId":5,"cuentaId":101,"monto":300.0,"tipo":"debito","fecha":"2026-09-24"}
+Offset:2	NO_HEADERS	102	{"transaccionId":6,"cuentaId":102,"monto":100.0,"tipo":"credito","fecha":"2026-09-24"}
+Offset:3	NO_HEADERS	103	{"transaccionId":7,"cuentaId":103,"monto":1000.0,"tipo":"credito","fecha":"2026-09-24"}
+Offset:4	NO_HEADERS	103	{"transaccionId":8,"cuentaId":103,"monto":200.0,"tipo":"debito","fecha":"2026-09-24"}
+
+### 6. Kafka-UI: estado del cluster via su API (http://localhost:8090) ###
+[{"name":"bancoxyz","defaultCluster":null,"status":"online","lastError":null,"brokerCount":1,"onlinePartitionCount":51,"topicCount":2,"bytesInPerSec":null,"bytesOutPerSec":null,"readOnly":false,"version":"3.9-IV0","features":["TOPIC_DELETION"]}]
+
+### 7. Kafka-UI: topico transacciones via su API ###
+{'name': 'transacciones', 'partitionCount': 1, 'replicationFactor': 1, 'underReplicatedPartitions': 0, 'partitions': [{'partition': 0, 'leader': 1, 'replicas': [{'broker': 1, 'leader': True, 'inSync': True}], 'offsetMax': 5, 'offsetMin': 0}]}

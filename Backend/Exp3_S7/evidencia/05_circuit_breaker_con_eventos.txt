@@ -1,0 +1,48 @@
+====================================================================
+EVIDENCIA S7: Resilience4j en ms-transacciones con falla REAL + arquitectura de eventos
+Se inyecta una excepcion en TransaccionService.listar() (revertida despues).
+Fecha: Thu Sep 24 20:45:02 HSP 2026
+====================================================================
+
+### 1. Circuito inicial ###
+{"circuitBreakers":{"transaccionesCB":{"failureRate":"-1.0%","slowCallRate":"-1.0%","failureRateThreshold":"50.0%","slowCallRateThreshold":"100.0%","bufferedCalls":0,"failedCalls":0,"slowCalls":0,"slowFailedCalls":0,"notPermittedCalls":0,"state":"CLOSED"}}}
+
+### 2. 10 consultas GET /transacciones, todas fallan: el cliente recibe el FALLBACK (200 []), no un 500 ###
+  consulta 1 -> [] | HTTP_STATUS:200
+  consulta 2 -> [] | HTTP_STATUS:200
+  consulta 3 -> [] | HTTP_STATUS:200
+  consulta 4 -> [] | HTTP_STATUS:200
+  consulta 5 -> [] | HTTP_STATUS:200
+  consulta 6 -> [] | HTTP_STATUS:200
+  consulta 7 -> [] | HTTP_STATUS:200
+  consulta 8 -> [] | HTTP_STATUS:200
+  consulta 9 -> [] | HTTP_STATUS:200
+  consulta 10 -> [] | HTTP_STATUS:200
+
+### 3. Circuito tras 10 fallos (debe ser OPEN) ###
+{"circuitBreakers":{"transaccionesCB":{"failureRate":"100.0%","slowCallRate":"0.0%","failureRateThreshold":"50.0%","slowCallRateThreshold":"100.0%","bufferedCalls":10,"failedCalls":10,"slowCalls":0,"slowFailedCalls":0,"notPermittedCalls":0,"state":"OPEN"}}}
+
+### 4. Consulta con el circuito OPEN: se corta antes de llegar al metodo (notPermittedCalls) ###
+[] | HTTP_STATUS:200
+{"circuitBreakers":{"transaccionesCB":{"failureRate":"100.0%","slowCallRate":"0.0%","failureRateThreshold":"50.0%","slowCallRateThreshold":"100.0%","bufferedCalls":10,"failedCalls":10,"slowCalls":0,"slowFailedCalls":0,"notPermittedCalls":1,"state":"OPEN"}}}
+
+### 5. AISLAMIENTO: con el circuito de las CONSULTAS abierto, el REGISTRO de transacciones y su evento siguen funcionando ###
+{"id":4,"cuentaId":101,"fecha":"2026-09-24","monto":50.0,"tipo":"credito"}
+  HTTP_STATUS:201
+--- log del productor ---
+2026-09-24T20:45:02.943-03:00  INFO 8020 --- [ms-transacciones] [nio-8082-exec-1] c.b.m.event.TransaccionEventProducer     : [KAFKA-PRODUCER] Publicando evento en topico 'transacciones': TransaccionCreadaEvent[transaccionId=4, cuentaId=101, monto=50.0, tipo=cr
+--- los consumidores procesaron ese evento ---
+2026-09-24T20:45:03.458-03:00  INFO 12696 --- [ms-cuentas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER cuentas] Saldo actualizado para cuenta 101: nuevo saldo 5080.0
+
+### 6. Log de la aplicacion: fallback activandose ###
+2026-09-24T20:45:02.666-03:00  WARN 8020 --- [ms-transacciones] [nio-8082-exec-9] c.b.m.controller.TransaccionController   : [FALLBACK] listar transacciones: Fallo simulado de acceso a datos (prueba de tolerancia a fallos)
+2026-09-24T20:45:02.713-03:00  WARN 8020 --- [ms-transacciones] [nio-8082-exec-1] c.b.m.controller.TransaccionController   : [FALLBACK] listar transacciones: Fallo simulado de acceso a datos (prueba de tolerancia a fallos)
+2026-09-24T20:45:02.767-03:00  WARN 8020 --- [ms-transacciones] [nio-8082-exec-3] c.b.m.controller.TransaccionController   : [FALLBACK] listar transacciones: Fallo simulado de acceso a datos (prueba de tolerancia a fallos)
+2026-09-24T20:45:02.856-03:00  WARN 8020 --- [ms-transacciones] [nio-8082-exec-7] c.b.m.controller.TransaccionController   : [FALLBACK] listar transacciones: CircuitBreaker 'transaccionesCB' is OPEN and does not permit further calls
+
+### 7. RECUPERACION: se revierte la falla, se reinicia el servicio ###
+GET /transacciones (servicio sano):
+[{"id":1,"cuentaId":101,"fecha":"2024-01-01","monto":1000.0,"tipo":"debito"},{"id":2,"cuentaId":101,"fecha":"2024-01-05","monto":1500.0,"tipo":"credito"},{"id":3,"cuentaId":102,"fecha":"2024-01-03","monto":800.0,"tipo":"debito"}]
+  HTTP_STATUS:200
+Circuito tras la recuperacion:
+{"circuitBreakers":{"transaccionesCB":{"failureRate":"-1.0%","slowCallRate":"-1.0%","failureRateThreshold":"50.0%","slowCallRateThreshold":"100.0%","bufferedCalls":1,"failedCalls":0,"slowCalls":0,"slowFailedCalls":0,"notPermittedCalls":0,"state":"CLOSED"}}}

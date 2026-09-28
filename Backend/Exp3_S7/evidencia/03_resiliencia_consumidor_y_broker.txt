@@ -1,0 +1,37 @@
+====================================================================
+EVIDENCIA S7: resiliencia de la arquitectura de eventos (real)
+Fecha: Thu Sep 24 20:39:33 HSP 2026
+====================================================================
+
+### A. BROKER CAIDO: el productor sigue respondiendo y el evento se entrega al volver Kafka ###
+(ya ejecutado en vivo: con 'docker stop bancoxyz-kafka' un POST devolvio 201 en 11 ms;
+ el evento quedo en el buffer del productor y al hacer 'docker start' llego a ambos consumidores)
+2026-09-24T20:38:43.222-03:00  INFO 9836 --- [ms-transacciones] [nio-8082-exec-6] c.b.m.event.TransaccionEventProducer     : [KAFKA-PRODUCER] Publicando evento en topico 'transacciones': TransaccionCreadaEvent[transaccionId=6, cuentaId=102, monto=100
+/tmp/s7-cuentas.log:2026-09-24T20:38:59.025-03:00  INFO 26696 --- [ms-cuentas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER cuentas] Evento recibido: TransaccionCreadaEvent[transaccionId=6, cuentaId=102, monto=100.0, tipo=credit
+/tmp/s7-tarjetas.log:2026-09-24T20:38:59.035-03:00  INFO 28356 --- [ms-tarjetas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER tarjetas] Evento recibido: TransaccionCreadaEvent[transaccionId=6, cuentaId=102, monto=100.0, tipo=cre
+2026-09-24T20:38:59.030-03:00  INFO 26696 --- [ms-cuentas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER cuentas] Saldo actualizado para cuenta 102: nuevo saldo 8100.0
+
+### B. CONSUMIDOR CAIDO: se detiene ms-tarjetas; el resto sigue operando ###
+port 8083: arbol 6396 terminado
+(ms-tarjetas detenido)
+
+--- POST /transacciones x2 con ms-tarjetas CAIDO (el productor ni se entera) ---
+{"id":7,"cuentaId":103,"fecha":"2026-09-24","monto":1000.0,"tipo":"credito"}  HTTP_STATUS:201
+{"id":8,"cuentaId":103,"fecha":"2026-09-24","monto":200.0,"tipo":"debito"}  HTTP_STATUS:201
+
+--- ms-cuentas (vivo) proceso ambos eventos; saldo 103: 12000 + 1000 - 200 = 12800 ---
+{"id":103,"titular":"Bob Johnson","tipo":"hipoteca","saldo":12800.0}
+
+--- Lag del grupo grupo-tarjetas (mensajes pendientes en el topico para el consumidor caido) ---
+GROUP TOPIC PARTITION CURRENT-OFFSET LOG-END-OFFSET LAG CONSUMER-ID HOST CLIENT-ID
+grupo-tarjetas transacciones 0 3 5 2 consumer-grupo-tarjetas-1-52fff327-7928-4779-87a8-e74ef07604f2 /172.18.0.1 consumer-grupo-tarjetas-1
+
+### C. ms-tarjetas VUELVE: se pone al dia con los eventos que esperaban en el topico ###
+2026-09-24T20:40:20.187-03:00  INFO 36668 --- [ms-tarjetas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER tarjetas] Evento recibido: TransaccionCreadaEvent[transaccionId=7, cuentaId=103, monto=1000.0, tipo=credito, fecha=2026-09-
+2026-09-24T20:40:20.189-03:00  INFO 36668 --- [ms-tarjetas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER tarjetas] Registrando movimiento de credito por 1000.0 en cuenta 103
+2026-09-24T20:40:20.189-03:00  INFO 36668 --- [ms-tarjetas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER tarjetas] Evento recibido: TransaccionCreadaEvent[transaccionId=8, cuentaId=103, monto=200.0, tipo=debito, fecha=2026-09-24
+2026-09-24T20:40:20.189-03:00  INFO 36668 --- [ms-tarjetas] [ntainer#0-0-C-1] c.b.m.event.TransaccionEventConsumer     : [KAFKA-CONSUMER tarjetas] Registrando movimiento de debito por 200.0 en cuenta 103
+
+--- Lag del grupo grupo-tarjetas tras la recuperacion (esperado 0) ---
+GROUP TOPIC PARTITION CURRENT-OFFSET LOG-END-OFFSET LAG CONSUMER-ID HOST CLIENT-ID
+grupo-tarjetas transacciones 0 5 5 0 consumer-grupo-tarjetas-1-9e9ef987-d701-4734-91d3-1f5d9251eb4f /172.18.0.1 consumer-grupo-tarjetas-1
