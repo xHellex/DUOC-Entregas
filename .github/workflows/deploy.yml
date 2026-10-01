@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main"]
     paths:
-      - 'Frontend/Exp3_S7/**'
+      - 'Frontend/Exp3_S8/**'
   workflow_dispatch:
 
 permissions:
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: Frontend/Exp3_S7
+        working-directory: Frontend/Exp3_S8
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: Frontend/Exp3_S7/package-lock.json
+          cache-dependency-path: Frontend/Exp3_S8/package-lock.json
       - name: Install dependencies
         run: npm ci
       - name: Build
@@ -38,7 +38,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: Frontend/Exp3_S7/dist
+          path: Frontend/Exp3_S8/dist
   deploy:
     environment:
       name: github-pages

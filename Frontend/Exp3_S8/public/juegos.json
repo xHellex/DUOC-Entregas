@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "titulo": "The Witcher 3: Wild Hunt",
+        "descripcion": "Encarna al cazador de monstruos Geralt de Rivia en un mundo abierto masivo y oscuro.",
+        "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg",
+        "categoria": "RPG",
+        "precio": 24900,
+        "precioOferta": 19900
+    },
+    {
+        "id": 2,
+        "titulo": "Cyberpunk 2077",
+        "descripcion": "Un RPG de acción y aventura de mundo abierto, ambientado en la megalópolis de Night City.",
+        "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg",
+        "categoria": "RPG",
+        "precio": 39900,
+        "precioOferta": 29900
+    },
+    {
+        "id": 3,
+        "titulo": "Elden Ring",
+        "descripcion": "El aclamado juego de rol de fantasía oscura creado por Hidetaka Miyazaki y George R. R. Martin.",
+        "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg",
+        "categoria": "RPG",
+        "precio": 45000,
+        "precioOferta": null
+    },
+    {
+        "id": 4,
+        "titulo": "Final Fantasy VII Remake",
+        "descripcion": "Una reimaginación espectacular del icónico juego que definió el género RPG, ahora en gráficos modernos.",
+        "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1462040/header.jpg",
+        "categoria": "RPG",
+        "precio": 49000,
+        "precioOferta": 35900
+    },
+    {
+        "id": 5,
+        "titulo": "Skyrim Special Edition",
+        "descripcion": "El épico RPG de fantasía que redefinió el género de mundo abierto. Totalmente remasterizado.",
+        "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/header.jpg",
+        "categoria": "RPG",
+        "precio": 29900,
+        "precioOferta": 18900
+    },
+    {
+        "id": 6,
+        "titulo": "Persona 5 Royal",
+        "descripcion": "Ponte la máscara escolar de día, roba corazones de noche. Aclamado JRPG aclamado por la crítica.",
+        "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1687950/header.jpg",
+        "categoria": "RPG",
+        "precio": 35000,
+        "precioOferta": null
+    },
+    {
+        "id": 7,
+        "titulo": "Doom Eternal",
+        "descripcion": "Los ejércitos del infierno han invadido la Tierra. Conviértete en el Slayer y acaba con los demonios.",
+        "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/782330/header.jpg",
+        "categoria": "FPS",
+        "precio": 29900,
+        "precioOferta": 18900
+    },
+    {
+        "id": 8,
+        "titulo": "Call of Duty: Modern Warfare II",
+        "descripcion": "Acción multijugador táctica y campaña global inmersiva con los gráficos de última generación.",
+        "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1938090/header.jpg",
+        "categoria": "FPS",
+        "precio": 52000,
+        "precioOferta": 39990
+    },
+    {
+        "id": 9,
+        "titulo": "Counter-Strike 2",
+        "descripcion": "El rey de los FPS tácticos competitivos, renovado con nuevo motor gráfico e iluminación realista.",
+        "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/header.jpg",
+        "categoria": "FPS",
+        "precio": 15000,
+        "precioOferta": 10000
+    },
+    {
+        "id": 10,
+        "titulo": "Halo Infinite",
+        "descripcion": "Cuando toda esperanza se ha perdido, el Jefe Maestro está listo para enfrentarse al enemigo final.",
+        "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1240440/header.jpg",
+        "categoria": "FPS",
+        "precio": 39900,
+        "precioOferta": 29990
+    },
+    {
+        "id": 11,
+        "titulo": "Apex Legends",
+        "descripcion": "Juego de disparos de héroes rápido y estratégico ambientado en el dinámico universo Titanfall.",
+        "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172470/header.jpg",
+        "categoria": "FPS",
+        "precio": 9900,
+        "precioOferta": null
+    },
+    {
+        "id": 12,
+        "titulo": "Left 4 Dead 2",
+        "descripcion": "Frenético FPS cooperativo para luchar contra oleadas de zombis en medio de un apocalipsis.",
+        "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/header.jpg",
+        "categoria": "FPS",
+        "precio": 5000,
+        "precioOferta": null
+    }
+]
