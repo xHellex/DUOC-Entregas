@@ -9,7 +9,16 @@ import Footer from './components/Footer'
 import './App.css'
 
 function App() {
-  const [carrito, setCarrito] = useState([])
+  const [carrito, setCarrito] = useState(() => {
+    const carritoGuardado = localStorage.getItem('carritoStore')
+    return carritoGuardado ? JSON.parse(carritoGuardado) : []
+  })
+
+  // Guardar en localStorage cada vez que el carrito cambie
+  useEffect(() => {
+    localStorage.setItem('carritoStore', JSON.stringify(carrito))
+  }, [carrito])
+
   const [carritoVisible, setCarritoVisible] = useState(false)
   const [filtroCategoria, setFiltroCategoria] = useState('Todos')
   const [terminoBusqueda, setTerminoBusqueda] = useState('')
