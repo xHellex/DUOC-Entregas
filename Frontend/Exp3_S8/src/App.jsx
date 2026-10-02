@@ -22,30 +22,38 @@ function App() {
   const [carritoVisible, setCarritoVisible] = useState(false)
   const [filtroCategoria, setFiltroCategoria] = useState('Todos')
   const [terminoBusqueda, setTerminoBusqueda] = useState('')
+  const [toast, setToast] = useState({ visible: false, mensaje: '' })
 
   const agregarAlCarrito = (producto) => {
-    setCarrito(prev => [...prev, producto])
+    if (!carrito.some((item) => item.id === producto.id)) {
+      setCarrito([...carrito, producto])
+
+      // Mostrar Toast interactivo
+      setToast({ visible: true, mensaje: `¡${producto.titulo} agregado al carrito!` })
+      setTimeout(() => setToast({ visible: false, mensaje: '' }), 3000)
+    }
   }
 
-  const eliminarDelCarrito = (indice) => {
-    setCarrito(prev => prev.filter((_, i) => i !== indice))
+  const eliminarDelCarrito = (id) => {
+    setCarrito(carrito.filter(item => item.id !== id))
   }
 
-  const totalCarrito = carrito.reduce(
-    (sum, item) => sum + (item.precioOferta || item.precio), 0
-  )
+  const vaciarCarrito = () => {
+    setCarrito([])
+  }
 
   return (
     <>
-      <Header />
-      <Navbar
+      <Header
         cantidadCarrito={carrito.length}
         onAbrirCarrito={() => setCarritoVisible(true)}
+      />
+      <Navbar
         onBuscar={setTerminoBusqueda}
         onFiltrarCategoria={setFiltroCategoria}
       />
       <Carousel />
-      <main className="container">
+      <main className="container flex-grow-1">
         <ProductList
           onAgregarAlCarrito={agregarAlCarrito}
           filtroCategoria={filtroCategoria}
@@ -54,14 +62,27 @@ function App() {
         />
         <ContactForm />
       </main>
-      <Cart
-        carrito={carrito}
-        onEliminar={eliminarDelCarrito}
-        total={totalCarrito}
-        visible={carritoVisible}
-        onCerrar={() => setCarritoVisible(false)}
-      />
       <Footer />
+
+      <Cart
+        visible={carritoVisible}
+        onClose={() => setCarritoVisible(false)}
+        carrito={carrito}
+        onEliminarItem={eliminarDelCarrito}
+        onVaciarCarrito={vaciarCarrito}
+      />
+
+      {/* Componente Toast de Bootstrap para Notificaciones */}
+      <div className="toast-container position-fixed bottom-0 end-0 p-3" style={{ zIndex: 1055 }}>
+        <div className={`toast align-items-center text-bg-success border-0 ${toast.visible ? 'show' : 'hide'}`} role="alert" aria-live="assertive" aria-atomic="true">
+          <div className="d-flex">
+            <div className="toast-body fw-bold">
+              🛒 {toast.mensaje}
+            </div>
+            <button type="button" className="btn-close btn-close-white me-2 m-auto" onClick={() => setToast({ visible: false, mensaje: '' })}></button>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
