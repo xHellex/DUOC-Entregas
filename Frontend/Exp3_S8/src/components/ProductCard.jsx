@@ -7,17 +7,22 @@
  */
 function ProductCard({ producto, onAgregar, enCarrito }) {
     return (
-        <div className="col-12 col-md-6 col-lg-3">
-            <div className="card h-100 shadow-sm interactivo" style={{ transition: 'transform 0.3s ease' }}
-                onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+        <div className="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div className="card h-100 shadow-sm interactivo">
 
                 {/* Badge de Categoría encima de la imagen */}
                 <span className="badge bg-secondary position-absolute top-0 start-0 m-2">
                     {producto.categoria}
                 </span>
 
-                <img src={producto.imagen} className="card-img-top object-fit-cover" alt={`Portada de ${producto.titulo}`} style={{ height: '200px' }} />
+                <img
+                    src={producto.imagen}
+                    className="card-img-top object-fit-cover"
+                    alt={`Portada de ${producto.titulo}`}
+                    style={{ height: '200px' }}
+                    loading="lazy"
+                    onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/400x200?text=Cargando...' }}
+                />
 
                 <div className="card-body d-flex flex-column">
                     <h5 className="card-title fw-bold text-dark">{producto.titulo}</h5>

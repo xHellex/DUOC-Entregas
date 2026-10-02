@@ -1,92 +1,21 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+    --primary-dark: #1a1a2e;
+    --secondary-dark: #0f3460;
+    --accent: #e94560;
 }
 
+/* Modificador global para interacciones */
+@media (hover: hover) {
+    .interactivo:hover {
+        transform: scale(1.03);
+    }
+}
+
+/* Estilos de validación visual */
+.is-invalid {
+    border-color: var(--accent) !important;
+}
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
-    padding: 0 20px;
-}
-
-
-header {
-    background-color: #1a1a2e;
-    color: #e94560;
-    padding: 30px 20px;
-    text-align: center;
-    border-bottom: 5px solid #0f3460;
-    margin-bottom: 20px;
-    border-radius: 0 0 10px 10px;
-}
-
-header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-}
-
-header p {
-    color: #fff;
-    font-size: 1.1rem;
-}
-
-
-#productos h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    color: #1a1a2e;
-}
-
-.card-img-top {
-    height: 220px;
-    object-fit: cover;
-}
-
-footer {
-    background-color: #1a1a2e;
-    color: #fff;
-    text-align: center;
-    padding: 30px 20px;
-    border-top: 5px solid #0f3460;
-    margin-top: 40px;
-    border-radius: 10px 10px 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-footer a {
-    color: #e94560;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Diseño Responsivo (Media Queries) */
-@media (max-width: 1024px) {
-    .productos-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    header p {
-        font-size: 1rem;
-    }
-
-    .productos-list {
-        grid-template-columns: 1fr;
-    }
+    background-color: #f8f9fa;
 }

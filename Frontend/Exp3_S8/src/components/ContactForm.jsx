@@ -1,5 +1,9 @@
 import { useState } from 'react'
 
+/**
+ * Componente que muestra un formulario de contacto.
+ * Integra validaciones HTML5 nativas junto con validación de estado en React.
+ */
 function ContactForm() {
     const [nombre, setNombre] = useState('')
     const [email, setEmail] = useState('')
@@ -24,28 +28,30 @@ function ContactForm() {
 
     return (
         <section id="contacto" className="mt-5 mb-5 p-4 bg-white rounded shadow-sm">
-            <h2 className="text-center mb-4" style={{ color: '#1a1a2e' }}>Contáctanos</h2>
+            <h2 className="text-center mb-4" style={{ color: 'var(--primary-dark)' }}>Contáctanos</h2>
 
             <form id="formulario-contacto" onSubmit={manejarEnvio}>
                 <div className="mb-3">
-                    <label htmlFor="nombre" className="form-label">Nombre completo</label>
+                    <label htmlFor="nombre" className="form-label fw-bold">Nombre completo</label>
                     <input
                         type="text"
                         className="form-control"
                         id="nombre"
-                        placeholder="Ingresa tu nombre"
+                        placeholder="Ej. Juan Pérez"
                         value={nombre}
+                        required
                         onChange={(e) => setNombre(e.target.value)}
                     />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Correo electrónico</label>
+                    <label htmlFor="email" className="form-label fw-bold">Correo electrónico</label>
                     <input
                         type="email"
                         className="form-control"
                         id="email"
-                        placeholder="ejemplo@correo.com"
+                        placeholder="juan.perez@chile.cl"
                         value={email}
+                        required
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>

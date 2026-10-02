@@ -10,6 +10,14 @@ Esta actividad consolida el desarrollo con React (implementando Hooks, Eventos, 
 - **Ubicación del JSON de Datos:** `/public/juegos.json` permite que el componente `ProductList` realice el método `fetch()` simulando una petición asíncrona a un backend.
 - **Componente Contenedor Global:** `/src/App.jsx` concentra el árbol de componentes (Navbar, Carousel, ProductList, Cart y Footer) y distribuye el estado a través de sus Props.
 
+## 🔗 Enlaces y Rutas de Despliegue Oficiales (Criterio 5)
+
+- 🌐 **Aplicación de Producción PWA (GitHub Pages):** [https://xHellex.github.io/DUOC-Entregas/](https://xHellex.github.io/DUOC-Entregas/)
+- 💻 **Código Fuente (Repositorio Exp3_S8):** [Repositorio en GitHub](https://github.com/xHellex/DUOC-Entregas/tree/main/Frontend/Exp3_S8)
+
+## 📸 Capturas de Evidencia (Criterio Rúbrica)
+Las evidencias solicitadas por la rúbrica (Carga de datos, agregar/eliminar carrito, y renderizado condicional de botones) se ubican físicamente dentro del directorio `capturas/` en la raíz de esta entrega (`Exp3_S8`).
+
 ## 🚀 Funcionalidades Principales implementadas
 
 1. **Catálogo Reactivo Dinámico (`useEffect` & `fetch`):** Los datos se obtienen de manera asíncrona validando errores de red en el proceso.

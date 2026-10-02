@@ -9,9 +9,15 @@ import Footer from './components/Footer'
 import './App.css'
 
 function App() {
+  // Inicializar el carrito previniendo corrupción de JSON
   const [carrito, setCarrito] = useState(() => {
-    const carritoGuardado = localStorage.getItem('carritoStore')
-    return carritoGuardado ? JSON.parse(carritoGuardado) : []
+    try {
+      const carritoGuardado = localStorage.getItem('carritoStore')
+      return carritoGuardado ? JSON.parse(carritoGuardado) : []
+    } catch (error) {
+      console.error('Error parseando localStorage, reiniciando carrito:', error)
+      return []
+    }
   })
 
   // Guardar en localStorage cada vez que el carrito cambie
@@ -24,20 +30,39 @@ function App() {
   const [terminoBusqueda, setTerminoBusqueda] = useState('')
   const [toast, setToast] = useState({ visible: false, mensaje: '' })
 
+  // Limpieza del efecto del toast (Evita superposición o cortes bruscos al clickear rápido)
+  useEffect(() => {
+    if (!toast.visible) return
+    const t = setTimeout(() => setToast({ visible: false, mensaje: '' }), 3000)
+    return () => clearTimeout(t)
+  }, [toast])
+
+  /**
+   * Agrega un juego al carrito si no está ya presente
+   * @param {Object} producto - Juego a añadir
+   */
   const agregarAlCarrito = (producto) => {
-    if (!carrito.some((item) => item.id === producto.id)) {
-      setCarrito([...carrito, producto])
+    setCarrito(prev => {
+      // Prevención segura en functional update
+      if (!prev.some(item => item.id === producto.id)) {
+        return [...prev, producto]
+      }
+      return prev
+    })
 
-      // Mostrar Toast interactivo
-      setToast({ visible: true, mensaje: `¡${producto.titulo} agregado al carrito!` })
-      setTimeout(() => setToast({ visible: false, mensaje: '' }), 3000)
-    }
+    // Activa la notificación visual en pantalla
+    setToast({ visible: true, mensaje: `¡${producto.titulo} agregado al carrito!` })
   }
 
+  /**
+   * Elimina un juego del estado del carrito
+   * @param {number} id - Identificador del juego
+   */
   const eliminarDelCarrito = (id) => {
-    setCarrito(carrito.filter(item => item.id !== id))
+    setCarrito(prev => prev.filter(item => item.id !== id))
   }
 
+  /** Llama la actualización de estado para limpiar todo el array */
   const vaciarCarrito = () => {
     setCarrito([])
   }

@@ -1,35 +1,41 @@
+/**
+ * Componente pie de página (Footer).
+ * Contiene enlaces rápidos, redes sociales y copyright.
+ */
 function Footer() {
     return (
-        <footer className="bg-dark text-white pt-5 pb-4 mt-5">
-            <div className="container text-center text-md-start">
-                <div className="row text-center text-md-start">
-                    <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h3 className="text-uppercase mb-4 font-weight-bold text-warning">Pixel Games Store</h3>
-                        <p>&copy; 2026 Pixel Games Store. Todos los derechos reservados.</p>
+        <footer className="text-white py-5 mt-auto" style={{ backgroundColor: 'var(--primary-dark)' }}>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-4 mb-4 mb-md-0">
+                        <h2 className="h4 fw-bold text-warning mb-3">Pixel Games Store</h2>
+                        <p className="text-muted">Tu destino número uno para los mejores videojuegos. Explora, compra y juega con nosotros.</p>
                     </div>
 
-                    <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h3 className="text-uppercase mb-4 font-weight-bold text-warning">Enlaces</h3>
-                        <p><a href="/" className="text-white text-decoration-none">Inicio</a></p>
-                        <p><a href="#productos" className="text-white text-decoration-none">Productos</a></p>
-                        <p><a href="mailto:contacto@tienda.com" className="text-white text-decoration-none">Contacto</a></p>
+                    <div className="col-md-4 mb-4 mb-md-0">
+                        <h3 className="h4 fw-bold mb-3">Enlaces Rápidos</h3>
+                        <ul className="list-unstyled">
+                            <li className="mb-2"><a href="#" className="text-decoration-none text-muted interactivo d-inline-block">🏠 Inicio</a></li>
+                            <li className="mb-2"><a href="#productos" className="text-decoration-none text-muted interactivo d-inline-block">🎮 Productos</a></li>
+                            <li className="mb-2"><a href="#contacto" className="text-decoration-none text-muted interactivo d-inline-block">✉️ Contacto</a></li>
+                        </ul>
                     </div>
 
-                    <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h3 className="text-uppercase mb-4 font-weight-bold text-warning">Contacto</h3>
-                        <p>Calle Falsa 123, Ciudad, País</p>
-                        <p><a href="mailto:contacto@tienda.com" className="text-white text-decoration-none">contacto@tienda.com</a></p>
-                        <p><a href="tel:+1234567890" className="text-white text-decoration-none">+1 234 567 890</a></p>
+                    <div className="col-md-4">
+                        <h3 className="h4 fw-bold mb-3">Síguenos</h3>
+                        <div className="d-flex gap-3">
+                            <a href="#" className="text-muted fs-4 interactivo"><i className="bi bi-facebook"></i></a>
+                            <a href="#" className="text-muted fs-4 interactivo"><i className="bi bi-twitter-x"></i></a>
+                            <a href="#" className="text-muted fs-4 interactivo"><i className="bi bi-instagram"></i></a>
+                            <a href="#" className="text-muted fs-4 interactivo"><i className="bi bi-discord"></i></a>
+                        </div>
                     </div>
+                </div>
 
-                    <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h3 className="text-uppercase mb-4 font-weight-bold text-warning">Síguenos</h3>
-                        <p>
-                            <a href="https://www.facebook.com/tienda" target="_blank" rel="noreferrer" className="text-white text-decoration-none d-block">Facebook</a>
-                            <a href="https://www.twitter.com/tienda" target="_blank" rel="noreferrer" className="text-white text-decoration-none d-block">Twitter</a>
-                            <a href="https://www.instagram.com/tienda" target="_blank" rel="noreferrer" className="text-white text-decoration-none d-block">Instagram</a>
-                        </p>
-                    </div>
+                <hr className="my-4 border-secondary" />
+
+                <div className="text-center text-muted">
+                    <p className="mb-0">&copy; 2026 Pixel Games Store. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>
