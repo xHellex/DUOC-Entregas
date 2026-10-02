@@ -44,11 +44,10 @@ function App() {
 
   return (
     <>
-      <Header
+      <Header />
+      <Navbar
         cantidadCarrito={carrito.length}
         onAbrirCarrito={() => setCarritoVisible(true)}
-      />
-      <Navbar
         onBuscar={setTerminoBusqueda}
         onFiltrarCategoria={setFiltroCategoria}
       />
