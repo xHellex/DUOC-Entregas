@@ -1,0 +1,32 @@
+====================================================================
+COMPILACION Y TESTS - Exp3_S8_Felipe_Penaloza (7 modulos)  |  Fri Oct  2 15:39:53 HSP 2026
+mvn clean test por modulo; se muestra el resumen de surefire
+====================================================================
+
+=== auth-server ===
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+
+=== config-server ===
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+
+=== eureka-server ===
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+
+=== api-gateway ===
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+
+=== ms-cuentas ===
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+
+=== ms-transacciones ===
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+
+=== ms-tarjetas ===
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS

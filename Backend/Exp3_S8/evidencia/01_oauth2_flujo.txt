@@ -1,0 +1,19 @@
+====================================================================
+EVIDENCIA S8: flujo OAuth2.0 client_credentials (real)
+Fecha: Fri Oct  2 15:39:22 HSP 2026
+====================================================================
+
+### 1. Obtener access token (POST /oauth2/token) ###
+{"access_token":"eyJraWQiOiI0MDAxOWM4Ni0yOTExLTRlZjctOTE3My0wMTdjZTNkZWUzMDIiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJiYW5jb3h5ei1jbGllbnQiLCJhdWQiOiJiYW5jb3h5ei1jbGllbnQiLCJuYmYiOjE3OTA5NjYzNjIsInNjb3BlIjpbImN1ZW50YXMucmVhZCJdLCJpc3MiOiJodHRwOi8vYXV0aC1zZXJ2ZXI6OTAwMCIsImV4cCI6MTc5MDk2OTk2MiwiaWF0IjoxNzkwOTY2MzYyLCJqdGkiOiIxZDkzODIwMi0xYjA3LTQ0MWQtOTJjYS00MmU4ZGU3NDI4YjcifQ.CUbzkpbiIctneNlGt_wAtvTeppSwLoLWjzuZIcmoL1rl3w-TYZB_QYFlWg2Tg82bGOxF9O5pGRXbuzj4P3vNdBPrh3x_3nFO2wWW3Aa1GmrD9ESZGMiG1g-ouHXRAfKz73WvJ3wzbLUw9SHKwp4pr94ZLxpZpHRlNVwTXbOH6Sw6ELtnlnfPlKF81J6jGdy-thXNtNT9XGoIndaZQBY7T1Kinw6ZEYrR0yB0X9veS0pBjLpzjp77ELBqHFA7dRRu6yZstHQ2SZLm7dyRNwWYHLQ05RvImKFmyUstrNyezQtTvei2qAo7RYYYL_xavHUKY9FObvkgJcgLoyL8QAcj4g","scope":"cuentas.read","token_type":"Bearer","expires_in":3599}
+
+### 2. Llamada protegida CON token via gateway (esperado 200) ###
+[{"id":101,"titular":"John Doe","tipo":"ahorro","saldo":5000.0},{"id":102,"titular":"Jane Smith","tipo":"prestamo","saldo":8000.0},{"id":103,"titular":"Bob Johnson","tipo":"hipoteca","saldo":12000.0}]
+HTTP_STATUS:200
+
+### 3. Llamada SIN token via gateway (esperado 401) ###
+
+HTTP_STATUS:401
+
+### 4. Token invalido (esperado 401) ###
+
+HTTP_STATUS:401

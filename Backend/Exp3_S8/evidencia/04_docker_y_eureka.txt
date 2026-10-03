@@ -1,0 +1,36 @@
+====================================================================
+EVIDENCIA S8: imagenes Docker, docker-compose y registro Eureka
+Fecha: Fri Oct  2 15:39:10 HSP 2026
+====================================================================
+
+### 1. docker images (las 7 imagenes del proyecto) ###
+REPOSITORY                  TAG       SIZE      CREATED
+bancoxyz/ms-transacciones   1.0.0     637MB     5 minutes ago
+bancoxyz/ms-tarjetas        1.0.0     637MB     8 minutes ago
+bancoxyz/ms-cuentas         1.0.0     637MB     10 minutes ago
+bancoxyz/eureka-server      1.0.0     546MB     About an hour ago
+bancoxyz/api-gateway        1.0.0     528MB     About an hour ago
+bancoxyz/auth-server        1.0.0     537MB     About an hour ago
+bancoxyz/config-server      1.0.0     515MB     About an hour ago
+
+### 2. Estado de los 8 contenedores (docker compose) ###
+NAMES                       STATUS                    PORTS
+bancoxyz-api-gateway        Up 39 seconds             0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+bancoxyz-ms-transacciones   Up 40 seconds             0.0.0.0:8082->8082/tcp, [::]:8082->8082/tcp
+bancoxyz-ms-cuentas         Up 41 seconds             0.0.0.0:8081->8081/tcp, [::]:8081->8081/tcp
+bancoxyz-ms-tarjetas        Up 40 seconds             0.0.0.0:8083->8083/tcp, [::]:8083->8083/tcp
+bancoxyz-kafka-ui           Up 40 seconds             0.0.0.0:8090->8080/tcp, [::]:8090->8080/tcp
+bancoxyz-auth-server        Up 42 seconds (healthy)   0.0.0.0:9000->9000/tcp, [::]:9000->9000/tcp
+bancoxyz-kafka              Up 53 seconds (healthy)   0.0.0.0:9094->9094/tcp, [::]:9094->9094/tcp
+bancoxyz-config-server      Up 53 seconds (healthy)   0.0.0.0:8888->8888/tcp, [::]:8888->8888/tcp
+bancoxyz-eureka-server      Up 53 seconds (healthy)   0.0.0.0:8761->8761/tcp, [::]:8761->8761/tcp
+
+### 3. Registro completo de Eureka (5 servicios Spring, todos UP, sin residuos) ###
+AUTH-SERVER          status=UP       instanceId=883ffc74533c:auth-server:9000
+API-GATEWAY          status=UP       instanceId=97c83b5c07e2:api-gateway:8080
+MS-TRANSACCIONES     status=UP       instanceId=9d9b085e84f3:ms-transacciones:8082
+MS-TARJETAS          status=UP       instanceId=f528ae356fe8:ms-tarjetas:8083
+MS-CUENTAS           status=UP       instanceId=1935a40b62ba:ms-cuentas:8081
+
+### 4. JWK Set publicado por el auth-server (clave publica RSA) ###
+{"keys":[{"kty":"RSA","e":"AQAB","kid":"40019c86-2911-4ef7-9173-017ce3dee302","n":"lBDC-CJZ3ecVR-B8IBbLBEpL2rnAnaIXqjj1YOhiw-HPffLmyeF-2PB-sYLIcQ3taMXFt_Yyh5AwVbGirDAa4A0nxTq8eGyVX94I6SX8H0R7uixiU2XyoPI1Ro5vG9f34FMhEtnKuXBowa614PofamORs87oCeUYM6D3dUIh49yt5Olo-OQOK6Bn_EOQ66urG7lxRemrh5FZBnoYQjnOKwCEWjzJgXer9FR3JGpjtVTFmRmXvyysDHImoV7RjJEKAGahVU9Bhw3cuK9X6To90nfXXPuMKo3zFg1ibIBAX0ypVld2xwezM36mf5bybMkpMjLloyuUwk-SjgPLWCEj1Q"}]}

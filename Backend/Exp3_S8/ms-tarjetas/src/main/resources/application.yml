@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: ms-tarjetas
+  cloud:
+    config:
+      # Reintenta la conexion al Config Server al arrancar (util en Docker).
+      fail-fast: true
+      retry:
+        max-attempts: 30
+        initial-interval: 2000
+        multiplier: 1.3
+        max-interval: 8000
+
+---
+# ===== Perfil local (distinto de docker): Config Server en localhost =====
+#
+# "spring.config.import" NO se reemplaza por otro definido en un documento de
+# perfil distinto: Spring Boot ACUMULA todas las ubicaciones activas, de
+# todos los documentos cuya condicion de perfil se cumpla. Por eso este
+# documento se excluye explicitamente cuando el perfil es "docker"
+# (on-profile: "!docker"): sin esa negacion, este import a "localhost:8888"
+# tambien se intentaba dentro del contenedor (donde nada escucha en
+# localhost) y, con fail-fast activo, el servicio jamas terminaba de
+# levantar aunque el Config Server real SI respondiera por su nombre de
+# contenedor. "spring.application.name" queda FUERA de este documento (en el
+# bloque de arriba, siempre activo): si tambien quedara condicionado aqui, al
+# excluirse en Docker el microservicio pediria el perfil "application" en vez
+# de "ms-tarjetas" al Config Server.
+spring:
+  config:
+    activate:
+      on-profile: "!docker"
+    import: optional:configserver:http://localhost:8888
+
+---
+# ===== Perfil docker: UNICO import activo, al Config Server alcanzable =====
+# por nombre de contenedor (no por "localhost").
+spring:
+  config:
+    activate:
+      on-profile: docker
+    import: configserver:http://config-server:8888

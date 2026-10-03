@@ -1,0 +1,16 @@
+# Perfil "docker": sobrescribe los hosts para el entorno orquestado con
+# docker-compose. Los servicios se resuelven por nombre dentro de la red Docker.
+server:
+  address: 0.0.0.0
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring.security.oauth2.resourceserver.jwt.jwk-set-uri: http://auth-server:9000/oauth2/jwks
+
+spring.kafka:
+  bootstrap-servers: kafka:9092

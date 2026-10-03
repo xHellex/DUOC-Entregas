@@ -1,0 +1,40 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: auth-server
+
+# Emisor de los tokens. En local es localhost:9000; el perfil "docker" lo
+# redirige al nombre del contenedor para que coincida con el JWK que consultan
+# los Resource Servers dentro de la red de Docker.
+app:
+  issuer-uri: http://localhost:9000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+---
+# ===================== Perfil docker =====================
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+app:
+  issuer-uri: http://auth-server:9000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/

@@ -1,0 +1,57 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:cuentasdb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+# Tolerancia a fallos (Resilience4j)
+resilience4j:
+  circuitbreaker:
+    instances:
+      cuentasCB:
+        sliding-window-size: 10
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 3
+
+# Seguridad JWT
+# ===== Seguridad: OAuth2 Resource Server =====
+# El microservicio delega la autenticacion en el Authorization Server y valida
+# los access tokens (JWT) contra su JWK Set. En local apunta a localhost:9000;
+# el perfil "docker" (archivo *-docker.yml) lo redirige al contenedor auth-server.
+spring.security.oauth2.resourceserver.jwt.jwk-set-uri: http://localhost:9000/oauth2/jwks
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,circuitbreakers
+
+# ===== Kafka (consumidor de eventos) =====
+spring.kafka:
+  bootstrap-servers: localhost:9094
+  consumer:
+    group-id: grupo-cuentas
+    auto-offset-reset: earliest
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    properties:
+      spring.json.use.type.headers: false
+      spring.json.trusted.packages: "com.bancoxyz.mscuentas.event"
+      spring.json.value.default.type: "com.bancoxyz.mscuentas.event.TransaccionCreadaEvent"

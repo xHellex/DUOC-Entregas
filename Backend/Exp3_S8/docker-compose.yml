@@ -1,0 +1,200 @@
+# ============================================================================
+#  Banco XYZ - Orquestacion completa del ecosistema de microservicios
+#  Experiencia 3 - Semana 8 (Desarrollo Backend III, PBY2203)
+#
+#  Levanta TODO el sistema con un solo comando:
+#
+#      docker compose up --build
+#
+#  Componentes orquestados:
+#    - kafka          (broker de mensajeria asincrona, modo KRaft)
+#    - kafka-ui       (consola web para inspeccionar topicos y mensajes)
+#    - config-server  (configuracion centralizada, perfil native)
+#    - eureka-server  (registro y descubrimiento de servicios)
+#    - auth-server    (Authorization Server OAuth2.0: emite y firma los JWT)
+#    - api-gateway    (puerta de entrada unica, enruta por Eureka)
+#    - ms-cuentas / ms-transacciones / ms-tarjetas (microservicios de negocio,
+#      Resource Servers OAuth2 + tolerancia a fallos con Resilience4j)
+#
+#  Red: todos comparten "bancoxyz-net" y se resuelven por nombre de servicio.
+# ============================================================================
+
+services:
+
+  # ------------------------- Mensajeria (Kafka) -------------------------
+  # Imagen oficial apache/kafka (modo KRaft). bitnami/kafka:3.7 fue retirada de
+  # Docker Hub (confirmado al intentar el pull: "not found"), por eso se usa la
+  # imagen oficial, que requiere las variables KAFKA_* sin el prefijo CFG_.
+  kafka:
+    image: apache/kafka:3.9.0
+    container_name: bancoxyz-kafka
+    ports:
+      - "9094:9094"          # listener externo (acceso desde el host)
+    environment:
+      KAFKA_NODE_ID: "1"
+      KAFKA_PROCESS_ROLES: "controller,broker"
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@kafka:9093"
+      # Listener interno (kafka:9092) para los contenedores y externo (9094) para el host
+      KAFKA_LISTENERS: "INTERNAL://:9092,CONTROLLER://:9093,EXTERNAL://:9094"
+      KAFKA_ADVERTISED_LISTENERS: "INTERNAL://kafka:9092,EXTERNAL://localhost:9094"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "INTERNAL"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: "1"
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: "1"
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: "0"
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list"]
+      interval: 10s
+      timeout: 10s
+      retries: 20
+    networks: [bancoxyz-net]
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: bancoxyz-kafka-ui
+    ports:
+      - "8090:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: "bancoxyz"
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: "kafka:9092"
+    depends_on:
+      kafka:
+        condition: service_healthy
+    networks: [bancoxyz-net]
+
+  # ------------------------- Infraestructura Cloud -------------------------
+  config-server:
+    build: ./config-server
+    image: bancoxyz/config-server:1.0.0
+    container_name: bancoxyz-config-server
+    ports:
+      - "8888:8888"
+    environment:
+      # Sirve los .yml montados como volumen (perfil native ya activo en el jar)
+      SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCHLOCATIONS: "file:/config-repo"
+    volumes:
+      - ./config-repo:/config-repo:ro
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/127.0.0.1/8888' 2>/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [bancoxyz-net]
+
+  eureka-server:
+    build: ./eureka-server
+    image: bancoxyz/eureka-server:1.0.0
+    container_name: bancoxyz-eureka-server
+    ports:
+      - "8761:8761"
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/127.0.0.1/8761' 2>/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [bancoxyz-net]
+
+  auth-server:
+    build: ./auth-server
+    image: bancoxyz/auth-server:1.0.0
+    container_name: bancoxyz-auth-server
+    ports:
+      - "9000:9000"
+    environment:
+      SPRING_PROFILES_ACTIVE: "docker"
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/127.0.0.1/9000' 2>/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [bancoxyz-net]
+
+  # ------------------------- Microservicios de negocio -------------------------
+  ms-cuentas:
+    build: ./ms-cuentas
+    image: bancoxyz/ms-cuentas:1.0.0
+    container_name: bancoxyz-ms-cuentas
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_PROFILES_ACTIVE: "docker"
+    depends_on:
+      config-server:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+      auth-server:
+        condition: service_started
+    networks: [bancoxyz-net]
+
+  ms-transacciones:
+    build: ./ms-transacciones
+    image: bancoxyz/ms-transacciones:1.0.0
+    container_name: bancoxyz-ms-transacciones
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_PROFILES_ACTIVE: "docker"
+    depends_on:
+      config-server:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+      auth-server:
+        condition: service_started
+    networks: [bancoxyz-net]
+
+  ms-tarjetas:
+    build: ./ms-tarjetas
+    image: bancoxyz/ms-tarjetas:1.0.0
+    container_name: bancoxyz-ms-tarjetas
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_PROFILES_ACTIVE: "docker"
+    depends_on:
+      config-server:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+      auth-server:
+        condition: service_started
+    networks: [bancoxyz-net]
+
+  # ------------------------- Puerta de entrada -------------------------
+  api-gateway:
+    build: ./api-gateway
+    image: bancoxyz/api-gateway:1.0.0
+    container_name: bancoxyz-api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eureka-server:8761/eureka/"
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+      auth-server:
+        condition: service_started
+      ms-cuentas:
+        condition: service_started
+      ms-transacciones:
+        condition: service_started
+      ms-tarjetas:
+        condition: service_started
+    networks: [bancoxyz-net]
+
+networks:
+  bancoxyz-net:
+    driver: bridge

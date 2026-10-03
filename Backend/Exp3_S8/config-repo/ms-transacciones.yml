@@ -1,0 +1,54 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:transaccionesdb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      transaccionesCB:
+        sliding-window-size: 10
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 3
+
+# ===== Seguridad: OAuth2 Resource Server =====
+# El microservicio delega la autenticacion en el Authorization Server y valida
+# los access tokens (JWT) contra su JWK Set. En local apunta a localhost:9000;
+# el perfil "docker" (archivo *-docker.yml) lo redirige al contenedor auth-server.
+spring.security.oauth2.resourceserver.jwt.jwk-set-uri: http://localhost:9000/oauth2/jwks
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,circuitbreakers
+
+# ===== Kafka (productor de eventos) =====
+spring.kafka:
+  bootstrap-servers: localhost:9094
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    properties:
+      # El contrato del evento es el JSON, no una clase Java: no se envia el
+      # header __TypeId__ (evita que los consumidores intenten cargar
+      # com.bancoxyz.mstransacciones.event.* en sus propios paquetes).
+      spring.json.add.type.headers: false
