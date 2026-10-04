@@ -5,8 +5,10 @@
 function Header() {
     return (
         <header className="text-center py-4 text-white" style={{ backgroundColor: 'var(--primary-dark)', borderBottom: '5px solid var(--secondary-dark)' }}>
-            <h1>Pixel Games Store</h1>
-            <p>Bienvenido a nuestra tienda. Encuentra los mejores videojuegos para todas tus consolas y PC.</p>
+            <div className="container px-3">
+                <h1 className="display-4 fw-bold">Pixel Games Store</h1>
+                <p className="lead mb-0">Bienvenido a nuestra tienda. Encuentra los mejores videojuegos para todas tus consolas y PC.</p>
+            </div>
         </header>
     )
 }

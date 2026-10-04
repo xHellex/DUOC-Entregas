@@ -49,7 +49,7 @@ function Carousel() {
                         <img
                             src={slide.img}
                             className="d-block w-100 object-fit-cover"
-                            style={{ height: 'clamp(200px, 40vw, 480px)' }}
+                            style={{ height: '50vh', minHeight: '300px' }}
                             loading={index === 0 ? "eager" : "lazy"}
                             alt={slide.title}
                         />
