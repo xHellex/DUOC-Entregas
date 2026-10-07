@@ -1,0 +1,75 @@
+/* =========================================================
+   Estilos propios de Pixel Games Store
+   (Bootstrap 5 hace la maquetación; aquí van la paleta y los detalles)
+   ========================================================= */
+
+/* Variables CSS: paleta de colores reutilizada en todos los componentes */
+:root {
+    --primary-dark: #1a1a2e;
+    --secondary-dark: #0f3460;
+    --accent: #e94560;
+    --accent-hover: #d13a54;
+}
+
+/* Compensa la altura del navbar fijo al saltar a una sección con los enlaces (#productos, #contacto) */
+html {
+    scroll-padding-top: 72px;
+}
+
+body {
+    background-color: #f4f5f9;
+}
+
+/* Botón con el color de la marca (Agregar al carrito, Enviar, Comprar) */
+.btn-brand {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--accent);
+    --bs-btn-border-color: var(--accent);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--accent-hover);
+    --bs-btn-hover-border-color: var(--accent-hover);
+    --bs-btn-active-bg: var(--accent-hover);
+    --bs-btn-focus-shadow-rgb: 233, 69, 96;
+}
+
+/* Tarjetas de juego: imagen de alto fijo y recorte proporcional */
+.tarjeta-juego .card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Efecto al pasar el mouse solo en dispositivos con puntero (no en pantallas táctiles) */
+@media (hover: hover) {
+    .tarjeta-juego {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .tarjeta-juego:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15) !important;
+    }
+}
+
+/* Carrusel: alto fluido según el ancho de la pantalla */
+.carousel-img {
+    height: clamp(200px, 40vw, 460px);
+    object-fit: cover;
+}
+
+/* Pie de página con CSS Grid: 1 columna en móvil, columnas automáticas en pantallas grandes */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.link-footer {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+}
+
+.link-footer:hover,
+.link-footer:focus-visible {
+    color: #fff;
+    text-decoration: underline;
+}
