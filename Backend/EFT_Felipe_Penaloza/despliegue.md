@@ -33,7 +33,7 @@ Abrir entradas (inbound) según lo que quieras exponer:
 ssh -i mi-clave.pem ubuntu@<IP_PUBLICA_EC2>
 
 sudo apt-get update
-sudo apt-get install -y docker.io docker-compose-plugin git
+sudo apt-get install -y docker.io docker-compose-v2 git
 sudo usermod -aG docker ubuntu
 newgrp docker
 docker --version && docker compose version
