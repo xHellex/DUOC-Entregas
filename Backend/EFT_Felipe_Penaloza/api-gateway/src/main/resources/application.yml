@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # Habilita el enrutamiento automatico por nombre de servicio de Eureka.
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        # Endpoints OAuth2 del Authorization Server (emision de tokens, JWK).
+        - id: auth-server
+          uri: lb://auth-server
+          predicates:
+            - Path=/oauth2/**
+        - id: ms-cuentas
+          uri: lb://ms-cuentas
+          predicates:
+            - Path=/cuentas/**
+        - id: ms-pagos
+          uri: lb://ms-pagos
+          predicates:
+            - Path=/pagos/**
+        - id: ms-clientes
+          uri: lb://ms-clientes
+          predicates:
+            - Path=/clientes/**
+
+eureka:
+  client:
+    service-url:
+      # En Docker se sobrescribe con la variable de entorno
+      # EUREKA_CLIENT_SERVICEURL_DEFAULTZONE hacia http://eureka-server:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: ms-cuentas
+  cloud:
+    config:
+      # Reintenta la conexion al Config Server al arrancar (util en Docker).
+      fail-fast: true
+      retry:
+        max-attempts: 30
+        initial-interval: 2000
+        multiplier: 1.3
+        max-interval: 8000
+
+---
+# ===== Perfil local (distinto de docker): Config Server en localhost =====
+#
+# "spring.config.import" NO se reemplaza por otro definido en un documento de
+# perfil distinto ni por una variable de entorno: Spring Boot ACUMULA todas
+# las ubicaciones activas de todos los contribuyentes cuya condicion de perfil
+# se cumpla. Por eso este documento se excluye explicitamente cuando el perfil
+# es "docker" (on-profile: "!docker"): sin esa negacion, este import a
+# "localhost:8888" tambien se intentaba dentro del contenedor (donde nada
+# escucha en localhost) y, con fail-fast activo, el servicio jamas terminaba
+# de levantar aunque el Config Server real SI respondiera por su nombre de
+# contenedor.
+spring:
+  config:
+    activate:
+      on-profile: "!docker"
+    import: optional:configserver:http://localhost:8888
+
+---
+# ===== Perfil docker: UNICO import activo, al Config Server alcanzable =====
+# por nombre de contenedor (no por "localhost").
+spring:
+  config:
+    activate:
+      on-profile: docker
+    import: configserver:http://config-server:8888
