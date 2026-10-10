@@ -47,12 +47,12 @@ Queda en `http://localhost:8085`.
 
 ```bash
 # Web (datos completos)
-curl -u web_user:web123 http://localhost:8085/api/web/cuentas/1/dashboard
+curl -u web_user:web123 http://localhost:8085/api/web/cuentas/101/dashboard
 # Móvil (ligero)
-curl -u movil_user:movil123 http://localhost:8085/api/movil/cuentas/1/resumen
+curl -u movil_user:movil123 http://localhost:8085/api/movil/cuentas/101/resumen
 # Cajero (saldo + retiro)
-curl -u cajero_user:cajero123 http://localhost:8085/api/cajero/cuentas/1/saldo
-curl -u cajero_user:cajero123 -H "Content-Type: application/json" -d "{\"monto\":20000}" http://localhost:8085/api/cajero/cuentas/1/retiro
+curl -u cajero_user:cajero123 http://localhost:8085/api/cajero/cuentas/101/saldo
+curl -u cajero_user:cajero123 -H "Content-Type: application/json" -d "{\"monto\":20000}" http://localhost:8085/api/cajero/cuentas/101/retiro
 # Seguridad por canal (credencial cruzada -> 403)
 curl -u movil_user:movil123 http://localhost:8085/api/web/cuentas
 ```

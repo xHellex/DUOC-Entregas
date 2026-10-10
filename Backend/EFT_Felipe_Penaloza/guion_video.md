@@ -66,9 +66,9 @@ Desplázate por la consola ya corrida. Menciona:
 
 ### 1:40–2:10 · BFF 3 canales (pantalla: terminal, comandos ya preparados)
 ```bash
-curl -u web_user:web123 http://localhost:8085/api/web/cuentas/1/dashboard
-curl -u movil_user:movil123 http://localhost:8085/api/movil/cuentas/1/resumen
-curl -u cajero_user:cajero123 http://localhost:8085/api/cajero/cuentas/1/saldo
+curl -u web_user:web123 http://localhost:8085/api/web/cuentas/101/dashboard
+curl -u movil_user:movil123 http://localhost:8085/api/movil/cuentas/101/resumen
+curl -u cajero_user:cajero123 http://localhost:8085/api/cajero/cuentas/101/saldo
 ```
 Muestra que la misma cuenta devuelve datos completos (web) vs ligeros
 (móvil) vs mínimos (cajero) — seguridad y respuesta distinta por canal.
